@@ -1,0 +1,24 @@
+.app-home-steps {
+    background: #ffffff;
+    text-align: center;
+    padding-top: 54px;
+}
+
+.steps-label {
+    color: #181821;
+    font-size: 36px;
+    line-height: 51px;
+    font-family: NunitoSansBold;
+    margin-top: 53px !important;
+    margin-bottom: 16px !important;
+}
+
+.step-left {
+    background: url("~assets/icons/step_left.png") no-repeat;
+    background-size: contain;
+}
+
+.step-right {
+    background: url("~assets/icons/step_right.png") no-repeat;
+    background-position: right;
+}
