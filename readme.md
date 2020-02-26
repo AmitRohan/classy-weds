@@ -8,4 +8,4 @@ Running different environments by executing ```npm run commandName``` in your te
     start-production        -> Start In production Mode
     build                   -> Build In Prod
     build-dev               -> Build In Dev Mode
-```s
+```
