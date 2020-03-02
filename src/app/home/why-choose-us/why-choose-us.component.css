@@ -3,7 +3,8 @@
     padding-top: 29px;
     padding-bottom: 98px;
     background: url("~assets/icons/why_choose_us_bgr.png") no-repeat;
-    background-size: cover;
+    background-size: 100%;
+    background-position: center;
 }
 
 .why-choose-us-title {
