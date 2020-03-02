@@ -1,8 +1,0 @@
-{
-  "/auth/*": {
-    "target": "http://vpsingh.com/",
-    "secure": false,
-    "logLevel": "debug",
-    "changeOrigin": true
-  }
-}
