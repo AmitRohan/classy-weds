@@ -8,12 +8,12 @@ declare const slimscroll: any;
 declare var H: any;
 
 @Component({
-  selector: 'app-home-services',
-  templateUrl: './services.component.html',
-  styleUrls: ['./services.component.css'],
+  selector: 'app-home-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class ServicesComponent implements OnInit , AfterViewInit , AfterContentChecked {
+export class ProductsComponent implements OnInit , AfterViewInit , AfterContentChecked {
 
 
   constructor(

@@ -1,0 +1,54 @@
+.app-products-card-container {
+    padding: 20px !important;
+    height: 100vh !important;
+    min-height: 355px !important;
+    max-height: 455px !important;
+}
+
+.app-products-card {
+    height: 100%;
+    background: #ffffff;
+}
+
+.app-products-card-content {
+    padding: 12px 16px 16px 16px!important;
+    background: #ffffff;
+}
+
+.app-products-card-title {
+    font-family: 'Nunito Sans Semi Bold';
+    color: #C00000;
+    line-height: 24px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.app-products-card-package-title {
+    font-family: 'Nunito Sans';
+    color: #A2A3AE;
+    line-height: 14px;
+    font-size: 10px;
+    text-align: right;
+}
+
+.app-products-card-package-rating {
+    margin-top: 4px;
+}
+
+.app-products-card-package-price {
+    margin-top: 2px;
+    font-family: 'Nunito Sans Semi Bold';
+    color: #29292F;
+    line-height: 21px;
+    font-size: 14px;
+    text-align: right;
+}
+
+.app-products-card-package-description {
+    margin-top: 12px;
+    font-family: 'Nunito Sans Semi Bold';
+    color: #A2A3AE;
+    line-height: 16px;
+    font-size: 12px;
+    text-align: left;
+}

@@ -1,0 +1,25 @@
+<div class="row p-0 m-0 full-parent-height">
+    <!-- Service 1 -->
+    <div
+            *ngFor="let product of serviceList"
+            class="col-lg-4 col-md-6 col-sm-12 half-parent-height p-0 app-products-card-container">
+        <div class="card border-0 shadow app-products-card">
+            <img
+                style="width: 100%;height: 300px;background: #ff0066">
+            <div class="app-products-card-content">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="app-products-card-title">{{product.name}}</div>
+                        <div class="app-products-card-package-rating"></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="app-products-card-package-title">Package starting from</div>
+                        <div class="app-products-card-package-price">{{product.price}} INR</div>
+                    </div>
+                </div>
+                <div class="app-products-card-package-description">{{product.description}}</div>
+            </div>
+        </div>
+    </div>
+
+</div>
