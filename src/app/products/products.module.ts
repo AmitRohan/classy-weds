@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeRoutingModule } from './home-routing.module';
+import { ProductsRoutingModule } from './products-routing.module';
 
-import { HomeService } from './home.service';
+import { ProductsService } from './products.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HolderComponent} from "./holder/holder.component";
 import {ServicesComponent} from "./services/services.component";
@@ -12,13 +12,13 @@ import {StepsComponent} from "./steps/steps.component";
 import {WhyChooseUsComponent} from "./why-choose-us/why-choose-us.component";
 
 @NgModule({
-    imports: [
-        CommonModule,
-        HomeRoutingModule,
-        FormsModule,
-        ReactiveFormsModule,
-    ],
-    declarations: [HolderComponent, ServicesComponent, HeaderComponent, ServicesListComponent, StepsComponent, WhyChooseUsComponent],
-    providers: [HomeService]
+  imports: [
+    CommonModule,
+    ProductsRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  declarations: [HolderComponent, ServicesComponent, HeaderComponent, ServicesListComponent, StepsComponent, WhyChooseUsComponent],
+    providers: [ProductsService]
 })
-export class HomeModule { }
+export class ProductsModule { }
