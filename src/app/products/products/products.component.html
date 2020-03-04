@@ -1,8 +1,40 @@
 <div class="app-services">
-    <div class="services-label-container">
+    <div class="app-products-filter-section">
+        <div class="row products-search-input-holder p-0 m-0">
+            <img class="products-search-input-icon" src="assets/icons/app-search.png">
+            <div class="col-lg-11 col-md-11 col-sm-11 p-0">
+                <input class="products-search-input" placeholder="Type a location or service">
+            </div>
+        </div>
+        <div class="row p-0 m-0 products-filter-holder">
+            <div class="col-lg-4 col-md-4 col-sm-12 p-0">
+                <div class="shadow products-filter-1">
+                    <img class="products-filter-icon" src="assets/icons/app-products-venues.png">
+                    <span class="products-filter-name">Venues</span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 p-0">
+                <div class="shadow products-filter-2">
+                    <img class="products-filter-icon" src="assets/icons/app-catering.png">
+                    <span class="products-filter-name">Catering</span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 p-0">
+                <div class="shadow products-filter-3">
+                    <img class="products-filter-icon" src="assets/icons/app-products-services.png">
+                    <span class="products-filter-name">Services</span>
+                </div>
+            </div>
+
     </div>
-    <div class="carousel-container">
-        <app-home-services-service-list>
+    </div>
+
+    <div class="services-label-container">
+        {{productList.length}} Venues
+    </div>
+    <div>
+        <app-home-services-service-list
+                [productList]="productList">
 
         </app-home-services-service-list>
     </div>

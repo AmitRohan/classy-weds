@@ -2,7 +2,6 @@
     background: url("../../../assets/icons/services_bgr.png");
     background-repeat: no-repeat;
     background-size: cover;
-    text-align: center;
     padding-top: 54px;
     padding-left: 84px;
     padding-right: 84px;
@@ -12,28 +11,85 @@
 
 }
 
-.services-label {
-    margin: auto;
+.products-label {
     color: #181821;
-    font-size: 36px;
-    line-height: 51px;
-    font-family: NunitoSansBold;
-    margin-top: 53px !important;
-    margin-bottom: 16px !important;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: 'Nunito Sans';
+}
+
+.products-search-input-icon{
+    height: 22px;
+    width: 22px;
+}
+
+.products-search-input-holder {
+    margin-top: 24px!important;
+    padding: 15px 16px!important;
+    border-color: #CFD1DE;
+    background: #ffffff;
+    border-width: 1px;
+    border-radius: 2px;
+    border-style: solid;
 }
 
 
-.carousel-container {
-    height: 85%;
-}
-
-.carousel-item {
+.products-search-input {
+    margin-left: 6px;
+    background: #ffffff;
+    width: 100%;
     height: 100%;
-    margin-left: 52px;
-    margin-right: 2px;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    font-size: 14px;
+    line-height: 24px;
+    font-family: 'Nunito Sans';
+    border: none;
+}
+
+.products-search-input:focus {
+    border: none;
+    outline: none;
+}
+
+.products-search-input::-moz-placeholder {
+    color: #A2A3AE;
+}
+
+.app-products-filter-section {
+    padding: 80px 165px 64px 165px;
+}
+
+.products-filter-holder {
+    margin-top: 24px !important;
+}
+
+.products-filter-1 {
+    background: #FFFFFF;
+    margin-right: 21px;
+    border-radius: 4px;
+}
+.products-filter-2 {
+    margin-left: 21px;
+    margin-right: 21px;
+    background: #FFFFFF;
+    border-radius: 4px;
+}
+.products-filter-3 {
+    margin-left: 21px;
+    background: #FFFFFF;
+    border-radius: 4px;
+}
+
+.products-filter-icon {
+    height: 60px;
+    width: 80px;
+    padding: 13px 24px!important;
+    background: #FBFBFB;
+}
+
+.products-filter-name {
+    padding: 0px 16px 0px 16px;
+    font-family: "Nunito Sans";
+    line-height: 27px;
+    font-size: 20px;
+    background: #FFFFFF;
 }

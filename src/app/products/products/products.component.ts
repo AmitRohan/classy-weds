@@ -14,22 +14,22 @@ declare var H: any;
   encapsulation: ViewEncapsulation.None
 })
 export class ProductsComponent implements OnInit , AfterViewInit , AfterContentChecked {
-
+  @Input() productList: Array<any>;
 
   constructor(
       private dashboardData: ProductsService,
       private route: ActivatedRoute
   ) { }
 
-    ngOnInit() {
+  ngOnInit() {
 
-      }
+    }
 
-      ngAfterViewInit(): void {
+  ngAfterViewInit(): void {
 
-      }
+  }
 
-    ngAfterContentChecked(): void {
+  ngAfterContentChecked(): void {
 
-      }
+  }
 }

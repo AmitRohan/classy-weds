@@ -15,6 +15,434 @@ declare var H: any;
 })
 export class HolderComponent implements OnInit , AfterViewInit , AfterContentChecked {
 
+  productList: Array<any> = [
+      {
+        icon : `products_card_bgr.png`
+        , name : `Card Info`
+        , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+        , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+      , name : `Card Info`
+      , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+      , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      },{
+        icon : `products_card_bgr.png`
+            , name : `Card Info`
+            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+            , price : 7500
+      }
+      ];
 
   constructor(
       private dashboardData: ProductsService,
