@@ -25,18 +25,18 @@
                     <span class="products-filter-name">Services</span>
                 </div>
             </div>
-
+        </div>
     </div>
-    </div>
+    <div class="products-filtered-holder">
+        <div class="product-label-container">
+            {{productList.length}} Venues
+        </div>
+        <div>
+            <app-home-services-service-list
+                    [productList]="productList">
 
-    <div class="services-label-container">
-        {{productList.length}} Venues
-    </div>
-    <div>
-        <app-home-services-service-list
-                [productList]="productList">
-
-        </app-home-services-service-list>
+            </app-home-services-service-list>
+        </div>
     </div>
 
 </div>

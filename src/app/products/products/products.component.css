@@ -1,14 +1,13 @@
 .app-services {
-    background: url("../../../assets/icons/services_bgr.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 54px;
-    padding-left: 84px;
-    padding-right: 84px;
+
 }
 
-.services-label-container {
-
+.product-label-container {
+    padding-left: 20px;
+    color: #29292F;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: 'Nunito Sans';
 }
 
 .products-label {
@@ -92,4 +91,8 @@
     line-height: 27px;
     font-size: 20px;
     background: #FFFFFF;
+}
+
+.products-filtered-holder {
+    padding: 0px 42px 0px 42px!important;
 }
