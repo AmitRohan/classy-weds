@@ -18,3 +18,15 @@
     line-height: 45px;
     font-size: 24px;
 }
+
+.app-service-card-underline {
+    width: 24px;
+    background: #ffffff;
+    border-radius: 12px;
+    height: 1px;
+    margin : 13px auto 0px auto;
+}
+
+.blacked-40 {
+    background: rgb(0, 0, 0,0.4);
+}

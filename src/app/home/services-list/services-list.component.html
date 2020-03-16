@@ -4,12 +4,12 @@
             *ngFor="let service of serviceList"
         class="col-lg-4 col-md-6 col-sm-12 half-parent-height p-0 app-service-card-container">
             <div class="card border-0 shadow app-service-card"
-            [style.background-image]="'url('+service.icon+')'"   >
-                <div class="h-100">
+            [style.background-image]="'url(assets/icons/'+service.icon+')'"   >
+                <div class="h-100 blacked-40">
                     <div class="row h-100 align-items-center">
                         <div class="col-12 text-center">
                             <div class="app-service-card-title">{{service.name}}</div>
-                            <p class="app-service-card-title">------</p>
+                            <p class="app-service-card-underline"></p>
                         </div>
                     </div>
                 </div>
