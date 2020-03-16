@@ -3,7 +3,8 @@
     <div
             *ngFor="let service of serviceList"
         class="col-lg-4 col-md-6 col-sm-12 half-parent-height p-0 app-service-card-container">
-            <div class="card border-0 shadow app-service-card">
+            <div class="card border-0 shadow app-service-card"
+            [style.background-image]="'url('+service.icon+')'"   >
                 <div class="h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12 text-center">

@@ -12,6 +12,7 @@
 .header-label1 {
     width: 100%;
     color: #ffffff;
+    font-family: "Nunito Sans Bold";
     font-size: 44px;
     line-height: 66px;
     margin-top: 38px !important;
@@ -20,6 +21,7 @@
 .header-label2 {
     width: 100%;
     color: #ffffff;
+    font-family: "Nunito Sans Bold";
     font-size: 16px;
     line-height: 26px;
     margin-top: 39px !important;
@@ -30,7 +32,7 @@
     color: #ffffff;
     font-size: 18px;
     line-height: 24px;
-    font-family: NunitoSansBold;
+    font-family: "Nunito Sans Bold";
     margin-top: 53px !important;
     margin-bottom: 16px !important;
 }
@@ -40,21 +42,31 @@
     border-width: 2px;
     border-radius: 4px;
     border-style: solid;
+    background: rgba(255,255,255,0.1);
 }
 
 .header-input-number {
-    background: #ffffff;
+    background: transparent;
     width: 100%;
     height: 100%;
     font-size: 14px;
     line-height: 24px;
-    font-family: NunitoSansRegular;
+    font-family: "Nunito Sans Regular";
     border: none;
+    color: #ffffff;
 }
 
 .header-input-number::-moz-placeholder {
     color: #B5B6C0;
 }
+
+.header-input-icon {
+    width: 20px;
+    height: 20px;
+    margin-top: 14px;
+    margin-left: 12px;
+}
+
 
 
 .header-input-submit {
@@ -65,7 +77,7 @@
     font-size: 14px;
     line-height: 24px;
     text-align: center;
-    font-family: NunitoSansBold;
+    font-family: "Nunito Sans Bold";
 }
 
 .header-scroll-down {
@@ -80,7 +92,7 @@
     color: #ffffff;
     font-size: 14px;
     line-height: 24px;
-    font-family: NunitoSansRegular;
+    font-family: "Nunito Sans Regular";
 }
 
 .header-scroll-down-button {

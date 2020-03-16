@@ -19,19 +19,19 @@ export class ServicesListComponent implements OnInit , AfterViewInit , AfterCont
       icon : `service_photography.png`
       , name : `PHOTOGRAPHY`
     },{
-      icon : `service_photography.png`
+      icon : `service-music-dj.png`
       , name : `Music and DJ`
     },{
-      icon : `service_photography.png`
+      icon : `service-mehndi.png`
       , name : `Mehndi`
     },{
-      icon : `service_photography.png`
+      icon : `service-makeup.png`
       , name : `Makeup`
     },{
-      icon : `service_photography.png`
+      icon : `service-venue.png`
       , name : `Venue`
     },{
-      icon : `service_photography.png`
+      icon : `service-wedding.png`
       , name : `Wedding Card`
     }
   ];

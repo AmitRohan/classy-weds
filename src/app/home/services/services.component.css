@@ -12,12 +12,12 @@
 
 }
 
-.products-label {
+.services-label {
     margin: auto;
     color: #181821;
     font-size: 36px;
     line-height: 51px;
-    font-family: NunitoSansBold;
+    font-family: "Nunito Sans Bold";
     margin-top: 53px !important;
     margin-bottom: 16px !important;
 }
