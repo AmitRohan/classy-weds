@@ -9,6 +9,7 @@ import {ServicesComponent} from "./services/services.component";
 import {HeaderComponent} from "./header/header.component";
 import {ServicesListComponent} from "./services-list/services-list.component";
 import {StepsComponent} from "./steps/steps.component";
+import {ContactUs} from "./contact-us/contact-us.component";
 import {WhyChooseUsComponent} from "./why-choose-us/why-choose-us.component";
 
 @NgModule({
@@ -18,7 +19,7 @@ import {WhyChooseUsComponent} from "./why-choose-us/why-choose-us.component";
         FormsModule,
         ReactiveFormsModule,
     ],
-    declarations: [HolderComponent, ServicesComponent, HeaderComponent, ServicesListComponent, StepsComponent, WhyChooseUsComponent],
+    declarations: [HolderComponent, ContactUs ,ServicesComponent, HeaderComponent, ServicesListComponent, StepsComponent, WhyChooseUsComponent],
     providers: [HomeService]
 })
 export class HomeModule { }
