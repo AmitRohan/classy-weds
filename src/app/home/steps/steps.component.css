@@ -3,6 +3,8 @@
 }
 .button-icon{
     margin: auto;
+    margin-top: 14px;
+    margin-left: 12px;
     height: 20px;
     width: 20px;
 }

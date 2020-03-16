@@ -26,10 +26,10 @@ export class ServicesListComponent implements OnInit , AfterViewInit , AfterCont
       , name : `MEHNDI`
     },{
       icon : `service_makeup.png`
-      , name : `MAKEUp`
+      , name : `MAKEUP`
     },{
       icon : `service_venue.png`
-      , name : `VEMUE`
+      , name : `VENUE`
     },{
       icon : `service_wedding.png`
       , name : `WEDDING CARD`
