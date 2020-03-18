@@ -23,8 +23,8 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
   ) { }
 
   ngOnInit() {
-
-    }
+    
+  }
 
   ngAfterViewInit(): void {
 
