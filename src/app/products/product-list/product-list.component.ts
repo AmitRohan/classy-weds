@@ -8,7 +8,7 @@ declare const slimscroll: any;
 declare var H: any;
 
 @Component({
-  selector: 'app-home-services-service-list',
+  selector: 'app-home-products-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
   encapsulation: ViewEncapsulation.None

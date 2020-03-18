@@ -1,4 +1,4 @@
-<div class="app-services">
+<div class="app-products">
     <div class="app-products-filter-section">
         <div class="row products-search-input-holder p-0 m-0">
             <img class="products-search-input-icon" src="assets/icons/app-search.png">
@@ -31,13 +31,29 @@
         <div class="product-label-container">
             {{productList.length}} Venues
         </div>
-        <div>
-            <app-home-services-service-list
+        <div *ngIf="selectedProduct.length == 0;else selectedProduct">
+            <app-home-products-list
                     [selectedItem]="selectedProduct"
                     [productList]="productList">
 
-            </app-home-services-service-list>
+            </app-home-products-list>
         </div>
     </div>
 
 </div>
+
+<ng-template #selectedProduct>
+    <div class="row p-0 m-0">
+        <div class=col-lg-6>
+            <app-home-products-list
+                    [selectedItem]="selectedProduct"
+                    [productList]="productList">
+
+            </app-home-products-list>
+        </div>
+        <div class=col-lg-6>
+
+        </div>
+
+    </div>
+</ng-template>
