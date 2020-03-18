@@ -15,22 +15,29 @@ declare var H: any;
 })
 export class ProductListComponent implements OnInit , AfterViewInit , AfterContentChecked {
   @Input() productList: Array<any>;
-
+  @Input() selectedItem = "";
+  _ColumnNoClass = ""
+  
 
   constructor(
       private dashboardData: ProductsService,
       private route: ActivatedRoute
   ) { }
 
-    ngOnInit() {
+  ngOnInit() {
 
-      }
+  }
 
-      ngAfterViewInit(): void {
+  ngAfterViewInit(): void {
+    if(this.selectedItem.length > 0){
 
-      }
+    }else {
 
-    ngAfterContentChecked(): void {
+    }
+    
+  }
 
-      }
+  ngAfterContentChecked(): void {
+
+  }
 }
