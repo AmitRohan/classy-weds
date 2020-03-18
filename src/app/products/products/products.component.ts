@@ -15,7 +15,8 @@ declare var H: any;
 })
 export class ProductsComponent implements OnInit , AfterViewInit , AfterContentChecked {
   @Input() productList: Array<any>;
-
+  @Input() selectedProduct: string;
+  
   constructor(
       private dashboardData: ProductsService,
       private route: ActivatedRoute

@@ -14,7 +14,7 @@ declare var H: any;
   encapsulation: ViewEncapsulation.None
 })
 export class HolderComponent implements OnInit , AfterViewInit , AfterContentChecked {
-
+  productId = '';
   productList: Array<any> = [
       {
         icon : `products_card_bgr.png`
@@ -450,7 +450,8 @@ export class HolderComponent implements OnInit , AfterViewInit , AfterContentChe
   ) { }
 
     ngOnInit() {
-
+        this.productId = (this.route.snapshot.paramMap.get('productId') || "");
+        
       }
 
       ngAfterViewInit(): void {

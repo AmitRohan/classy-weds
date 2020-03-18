@@ -3,10 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import {HolderComponent} from "./holder/holder.component";
 
 const routes: Routes = [
-    {
-        path: '',
-        component:  HolderComponent
-    }
+  {
+    path: ':productId',
+    component:  HolderComponent
+  }, {
+    path: '',
+    component:  HolderComponent
+  }
 
 ];
 
