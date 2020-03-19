@@ -100,3 +100,11 @@ export class EventPolylineModel {
     path: Array<HereLocation>;
     color: string;
 }
+
+export class ProductModel {
+    index : number;
+    icon : string;
+    name : string;
+    description : string;
+    price : number;
+  }

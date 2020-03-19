@@ -21,15 +21,15 @@ export class ContactUs implements OnInit , AfterViewInit , AfterContentChecked {
       private route: ActivatedRoute
   ) { }
 
-    ngOnInit() {
+  ngOnInit() {
 
-      }
+  }
 
-      ngAfterViewInit(): void {
+  ngAfterViewInit(): void {
 
-      }
+  }
 
-    ngAfterContentChecked(): void {
+  ngAfterContentChecked(): void {
 
-      }
+  }
 }

@@ -1,21 +1,21 @@
-.app-products-card-container {
+.app-product-details-card-container {
     padding: 20px !important;
     height: 100vh !important;
     min-height: 355px !important;
     max-height: 455px !important;
 }
 
-.app-products-card {
+.app-product-details-card {
     height: 100%;
     background: #ffffff;
 }
 
-.app-products-card-content {
+.app-product-details-card-content {
     padding: 12px 16px 16px 16px!important;
     background: #ffffff;
 }
 
-.app-products-card-title {
+.app-product-details-card-title {
     font-family: 'Nunito Sans Semi Bold';
     color: #C00000;
     line-height: 24px;
@@ -23,7 +23,7 @@
     text-align: left;
 }
 
-.app-products-card-package-title {
+.app-product-details-card-package-title {
     font-family: 'Nunito Sans';
     color: #A2A3AE;
     line-height: 14px;
@@ -31,14 +31,11 @@
     text-align: right;
 }
 
-.app-products-card-package-rating {
+.app-product-details-card-package-rating {
     margin-top: 4px;
-    font-size: 12px;
-    display: block;
-    clear: both;
 }
 
-.app-products-card-package-price {
+.app-product-details-card-package-price {
     margin-top: 2px;
     font-family: 'Nunito Sans Semi Bold';
     color: #29292F;
@@ -47,37 +44,11 @@
     text-align: right;
 }
 
-.app-products-card-package-description {
+.app-product-details-card-package-description {
     margin-top: 12px;
     font-family: 'Nunito Sans Semi Bold';
     color: #A2A3AE;
     line-height: 16px;
     font-size: 12px;
     text-align: left;
-}
-
-.fa-star-half-o,.fa-star{
-    color: #FFA700;
-}
-
-.rated{
-    color: #FFA700;
-    cursor: pointer;
-}
-
-.unrated{
-    color: #EDEDED;
-    cursor: pointer;
-}
-
-.fa-star-half-empty:after, .fa-star-half-full:after, .fa-star-half-o:after {
-    content: "\f123";
-    transform: rotateY(-180deg);
-    display: inline-block;
-    left: 6px;
-    position: absolute;
-    top: 0;
-    color: #EDEDED;
-    overflow: hidden;
-    width: 8px;
 }

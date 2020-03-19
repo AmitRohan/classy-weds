@@ -1,6 +1,7 @@
-import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, Input, AfterViewInit, AfterContentChecked} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, Input, AfterViewInit, AfterContentChecked, OnChanges} from '@angular/core';
 import { ProductsService } from '../products.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import { ProductModel } from '../products.types';
 
 declare const $: any;
 declare const Morris: any;
@@ -13,12 +14,10 @@ declare var H: any;
   styleUrls: ['./product-list.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class ProductListComponent implements OnInit , AfterViewInit , AfterContentChecked {
-  @Input() productList: Array<any>;
-  @Input() selectedItem = "";
-  _ColumnNoClass = ""
-  
-
+export class ProductListComponent implements OnInit , AfterViewInit , AfterContentChecked , OnChanges{
+  @Input() availableProducts: Array<ProductModel> = [];
+  @Input() selectedProductDetail: ProductModel = null;
+  tmpList = ''
   constructor(
       private dashboardData: ProductsService,
       private route: ActivatedRoute,
@@ -29,22 +28,19 @@ export class ProductListComponent implements OnInit , AfterViewInit , AfterConte
 
   }
 
+  ngOnChanges(changes){
+    console.log("ProductListComponent : changes ", changes);
+  }
+
   ngAfterViewInit(): void {
-    if(this.selectedItem.length > 0){
-
-    }else {
-
-    }
-    
+   
   }
 
   ngAfterContentChecked(): void {
 
   }
 
-  selectItem(item:any){
+  selectItem(item:ProductModel){
     this.router.navigateByUrl('/products/' + item.index);
-
-    
   }
 }

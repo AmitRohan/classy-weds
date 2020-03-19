@@ -8,6 +8,7 @@ import {HolderComponent} from "./holder/holder.component";
 import {ProductsComponent} from "./products/products.component";
 import {HeaderComponent} from "./header/header.component";
 import {ProductListComponent} from "./product-list/product-list.component";
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import {ProductListComponent} from "./product-list/product-list.component";
     FormsModule,
     ReactiveFormsModule,
   ],
-  declarations: [HolderComponent, ProductsComponent, HeaderComponent, ProductListComponent],
+  declarations: [HolderComponent, ProductsComponent, HeaderComponent, ProductListComponent, ProductDetailComponent],
     providers: [ProductsService]
 })
 export class ProductsModule { }
