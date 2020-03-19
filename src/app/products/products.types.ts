@@ -107,4 +107,8 @@ export class ProductModel {
     name : string;
     description : string;
     price : number;
+    landmark : string;
+    address : string;
+    reviewsCount : number;
+    rating : number;
   }

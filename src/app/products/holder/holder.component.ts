@@ -17,23 +17,35 @@ declare var H: any;
 export class HolderComponent implements OnInit , AfterContentChecked , AfterViewInit, OnChanges{
   public availableProducts: Array<ProductModel> = [
       {
-        index : 0,
-        icon : `products_card_bgr.png`
+        index : 0
+        , icon : `products_card_bgr.png`
         , name : `The Leela Ambience Convention Hotel`
         , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+        , landmark : 'Bangalore Central'
+        , address : 'The Leela Ambience Convention Hotel, MG Road,Bangalore- 560092'
+        , reviewsCount : 18
+        , rating : 3.7
         , price : 7500
       },{
-        index : 1,
-        icon : `products_card_bgr.png`
-      , name : `The Leela Ambience Convention Hotel`
-      , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
-      , price : 7500
+        index : 1
+        , icon : `products_card_bgr.png`
+        , name : `The Vanila Convention Hotel`
+        , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+        , landmark : 'Bangalore North'
+        , address : 'The Vanila Ambience Convention Hotel, Vanila Road,Bangalore- 560092'
+        , reviewsCount : 180000
+        , rating : 4.9
+        , price : 5500
       },{
         index : 2,
         icon : `products_card_bgr.png`
-            , name : `Card Info`
-            , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
-            , price : 7500
+        , name : `Brave Heart`
+        , description : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…`
+        , landmark : 'South Bangalore Central'
+        , address : 'The Brave Heart MG Hotel, Convention Road,Bangalore- 560092'
+        , reviewsCount : 5
+        , rating : 5
+        , price : 9000
       }
       ];
   public selectedProductDetail: ProductModel = null;
