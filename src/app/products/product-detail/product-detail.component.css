@@ -1,8 +1,6 @@
 .app-product-details-card-container {
     padding: 20px !important;
-    height: 100vh !important;
     min-height: 355px !important;
-    max-height: 455px !important;
 }
 
 .app-product-details-card {
@@ -11,15 +9,15 @@
 }
 
 .app-product-details-card-content {
-    padding: 12px 16px 16px 16px!important;
+    padding: 24px 24px 58px 24px!important;
     background: #ffffff;
 }
 
 .app-product-details-card-title {
-    font-family: 'Nunito Sans Semi Bold';
-    color: #C00000;
-    line-height: 24px;
-    font-size: 16px;
+    font-family: 'Nunito Sans Bold';
+    color: #29292F;
+    line-height: 30px;
+    font-size: 20px;
     text-align: left;
 }
 
