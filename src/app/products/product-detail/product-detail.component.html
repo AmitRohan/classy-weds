@@ -8,15 +8,26 @@
                     src="assets/icons/{{selectedProductDetail.icon}}">
                 <div class="app-product-details-card-content">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-9">
                             <div class="app-product-details-card-title">{{selectedProductDetail.name}}</div>
-                            <div class="app-product-details-card-package-rating">
+                            <div class="app-product-landmark">
                                 <img
                                     style="width: 16px;height: 16px;"
                                     src="assets/icons/app_my_location.png">
+                                <div>
+                                    <span>{{selectedProductDetail.landmark}}</span> 
+                                    <span class="app-product-view-on-map">View on map</span>
+                                    <span class="app-product-view-on-map">{{selectedProductDetail.address}}</span> 
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-3 p-0" style="text-align: right;">
+                            <div class="app-product-review-box-holder">
+                                <div class="app-product-review-box">
+                                    <i class="fa fa-star start-icon"></i>{{selectedProductDetail.rating}}
+                                </div> 
+                            </div>
+                            <div class="app-product-review-count">{{selectedProductDetail.reviewsCount}} Reviews</div> 
                             <div class="app-product-details-card-package-title">Package starting from</div>
                             <div class="app-product-details-card-package-price">{{selectedProductDetail.price}} INR</div>
                         </div>

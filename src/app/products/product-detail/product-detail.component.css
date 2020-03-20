@@ -21,20 +21,30 @@
     text-align: left;
 }
 
-.app-product-details-card-package-title {
-    font-family: 'Nunito Sans';
-    color: #A2A3AE;
-    line-height: 14px;
-    font-size: 10px;
+.start-icon {
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-right: 12px!important;
+}
+.app-product-review-box-holder {
+    width: 100%;
     text-align: right;
 }
 
-.app-product-details-card-package-rating {
-    margin-top: 4px;
+.app-product-review-box {
+    width: 73px;
+    padding: 8px 12px;
+    font-family: 'Nunito Sans Bold';
+    color: #FFFFFF;
+    line-height: 21px;
+    font-size: 15px;
+    text-align: right;
+    background: #5DAE29;
+    border-radius: 2px;
+    border-style: solid;
 }
-
-.app-product-details-card-package-price {
-    margin-top: 2px;
+.app-product-review-count{
+    margin-top: 8px !important;
     font-family: 'Nunito Sans Semi Bold';
     color: #29292F;
     line-height: 21px;
@@ -42,11 +52,49 @@
     text-align: right;
 }
 
+.app-product-landmark {
+    margin-top: 4px;
+    display: block;
+    clear: both;
+    color: #29292F;
+    font-family: 'Nunito Sans Semi Bold';
+    line-height: 21px;
+    font-size: 14px;
+}
+
+.app-product-view-on-map {
+    margin-left: 8px;
+    display: block;
+    clear: both;
+    color: #6F6F6F;
+    font-family: 'Nunito Sans Regular';
+    line-height: 21px;
+    font-size: 14px;
+}
+
+.app-product-details-card-package-title {
+    margin-top: 16px;
+    font-family: 'Nunito Sans';
+    color: #A2A3AE;
+    line-height: 21px;
+    font-size: 14px;
+    text-align: right;
+}
+
+.app-product-details-card-package-price {
+    margin-top: 2px;
+    font-family: 'Nunito Sans Semi Bold';
+    color: #29292F;
+    line-height: 28px;
+    font-size: 20px;
+    text-align: right;
+}
+
 .app-product-details-card-package-description {
-    margin-top: 12px;
+    margin-top: 16px;
     font-family: 'Nunito Sans Semi Bold';
     color: #A2A3AE;
-    line-height: 16px;
-    font-size: 12px;
+    line-height: 20px;
+    font-size: 14px;
     text-align: left;
 }
