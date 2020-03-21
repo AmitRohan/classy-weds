@@ -107,16 +107,23 @@ export class AboutContent {
     description : string;
   }
 
+export class PackageAvailable {
+    title : string;
+    description : string;
+    price : number
+}
+
 export class ProductModel {
     index : number;
     icon : string;
     name : string;
     description : string;
     intro : string
-    aboutContent : Array<AboutContent>
     price : number;
     landmark : string;
     address : string;
     reviewsCount : number;
     rating : number;
+    aboutContent : Array<AboutContent>;
+    packaes : PackageAvailable
   }
