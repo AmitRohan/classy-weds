@@ -42,7 +42,7 @@ export class ServicesListComponent implements OnInit , AfterViewInit , AfterCont
       private route: ActivatedRoute,
       private router: Router
   ) { }
-ß
+
     ngOnInit() {
 
       }
