@@ -90,6 +90,41 @@
     text-align: right;
 }
 
+#mySelectedProductsTabHead {
+    border: rgba(74, 75, 78, 0.5) !important;
+    border-width: 0.5px !important;
+    border-style: solid !important;
+    background: #ffffff;
+}
+
+#mySelectedProductsTabHead > li.active {
+    
+    border-bottom: #0361E3 !important;
+    border-bottom-style: solid !important;
+    border-width: 3px !important;
+}
+
+#mySelectedProductsTabHead > li > a {
+    border-style: none !important;
+    font-family: 'Nunito Sans Semi Bold';
+    color: #29292F;
+    line-height: 19px;
+    font-size: 14px;
+}
+
+#mySelectedProductsTabHead > li.active > a {
+    border-style: none !important;
+    font-family: 'Nunito Sans Bold';
+    color: #29292F;
+    line-height: 19px;
+    font-size: 14px;
+}
+
+
+.mySelectedProductsViewPager {
+
+}
+
 .app-product-details-card-package-description {
     margin-top: 16px;
     font-family: 'Nunito Sans Semi Bold';

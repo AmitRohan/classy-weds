@@ -32,35 +32,37 @@
                             <div class="app-product-details-card-package-price">{{selectedProductDetail.price}} INR</div>
                         </div>
                     </div>
-
-                    <ul class="nav nav-pills">
-                        <li class="active"><a data-toggle="pill" href="#tabAbout">About</a></li>
-                        <li><a data-toggle="pill" href="#tabAreas">Areas Available</a></li>
-                        <li><a data-toggle="pill" href="#tabPhotos">20 Photos</a></li>
-                        <li><a data-toggle="pill" href="#tabReview">Review</a></li>
-                        <li><a data-toggle="pill" href="#tabContact">Contact Us</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="tabAbout" class="tab-pane fade in active">
-                            <div class="app-product-details-card-package-description">{{selectedProductDetail.description}}</div>
-                        </div>
-                        <div id="tabAreas" class="tab-pane fade">
-                            <h3>Menu Areas</h3>
-                            <p>Some content in menu 1.</p>
-                        </div>
-                        <div id="tabPhotos" class="tab-pane fade">
-                            <h3>Menu Photos</h3>
-                            <p>Some content in menu 2.</p>
-                        </div>
-                        <div id="tabReview" class="tab-pane fade">
-                            <h3>Menu Review</h3>
-                            <p>Some content in menu 2.</p>
-                        </div>
-                        <div id="tabContact" class="tab-pane fade">
-                            <h3>Menu Contact</h3>
-                            <p>Some content in menu 2.</p>
+                    <div>
+                        <ul class="nav nav-tabs" id="mySelectedProductsTabHead">
+                            <li class="active"><a data-toggle="tab" href="#tabAbout">About</a></li>
+                            <li><a data-toggle="tab" href="#tabAreas">Areas Available</a></li>
+                            <li><a data-toggle="tab" href="#tabPhotos">20 Photos</a></li>
+                            <li><a data-toggle="tab" href="#tabReview">Review</a></li>
+                            <li><a data-toggle="tab" href="#tabContact">Contact Us</a></li>
+                        </ul>  
+                        <div class="tab-content" id="mySelectedProductsViewPager">
+                            <div id="tabAbout" class="tab-pane fade in active">
+                                <div class="app-product-details-card-package-description">{{selectedProductDetail.description}}</div>
+                            </div>
+                            <div id="tabAreas" class="tab-pane fade">
+                                <h3>Menu Areas</h3>
+                                <p>Some content in menu 1.</p>
+                            </div>
+                            <div id="tabPhotos" class="tab-pane fade">
+                                <h3>Menu Photos</h3>
+                                <p>Some content in menu 2.</p>
+                            </div>
+                            <div id="tabReview" class="tab-pane fade">
+                                <h3>Menu Review</h3>
+                                <p>Some content in menu 2.</p>
+                            </div>
+                            <div id="tabContact" class="tab-pane fade">
+                                <h3>Menu Contact</h3>
+                                <p>Some content in menu 2.</p>
+                            </div>
                         </div>
                     </div>
+                    
                     
                 </div>
             </div>
