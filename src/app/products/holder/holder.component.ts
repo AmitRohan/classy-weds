@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, Input, AfterViewInit, AfterContentChecked, OnDestroy, OnChanges} from '@angular/core';
 import { ProductsService } from '../products.service';
 import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
-import { ProductModel , AboutContent} from '../products.types';
+import { ProductModel , AboutContent, PackageAvailable} from '../products.types';
 
 declare const $: any;
 declare const Morris: any;
@@ -26,6 +26,28 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
     title : 'Facilities'
     , description : 'The Leela spoils its patrons with a choice of myriad cuisines through its 3 specialty restaurants, All Day Dine Café Knosh, Oriental Mei Kun & Indian Dilli 32, and a regally designed Cherry bar. Taking guest experience to a whole new level, the hotel provides a selection of wellbeing and relaxation offerings in one of the finest spas named Shanaya. The 480 rooms are luxuriously appointed, out of which 126 are twin bedded rooms (highest in the country) and 25 are suites. With minimum of 45 square meters of area, each room displays state of art technology with four fixture bathrooms.The restaurants are well equipped to cater to a gathering of above 600 guests simultaneously during breakfast. The caterers at The Leela garnish an exquisite menu, staff envelop the guests with gracious hospitality while their decorators set up a breathtakingly stunning decor for the celebration. In house Alcohol and an in house DJ can be arranged at the venue to make your guests inebriated enough and to hype up the fun quotient of your wedding.The Leela offers top-notch food service and a state-of-the-art sound system that will keep your guests dancing all night. The interiors are magnificent and the great hospitality will leave you and your guests in awe.'
   }]
+
+  public packageAvailable : Array<PackageAvailable> = [{
+    title : 'Saphire'
+    , description : '225 Seating & 400 Floating'
+    , price : 7500
+  }, {
+    title : 'Saphire 2'
+    , description : '225 Seating & 400 Floating'
+    , price : 7500
+  }, {
+    title : 'Saphire 3'
+    , description : '225 Seating & 400 Floating'
+    , price : 7500
+  }, {
+    title : 'Saphire 4'
+    , description : '225 Seating & 400 Floating'
+    , price : 7500
+  }, {
+    title : 'Saphire 5'
+    , description : '225 Seating & 400 Floating'
+    , price : 7500
+  }]
   
   public availableProducts: Array<ProductModel> = [
       {
@@ -40,6 +62,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
         , rating : 3.7
         , price : 7500
         , aboutContent : this.sampleContent
+        , packageAvailable : this.packageAvailable
       },{
         index : 1
         , icon : `products_card_bgr.png`
@@ -52,6 +75,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
         , rating : 4.9
         , price : 5500
         , aboutContent : this.sampleContent
+        , packageAvailable : this.packageAvailable
       },{
         index : 2,
         icon : `products_card_bgr.png`
@@ -64,6 +88,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
         , rating : 5
         , price : 9000
         , aboutContent : this.sampleContent
+        , packageAvailable : this.packageAvailable
       }
       ];
   public selectedProductDetail: ProductModel = null;

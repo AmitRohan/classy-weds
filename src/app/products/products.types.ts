@@ -125,5 +125,5 @@ export class ProductModel {
     reviewsCount : number;
     rating : number;
     aboutContent : Array<AboutContent>;
-    packaes : PackageAvailable
+    packageAvailable : PackageAvailable
   }
