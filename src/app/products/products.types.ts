@@ -101,11 +101,19 @@ export class EventPolylineModel {
     color: string;
 }
 
+
+export class AboutContent {
+    title : string;
+    description : string;
+  }
+
 export class ProductModel {
     index : number;
     icon : string;
     name : string;
     description : string;
+    intro : string
+    aboutContent : Array<AboutContent>
     price : number;
     landmark : string;
     address : string;
