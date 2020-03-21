@@ -121,15 +121,51 @@
 }
 
 
-.mySelectedProductsViewPager {
-
+#mySelectedProductsViewPager {
+    padding-bottom: 48px;
 }
 
 .app-product-details-card-package-description {
     margin-top: 16px;
     font-family: 'Nunito Sans Semi Bold';
     color: #A2A3AE;
-    line-height: 20px;
+    line-height: 21px;
     font-size: 14px;
     text-align: left;
 }
+
+.app-product-details-about-us-title {
+    margin: 0px 33px;
+    margin-top: 35px;
+    font-family: 'Nunito Sans Bold';
+    color: #29292F;
+    line-height: 21px;
+    font-size: 14px;
+}
+
+.app-product-details-about-us-intro {
+    margin: 0px 48px;
+    margin-top: 16px;
+    font-family: 'Nunito Sans';
+    color: #29292F;
+    line-height: 21px;
+    font-size: 14px;
+}
+
+.app-product-details-about-us-content-title {
+    margin: 0px 48px;
+    margin-top: 24px;
+    font-family: 'Nunito Sans Bold';
+    color: #29292F;
+    line-height: 21px;
+    font-size: 14px;
+}
+
+.app-product-details-about-us-content-content {
+    margin: 0px 48px;
+    font-family: 'Nunito Sans';
+    color: #29292F;
+    line-height: 21px;
+    font-size: 14px;
+}
+
