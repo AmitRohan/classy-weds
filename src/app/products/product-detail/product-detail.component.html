@@ -44,27 +44,53 @@
                         <li><a data-toggle="tab" href="#tabContact">Contact Us</a></li>
                     </ul>  
                     <div class="tab-content" id="mySelectedProductsViewPager">
+                        <!-- About Us Section -->
                         <div id="tabAbout" class="tab-pane fade in active">
                             <div class="app-product-details-about-us-title">{{selectedProductDetail.name}}</div>
                             <div class="app-product-details-about-us-intro">{{selectedProductDetail.intro}}</div>
                             <ng-container *ngFor="let aboutContent of selectedProductDetail.aboutContent">
                                 <div class="app-product-details-about-us-content-title">{{aboutContent.title}}</div>
-                                <div class="app-product-details-about-us-content-content">{{aboutContent.description}}</div>
-                                
+                                <div class="app-product-details-about-us-content-content">{{aboutContent.description}}</div> 
                             </ng-container>
                         </div>
+
+                        <!-- Available Packages -->
                         <div id="tabAreas" class="tab-pane fade">
-                            <h3>Menu Areas</h3>
-                            <p>Some content in menu 1.</p>
+                            <div
+                                class="app-product-details-packages-available" 
+                                *ngFor="let packageAvailable of selectedProductDetail.packageAvailable">
+                                <div class="row m-0 p-0">
+                                    <div class="col-lg-5 p-0">
+                                        <div class="app-product-details-packages-available-title">{{packageAvailable.title}}</div>
+                                        <div class="app-product-details-packages-available-description">{{packageAvailable.description}}</div> 
+                                    </div>
+                                    <div class="col-lg-4 p-0">
+                                        <div class="app-product-details-packages-available-text">Package starting from</div>
+                                        <div class="app-product-details-packages-available-price">{{packageAvailable.price}} INR</div>
+                                    </div>
+                                    <div class="col-lg-3 p-0">
+                                        <div class="app-product-details-packages-available-get-deal">
+                                            Get the best deal
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+
+                        <!-- Photos -->
                         <div id="tabPhotos" class="tab-pane fade">
                             <h3>Menu Photos</h3>
                             <p>Some content in menu 2.</p>
                         </div>
+
+                        <!-- Reviews -->
                         <div id="tabReview" class="tab-pane fade">
                             <h3>Menu Review</h3>
                             <p>Some content in menu 2.</p>
                         </div>
+
+                        <!-- Contact Us -->
                         <div id="tabContact" class="tab-pane fade">
                             <h3>Menu Contact</h3>
                             <p>Some content in menu 2.</p>

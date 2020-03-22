@@ -169,3 +169,66 @@
     font-size: 14px;
 }
 
+
+
+
+/* PACKAGES */
+.app-product-details-packages-available {
+    padding : 21px 24px !important;
+    border-top: rgba(74, 75, 84, 0.5);    
+    border-top-style: solid;
+    border-top-width: 0.5px;
+}
+
+.app-product-details-packages-available-title {
+    font-family: 'Nunito Sans';
+    color: #A2A3AE;
+    line-height: 18px;
+    font-size: 12px;
+    text-align: left;
+}
+
+.app-product-details-packages-available-description {
+    margin-top: 4px;
+    font-family: 'Nunito Sans Semi Bold';
+    color: #444444;
+    line-height: 21px;
+    font-size: 14px;
+    text-align: left;
+
+}
+.app-product-details-packages-available-text {
+    padding-right: 20px !important;
+    margin-top: 1px;
+    font-family: 'Nunito Sans';
+    color: #A2A3AE;
+    line-height: 18px;
+    font-size: 12px;
+    text-align: right;
+
+}
+.app-product-details-packages-available-price {
+    padding-right: 20px !important;
+    margin-top: 4px;
+    font-family: 'Nunito Sans Semi Bold';
+    color: #29292F;
+    line-height: 21px;
+    font-size: 14px;
+    text-align: right;
+
+}
+
+.app-product-details-packages-available-get-deal {
+    border-radius: 2px;
+    font-family: 'Nunito Sans Semi Bold';
+    color: #FFFFFF;
+    background: #0361E3;
+    line-height: 18px;
+    font-size: 12px;
+    text-align: center;
+    padding: 13px 0px;
+    width: 100%;
+
+}
+
+
