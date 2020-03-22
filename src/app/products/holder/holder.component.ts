@@ -63,22 +63,22 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
         , price : 7500
         , aboutContent : this.sampleContent
         , packageAvailable : this.packageAvailable
-        , photos : ['https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.jakpost.travel%2Fvwall%2FibRmTw_love-couple-wallpaper-hd-1080p-free-download-53%2F&psig=AOvVaw37vetIDXrtTnGIYHxC4VAk&ust=1584953694810000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLj1w-TaregCFQAAAAAdAAAAABAD'
+        , photos : ['https://www.jakpost.travel/wimages/large/20-202100_love-couple-wallpaper-hd-1080p-free-download-53.jpg'
                   , 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfvJ7Po7TTKnm3nT7w_V1xlR8QVYC8rFCVmw42n2SCHNoWaqYP&s'
                   , 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSqZLnVXDQi_ar1m32RMp-wS39WMTA3fZEWG8M1E2S1DNHIQE-_'
-                  ,'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.jakpost.travel%2Fvwall%2FibRmTw_love-couple-wallpaper-hd-1080p-free-download-53%2F&psig=AOvVaw37vetIDXrtTnGIYHxC4VAk&ust=1584953694810000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLj1w-TaregCFQAAAAAdAAAAABAD'
+                  ,'https://www.jakpost.travel/wimages/large/20-202100_love-couple-wallpaper-hd-1080p-free-download-53.jpg'
                   , 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfvJ7Po7TTKnm3nT7w_V1xlR8QVYC8rFCVmw42n2SCHNoWaqYP&s'
                   , 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSqZLnVXDQi_ar1m32RMp-wS39WMTA3fZEWG8M1E2S1DNHIQE-_'
-                  ,'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.jakpost.travel%2Fvwall%2FibRmTw_love-couple-wallpaper-hd-1080p-free-download-53%2F&psig=AOvVaw37vetIDXrtTnGIYHxC4VAk&ust=1584953694810000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLj1w-TaregCFQAAAAAdAAAAABAD'
+                  ,'https://www.jakpost.travel/wimages/large/20-202100_love-couple-wallpaper-hd-1080p-free-download-53.jpg'
                   , 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfvJ7Po7TTKnm3nT7w_V1xlR8QVYC8rFCVmw42n2SCHNoWaqYP&s'
                   , 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSqZLnVXDQi_ar1m32RMp-wS39WMTA3fZEWG8M1E2S1DNHIQE-_'
-                  ,'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.jakpost.travel%2Fvwall%2FibRmTw_love-couple-wallpaper-hd-1080p-free-download-53%2F&psig=AOvVaw37vetIDXrtTnGIYHxC4VAk&ust=1584953694810000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLj1w-TaregCFQAAAAAdAAAAABAD'
+                  ,'https://www.jakpost.travel/wimages/large/20-202100_love-couple-wallpaper-hd-1080p-free-download-53.jpg'
                   , 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfvJ7Po7TTKnm3nT7w_V1xlR8QVYC8rFCVmw42n2SCHNoWaqYP&s'
                   , 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSqZLnVXDQi_ar1m32RMp-wS39WMTA3fZEWG8M1E2S1DNHIQE-_'
-                  ,'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.jakpost.travel%2Fvwall%2FibRmTw_love-couple-wallpaper-hd-1080p-free-download-53%2F&psig=AOvVaw37vetIDXrtTnGIYHxC4VAk&ust=1584953694810000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLj1w-TaregCFQAAAAAdAAAAABAD'
+                  ,'https://www.jakpost.travel/wimages/large/20-202100_love-couple-wallpaper-hd-1080p-free-download-53.jpg'
                   , 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfvJ7Po7TTKnm3nT7w_V1xlR8QVYC8rFCVmw42n2SCHNoWaqYP&s'
                   , 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSqZLnVXDQi_ar1m32RMp-wS39WMTA3fZEWG8M1E2S1DNHIQE-_'
-                  ,'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.jakpost.travel%2Fvwall%2FibRmTw_love-couple-wallpaper-hd-1080p-free-download-53%2F&psig=AOvVaw37vetIDXrtTnGIYHxC4VAk&ust=1584953694810000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLj1w-TaregCFQAAAAAdAAAAABAD'
+                  ,'https://www.jakpost.travel/wimages/large/20-202100_love-couple-wallpaper-hd-1080p-free-download-53.jpg'
                   , 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfvJ7Po7TTKnm3nT7w_V1xlR8QVYC8rFCVmw42n2SCHNoWaqYP&s'
                   , 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSqZLnVXDQi_ar1m32RMp-wS39WMTA3fZEWG8M1E2S1DNHIQE-_'
                   ]
