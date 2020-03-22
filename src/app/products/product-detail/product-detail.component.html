@@ -37,8 +37,8 @@
                 </div>
                 <div>
                     <ul class="nav nav-tabs" id="mySelectedProductsTabHead">
-                        <li class="active"><a data-toggle="tab" href="#tabAbout">About</a></li>
-                        <li><a data-toggle="tab" href="#tabAreas">Areas Available</a></li>
+                        <li class="active"><a data-toggle="tab" target="_self" href="#tabAbout">About</a></li>
+                        <li><a data-toggle="tab" target="_self" href="#tabAreas">Areas Available</a></li>
                         <li><a data-toggle="tab" href="#tabPhotos">{{selectedProductDetail.photos.length}} Photos</a></li>
                         <li><a data-toggle="tab" href="#tabReview">Review</a></li>
                         <li><a data-toggle="tab" href="#tabContact">Contact Us</a></li>
@@ -80,13 +80,25 @@
 
                         <!-- Photos -->
                         <div id="tabPhotos" class="tab-pane fade">
+                            
                             <div 
                                 class="app-product-details-photo-list" 
                                 class="row m-0 p-0">
                                 <div 
                                     *ngFor="let photoUrl of selectedProductDetail.photos"
                                     class="col-lg-6">
-                                    <img class="img-fluid app-product-details-photo-thumbnail" alt="Card image cap" src="{{photoUrl}}">
+                                    <a 
+                                        (click)='showImage(photoUrl)' 
+                                        href="#productImageShowcase" 
+                                        role="button" 
+                                        class="img-fluid app-product-details-photo-thumbnail" 
+                                        data-toggle="modal">
+                                        <img 
+                                            class="img-fluid app-product-details-photo-thumbnail" 
+                                            alt="Card image cap" 
+                                            src="{{photoUrl}}"></a>
+
+                                    
                                 </div>
                             </div>
 
@@ -112,3 +124,18 @@
 <ng-template #detailsNotPresent>
    Select Something
 </ng-template>
+
+
+
+<div class="modal fade" id="productImageShowcase" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-full modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content p-0">
+            <div class="modal-body p-0" id="result">
+                <img 
+                    class="img-fluid app-product-details-photo-enlarged" 
+                    src="{{selectedPhotoUrl}}"
+                    alt="Card image cap" >
+            </div>
+        </div>
+    </div>
+</div>

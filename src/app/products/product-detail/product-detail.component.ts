@@ -4,9 +4,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import { ProductModel } from '../products.types';
 
 declare const $: any;
-declare const Morris: any;
-declare const slimscroll: any;
-declare var H: any;
 
 @Component({
   selector: 'app-home-products-details',
@@ -17,6 +14,8 @@ declare var H: any;
 export class ProductDetailComponent implements OnInit , AfterViewInit , OnChanges , AfterContentChecked {
   @Input() selectedProductDetail: ProductModel = null;
   
+  selectedPhotoUrl = ''
+
   constructor(
       private dashboardData: ProductsService,
       private route: ActivatedRoute,
@@ -28,7 +27,9 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
   }
 
   ngAfterViewInit(): void {
-    
+    $('#productImageShowcase').on('hide.bs.modal', function (event) {
+       this.selectedPhotoUrl = ''
+    })
   }
 
   ngAfterContentChecked(): void {
@@ -38,4 +39,9 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
   ngOnChanges(changes){
     console.log("ProductDetailComponent : changes ", changes);
   }
+
+  showImage(imageUrl){
+    this.selectedPhotoUrl = imageUrl;
+  }
+  
 }
