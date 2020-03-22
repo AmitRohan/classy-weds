@@ -126,4 +126,5 @@ export class ProductModel {
     rating : number;
     aboutContent : Array<AboutContent>;
     packageAvailable : Array<PackageAvailable>;
+    photos : Array<string>
   }
