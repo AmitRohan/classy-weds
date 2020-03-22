@@ -231,4 +231,14 @@
 
 }
 
+/* PHOTOS */
+.app-product-details-photo-list{
+    background: #ffffff;
+}
+
+.app-product-details-photo-thumbnail {
+    padding-top: 20px;
+    object-fit: cover;
+    width: 100%;
+}
 

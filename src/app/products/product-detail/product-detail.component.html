@@ -39,7 +39,7 @@
                     <ul class="nav nav-tabs" id="mySelectedProductsTabHead">
                         <li class="active"><a data-toggle="tab" href="#tabAbout">About</a></li>
                         <li><a data-toggle="tab" href="#tabAreas">Areas Available</a></li>
-                        <li><a data-toggle="tab" href="#tabPhotos">20 Photos</a></li>
+                        <li><a data-toggle="tab" href="#tabPhotos">{{selectedProductDetail.photos.length}} Photos</a></li>
                         <li><a data-toggle="tab" href="#tabReview">Review</a></li>
                         <li><a data-toggle="tab" href="#tabContact">Contact Us</a></li>
                     </ul>  
@@ -80,8 +80,16 @@
 
                         <!-- Photos -->
                         <div id="tabPhotos" class="tab-pane fade">
-                            <h3>Menu Photos</h3>
-                            <p>Some content in menu 2.</p>
+                            <div 
+                                class="app-product-details-photo-list" 
+                                class="row m-0 p-0">
+                                <div 
+                                    *ngFor="let photoUrl of selectedProductDetail.photos"
+                                    class="col-lg-6">
+                                    <img class="img-fluid app-product-details-photo-thumbnail" alt="Card image cap" src="{{photoUrl}}">
+                                </div>
+                            </div>
+
                         </div>
 
                         <!-- Reviews -->
