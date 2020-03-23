@@ -122,7 +122,7 @@
 
 
 #mySelectedProductsViewPager {
-    padding-bottom: 48px;
+    background: #ffffff;
 }
 
 .app-product-details-card-package-description {
@@ -250,3 +250,150 @@
 .modal-lg {
     max-width: 80% !important;
 }
+
+
+/* Contact Us */
+
+.button-icon{
+    margin: auto;
+    margin-top: 14px;
+    margin-left: 12px;
+    height: 20px;
+    width: 20px;
+}
+
+.app-product-details-contact {
+    padding:  36px 48px;;
+}
+
+.app-product-details-contact-title {
+    font-family: 'Nunito Sans Bold';
+    color: #29292F;
+    line-height: 22px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.app-product-details-contact-number-holder {
+    margin-top: 24px!important;
+    border-color: #CFD1DE;
+    background: #ffffff;
+    border-width: 1px;
+    border-radius: 2px;
+    border-style: solid;
+}
+
+.app-product-details-contact-number {
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    line-height: 24px;
+    font-family: 'Nunito Sans';
+    border: none;
+}
+
+.app-product-details-contact-number::-moz-placeholder {
+    color: #A2A3AE;
+}
+
+.app-product-details-contact-number-submit {
+    width: 100%;
+    padding: 12px 19px;
+    color: #ffffff;
+    background: #0361E3;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    font-family: 'Nunito Sans Bold';
+}
+
+.app-product-details-label-2  {
+    margin-top: 20px;
+    font-family: 'Nunito Sans Bold';
+    color: #29292F;
+    line-height: 25px;
+    font-size: 18px;
+    text-align: left;
+}
+
+
+
+
+.md-group {
+    position: relative;
+    margin: 24px 12px 0px 12px;
+  }
+    
+.md-input {
+    background: none;
+    color: #c6c6c6;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 10px 10px 10px 3px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #c6c6c6;
+}
+.md-input:focus {
+    outline: none;
+}
+.md-input:focus ~ .md-label, 
+.md-input:valid ~ .md-label {
+    top: -14px;
+    font-size: 12px;
+    color: #2196F3;
+}
+.md-input:focus ~ .md-bar:before{
+    width: 100%;
+}
+  
+.md-input[type="password"] {
+    letter-spacing: 0.3em;
+}
+  
+.md-label {
+    color: #c6c6c6;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    -webkit-transition: 300ms ease all;
+    transition: 300ms ease all;
+}
+  
+.md-bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.md-bar:before {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0px;
+    position: absolute;
+    background: #2196F3;
+    -webkit-transition: 300ms ease all;
+    transition: 300ms ease all;
+    left: 0%;
+}
+
+
+.app-product-details-contact-send-message {
+    margin: 36px 0px;
+    margin-left:auto;
+    width: 150px;
+    padding: 12px 19px;
+    color: #ffffff;
+    background: #0361E3;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    font-family: 'Nunito Sans Bold';
+}
+
