@@ -32,7 +32,9 @@
 }
 
 .app-product-review-box {
-    width: 73px;
+    margin-left: auto;
+    width: 100%;
+    max-width: 80px;
     padding: 8px 12px;
     font-family: 'Nunito Sans Bold';
     color: #FFFFFF;
