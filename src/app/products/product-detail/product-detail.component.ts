@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, Input, AfterViewInit, AfterContentChecked, OnChanges} from '@angular/core';
 import { ProductsService } from '../products.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import { ProductModel } from '../products.types';
+import { ProductModel, ProductKnownForStatus } from '../products.types';
 
 declare const $: any;
 
@@ -13,7 +13,31 @@ declare const $: any;
 })
 export class ProductDetailComponent implements OnInit , AfterViewInit , OnChanges , AfterContentChecked {
   @Input() selectedProductDetail: ProductModel = null;
-  
+
+
+  makeProductKnownForStatus(title: string): ProductKnownForStatus{
+    return {
+      title : title,
+      selected : false
+    }
+  }
+
+  defaultRatingStarts:Array<String> = ['apdgrs-unselected','apdgrs-unselected','apdgrs-unselected','apdgrs-unselected','apdgrs-unselected']
+  defaultProductKnownForStatus: Array<ProductKnownForStatus> = [
+    this.makeProductKnownForStatus('Value for Money'),
+    this.makeProductKnownForStatus('Amazing Food'),
+    this.makeProductKnownForStatus('Hospitality'),
+    this.makeProductKnownForStatus('Multi Cuisine'),
+    this.makeProductKnownForStatus('Service'),
+    this.makeProductKnownForStatus('Modern Decor'),
+    this.makeProductKnownForStatus('Amazing Host'),
+    this.makeProductKnownForStatus('Royal Theme'),
+    this.makeProductKnownForStatus('Beautiful Banquet')
+
+  ]
+
+  reviewProductKnownForStatus: Array<ProductKnownForStatus>;
+  apdgrs:Array<String>;
   selectedPhotoUrl = ''
 
   constructor(
@@ -30,6 +54,7 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     $('#productImageShowcase').on('hide.bs.modal', function (event) {
        this.selectedPhotoUrl = ''
     })
+    this.resetProductKnownForStatus()
   }
 
   ngAfterContentChecked(): void {
@@ -37,11 +62,45 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
   }
 
   ngOnChanges(changes){
-    console.log("ProductDetailComponent : changes ", changes);
+    this.resetProductKnownForStatus()
+    this.resetRatingStarts();
+  }
+
+  resetRatingStarts(){
+    this.apdgrs = this.defaultRatingStarts;
+  }
+
+  resetProductKnownForStatus(){
+    this.reviewProductKnownForStatus = this.defaultProductKnownForStatus;
+    this.reviewProductKnownForStatus = this.reviewProductKnownForStatus.map(_productKnownForStatus => Object.assign( _productKnownForStatus,{ selected : false}) )
   }
 
   showImage(imageUrl){
     this.selectedPhotoUrl = imageUrl;
+  }
+
+  selectProductKnownStatus(productKnownForStatus: ProductKnownForStatus,status:boolean){
+    var _reviewProductKnownForStatus = this.reviewProductKnownForStatus.map( _productKnownForStatus => {
+      if(productKnownForStatus.title == _productKnownForStatus.title){
+         return Object.assign( _productKnownForStatus,{ selected : status})
+      }else {
+        return _productKnownForStatus;
+      }
+    })
+    this.reviewProductKnownForStatus = _reviewProductKnownForStatus
+  }
+
+  selectStarTill(index: number){
+    var x = document.getElementsByClassName('app-product-details-give-rating-stars')[0];
+    var _index = 0;
+    while (_index < 5) {
+      if(_index < index){
+        this.apdgrs[_index] = 'apdgrs-selected'
+      }else{
+        this.apdgrs[_index] = 'apdgrs-unselected'
+      }
+      _index++; 
+    }
   }
   
 }

@@ -37,15 +37,15 @@
                 </div>
                 <div>
                     <ul class="nav nav-tabs" id="mySelectedProductsTabHead">
-                        <li class="active"><a data-toggle="tab" target="_self" href="#tabAbout">About</a></li>
+                        <li><a data-toggle="tab" target="_self" href="#tabAbout">About</a></li>
                         <li><a data-toggle="tab" target="_self" href="#tabAreas">Areas Available</a></li>
                         <li><a data-toggle="tab" href="#tabPhotos">{{selectedProductDetail.photos.length}} Photos</a></li>
-                        <li><a data-toggle="tab" href="#tabReview">Review</a></li>
+                        <li class="active" ><a data-toggle="tab" href="#tabReview">Review</a></li>
                         <li><a data-toggle="tab" href="#tabContact">Contact Us</a></li>
                     </ul>  
                     <div class="tab-content" id="mySelectedProductsViewPager">
                         <!-- About Us Section -->
-                        <div id="tabAbout" class="tab-pane fade in active">
+                        <div id="tabAbout" class="tab-pane fade in">
                             <div style="padding-bottom: 48px;">
                                 <div class="app-product-details-about-us-title">{{selectedProductDetail.name}}</div>
                                 <div class="app-product-details-about-us-intro">{{selectedProductDetail.intro}}</div>
@@ -107,9 +107,54 @@
                         </div>
 
                         <!-- Reviews -->
-                        <div id="tabReview" class="tab-pane fade">
-                            <h3>Menu Review</h3>
-                            <p>Some content in menu 2.</p>
+                        <div id="tabReview" class="tab-pane fade active">
+                            <div style="padding : 32px 24px 48px 24px;">
+                                <div>
+                                    <div class="app-product-details-review-tab-title">{{selectedProductDetail.name}}</div>
+                                    <div class="app-product-details-review-tab-write-a-review-box">
+                                        <i class="fa fa-pencil app-product-details-review-tab-write-a-review-box-icon"></i>
+                                        <span class="app-product-details-review-tab-write-a-review-box-text">Write a review</span>
+                                    </div>
+                                    <div class="app-product-details-review-tab-rate-your-venue">
+                                        Rate your venue
+                                    </div>
+                                    <div class="app-product-details-give-rating-stars">
+                                            <i class="fa fa-star {{apdgrs[0]}}" (click)='selectStarTill(1)'></i>
+                                            <i class="fa fa-star {{apdgrs[1]}}" (click)='selectStarTill(2)'></i>
+                                            <i class="fa fa-star {{apdgrs[2]}}" (click)='selectStarTill(3)'></i>
+                                            <i class="fa fa-star {{apdgrs[3]}}" (click)='selectStarTill(4)'></i>
+                                            <i class="fa fa-star {{apdgrs[4]}}" (click)='selectStarTill(5)'></i>
+                                    </div>
+                                    <div class="app-product-details-known-for">
+                                        Known for
+                                    </div>
+                                    <div class="app-product-details-known-for-tags">
+                                        <ng-container *ngFor="let knownForStatus of reviewProductKnownForStatus">
+                                            <div 
+                                                *ngIf="knownForStatus.selected else unSelectedBlock"
+                                                (click)='selectProductKnownStatus(knownForStatus,false)'
+                                                class="apdkft apdkft-selected">{{knownForStatus.title}}</div>
+                                            <ng-template #unSelectedBlock>
+                                                <div
+                                                    (click)='selectProductKnownStatus(knownForStatus,true)' 
+                                                    class="apdkft apdkft-unselected">{{knownForStatus.title}}</div>
+                                            </ng-template>
+                                        </ng-container>
+                                    </div>
+                                    <div class="app-product-details-write-your-review">
+                                        Write your review
+                                    </div>
+                                    <textarea 
+                                        class="app-product-details-write-your-review-input-area" 
+                                        type="text" 
+                                        placeholder="Tell us about your experience*"
+                                        required="required">
+                                    </textarea>
+                                    <div class="app-product-details-write-your-review-submit">
+                                        Submit review
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Contact Us -->
