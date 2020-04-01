@@ -68,6 +68,7 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
 
   resetRatingStarts(){
     this.apdgrs = this.defaultRatingStarts;
+    this.apdgrs = this.apdgrs.map( _ => 'apdgrs-unselected')
   }
 
   resetProductKnownForStatus(){
