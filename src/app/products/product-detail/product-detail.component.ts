@@ -38,6 +38,7 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
 
   reviewProductKnownForStatus: Array<ProductKnownForStatus>;
   apdgrs:Array<String>;
+  canGiveNewReview: boolean;
   selectedPhotoUrl = ''
 
   constructor(
@@ -55,13 +56,25 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
        this.selectedPhotoUrl = ''
     })
     this.resetProductKnownForStatus()
+    this.resetRatingStarts();
   }
 
   ngAfterContentChecked(): void {
-
+    
   }
 
   ngOnChanges(changes){
+    this.canGiveNewReview = false    
+    this.resetProductKnownForStatus()
+    this.resetRatingStarts();
+  }
+
+  enableNewRatingSection(){
+    this.canGiveNewReview = true;
+  }
+
+  submitNewReview(){
+    this.canGiveNewReview = false;
     this.resetProductKnownForStatus()
     this.resetRatingStarts();
   }
