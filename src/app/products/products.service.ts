@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NetworkManagerService } from '../network-manager.service';
 import { environment } from '../../environments/environment';
-import {DriverModel, TripModel} from './products.types';
 import {ProductsResponses} from './products.responses';
 
 @Injectable({
