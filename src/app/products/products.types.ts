@@ -1,4 +1,10 @@
 
+
+export class ProductKnownForStatus {
+    title : string;
+    selected : boolean;
+}
+
 export class AboutContent {
     title : string;
     description : string;
@@ -24,15 +30,18 @@ export class ProductModel {
     aboutContent : Array<AboutContent>;
     packageAvailable : Array<PackageAvailable>;
     photos : Array<string>;
-    reviews : Array<ProductReview>;
-  }
-
-export class ProductKnownForStatus {
-    title : string;
-    selected : boolean;
+    reviewResponse : ProductReview;
 }
 
 export class ProductReview {
+    socialReview : string;
+    socialReviewSource : string;
+    reviewHighlights : Array<string>;
+    starCounts : Array<number>;    // [1 Star, 2 Star, 3 Star, 4 Star, 5 Star]
+    reviewList : Array<Review>;
+}
+
+export class Review {
     from : string;
     review : string;
     time : number;
