@@ -12,12 +12,13 @@
                             <div class="app-product-details-card-title">{{selectedProductDetail.name}}</div>
                             <div class="app-product-landmark">
                                 <img
+                                    class="dib vertical-a-t"
                                     style="width: 16px;height: 16px;"
                                     src="assets/icons/app_my_location.png">
-                                <div>
-                                    <span>{{selectedProductDetail.landmark}}</span> 
-                                    <span class="app-product-view-on-map">View on map</span>
-                                    <span class="app-product-view-on-map">{{selectedProductDetail.address}}</span> 
+                                <div class="dib vertical-a-t" style='margin-left: 8px;'>
+                                    <div class="dib vertical-a-t">{{selectedProductDetail.landmark}}</div> 
+                                    <div style='margin-left: 8px;'class="app-product-view-on-map dib vertical-a-t">View on map</div>
+                                    <div class="app-product-view-on-map">{{selectedProductDetail.address}}</div> 
                                 </div>
                             </div>
                         </div>
