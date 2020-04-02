@@ -23,10 +23,22 @@ export class ProductModel {
     rating : number;
     aboutContent : Array<AboutContent>;
     packageAvailable : Array<PackageAvailable>;
-    photos : Array<string>
+    photos : Array<string>;
+    reviews : Array<ProductReview>;
   }
 
 export class ProductKnownForStatus {
     title : string;
     selected : boolean;
+}
+
+export class ProductReview {
+    from : string;
+    review : string;
+    time : number;
+    rating : number;
+    tags : Array<string>;
+    replyAvailale : boolean;
+    replyFrom : string;
+    reply : string;
 }

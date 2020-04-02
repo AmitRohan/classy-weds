@@ -27,6 +27,24 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
     , description : 'The Leela spoils its patrons with a choice of myriad cuisines through its 3 specialty restaurants, All Day Dine Café Knosh, Oriental Mei Kun & Indian Dilli 32, and a regally designed Cherry bar. Taking guest experience to a whole new level, the hotel provides a selection of wellbeing and relaxation offerings in one of the finest spas named Shanaya. The 480 rooms are luxuriously appointed, out of which 126 are twin bedded rooms (highest in the country) and 25 are suites. With minimum of 45 square meters of area, each room displays state of art technology with four fixture bathrooms.The restaurants are well equipped to cater to a gathering of above 600 guests simultaneously during breakfast. The caterers at The Leela garnish an exquisite menu, staff envelop the guests with gracious hospitality while their decorators set up a breathtakingly stunning decor for the celebration. In house Alcohol and an in house DJ can be arranged at the venue to make your guests inebriated enough and to hype up the fun quotient of your wedding.The Leela offers top-notch food service and a state-of-the-art sound system that will keep your guests dancing all night. The interiors are magnificent and the great hospitality will leave you and your guests in awe.'
   }]
 
+  sampleReview(visible){
+    return {
+      from : 'Deeksha',
+      review : 'Had my wedding here and the venue and the service were both exceptional. We had a big gathering and the venue was perfect for us. Highly recommended',
+      time : 4,
+      rating : 4.0,
+      tags : [
+        'Value for Money',
+        'Beautiful Banquet',
+        'Amazing food'
+      ],
+      replyAvailale : visible,
+      replyFrom : 'The Leela Ambience Convention Hotel',
+      reply : 'Thank you for reviewing us :D'
+  }
+  }
+  sampleReviews = [this.sampleReview(true),this.sampleReview(false),this.sampleReview(true),this.sampleReview(true),this.sampleReview(true),this.sampleReview(true) ]
+
   public packageAvailable : Array<PackageAvailable> = [{
     title : 'Saphire'
     , description : '225 Seating & 400 Floating'
@@ -61,6 +79,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
         , reviewsCount : 18
         , rating : 3.7
         , price : 7500
+        , reviews : this.sampleReviews
         , aboutContent : this.sampleContent
         , packageAvailable : this.packageAvailable
         , photos : ['https://www.jakpost.travel/wimages/large/20-202100_love-couple-wallpaper-hd-1080p-free-download-53.jpg'
@@ -93,6 +112,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
         , reviewsCount : 180000
         , rating : 4.9
         , price : 5500
+        , reviews : this.sampleReviews
         , aboutContent : this.sampleContent
         , packageAvailable : this.packageAvailable
         , photos : []
@@ -107,6 +127,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
         , reviewsCount : 5
         , rating : 5
         , price : 9000
+        , reviews : this.sampleReviews
         , aboutContent : this.sampleContent
         , packageAvailable : this.packageAvailable
         , photos : []
