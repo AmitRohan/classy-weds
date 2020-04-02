@@ -1,3 +1,12 @@
+
+.dib {
+    display: inline-block;
+}
+
+.vertical-a-t {
+    vertical-align: top;
+}
+
 .app-product-details-card-container {
     padding: 20px !important;
     min-height: 355px !important;
@@ -399,7 +408,9 @@
     font-family: 'Nunito Sans Bold';
 }
 
+/* Review Section */
 
+/* Review Section Top */
 .app-product-details-review-tab-title {
     font-family: 'Nunito Sans Bold';
     color: #29292F;
@@ -432,6 +443,10 @@
     font-size: 12px;
 }
 
+/* New Review Section */
+.ratingBoxPadding {
+    padding : 0px 24px 0px 24px;
+}
 .app-product-details-review-tab-rate-your-venue {
     margin-top: 16px;
     font-family: 'Nunito Sans Semi Bold';
@@ -539,3 +554,88 @@
     font-family: 'Nunito Sans Bold';
 }
 
+/* Review List */
+.seperator {
+    width: 100%;
+    height: 0.5px;
+    background: rgba(74, 75, 84, 0.5);
+
+}
+.app-product-details-reviews-title{
+    margin-top: 9.5px;
+    font-family: 'Nunito Sans Semi Bold';
+    color: #29292F;
+    line-height: 22px;
+    font-size: 16px;
+}
+
+.single-review-box{
+    padding: 24px 24px 16px 24px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #EDEDED;
+}
+
+.single-review-reply-box {
+    background: #EDEDED;
+    padding: 24px;
+    padding-bottom: 29px;
+}
+
+.review-user-profile-icon {
+    display: inline-block;
+    height: 64px;
+    width: 64px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 64px;
+    border-color: rgba(74, 75, 84, 0.5);
+}
+
+.review-user-details {
+    display: inline-block;
+    margin-left: 16px;
+}
+
+.review-user-profile-name {
+    margin-top: 7px;
+    font-family: 'Nunito Sans Bold';
+    color: #29292F;
+    line-height: 22px;
+    font-size: 16px;
+}
+
+.review-user-time {
+    margin-top: 4px;
+    font-family: 'Nunito Sans';
+    color: #959595;
+    line-height: 21px;
+    font-size: 14px;
+}
+
+.review-user-message {
+    margin-top: 21px;
+    font-family: 'Nunito Sans';
+    color: #29292F;
+    line-height: 21px;
+    font-size: 14px;
+}
+
+.review-reply-section {
+    margin-left: 16px;
+}
+
+.review-reply-from {
+    font-family: 'Nunito Sans Bold';
+    color: #29292F;
+    line-height: 22px;
+    font-size: 16px;
+}
+
+.review-reply {
+    margin-top: 4px;
+    font-family: 'Nunito Sans';
+    color: #29292F;
+    line-height: 21px;
+    font-size: 14px;
+}
