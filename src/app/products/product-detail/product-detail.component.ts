@@ -116,5 +116,23 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
       _index++; 
     }
   }
+
+  getStarArray(rating:number): Array<string>{
+    let startArray=[];
+    let _i=1;
+    while(_i<rating){
+      startArray.push('fa fa-star apdgrs-selected')
+      _i++
+    }
+    if(_i > rating){
+      startArray.push('fa fa-star-half-o apdgrs-selected')  
+      _i++;
+    }
+    while(_i<6){
+      startArray.push('fa fa-star apdgrs-unselected')
+      _i++
+    }
+    return startArray;
+  }
   
 }

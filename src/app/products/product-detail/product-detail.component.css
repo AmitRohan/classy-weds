@@ -467,6 +467,18 @@
     color: #C8C8C8;
 }
 
+.apdgrs-half-empty:after, .apdgrs-half-full:after, .apdgrs-half-o:after {
+    content: "\f123";
+    transform: rotateY(-180deg);
+    display: inline-block;
+    left: 6px;
+    position: absolute;
+    top: 0;
+    color: #EDEDED;
+    overflow: hidden;
+    width: 8px;
+}
+
 .app-product-details-known-for {
     margin-top: 40px;
     font-family: 'Nunito Sans Semi Bold';
@@ -551,6 +563,35 @@
     line-height: 24px;
     text-align: center;
     font-family: 'Nunito Sans Bold';
+}
+
+/* Review Sumary */
+.app-product-details-review-summary-title{
+    font-family: 'Nunito Sans Semi Bold';
+    color: #29292F;
+    line-height: 22px;
+    font-size: 16px;
+}
+
+.app-product-details-review-summary-big-rating-box{
+    font-family: 'Nunito Sans Semi Bold';
+    height: 149px;
+    width: 144px;
+    border-style: solid;
+    border-radius: 6px;
+    border-width: 0.5px;
+    border-color: rgba(74, 75, 84, 0.5);
+}
+
+
+.app-product-details-review-summary-vertical-seperator {
+    height: 149px;
+    width: 1px;
+    margin-left: 24px;
+    margin-right: 24px;
+    border-left-style: dashed;
+    border-left-width: 0.5px;
+    border-left-color: rgba(74, 75, 84, 0.5);
 }
 
 /* Review List */

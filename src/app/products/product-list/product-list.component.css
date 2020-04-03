@@ -1,3 +1,6 @@
+.dib {
+    display: inline-block;
+}
 .app-products-card-container {
     padding: 20px !important;
     min-height: 355px !important;

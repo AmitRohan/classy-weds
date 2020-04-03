@@ -43,4 +43,22 @@ export class ProductListComponent implements OnInit , AfterViewInit , AfterConte
   selectItem(item:ProductModel){
     this.router.navigateByUrl('/products/' + item.index);
   }
+
+  getStarArray(rating:number): Array<string>{
+    let startArray=[];
+    let _i=1;
+    while(_i<rating){
+      startArray.push('fa fa-star dib')
+      _i++
+    }
+    if(_i > rating){
+      startArray.push('fa fa-star-half-o dib')  
+      _i++;
+    }
+    while(_i<6){
+      startArray.push('fa fa-star unrated dib')
+      _i++
+    }
+    return startArray;
+  }
 }

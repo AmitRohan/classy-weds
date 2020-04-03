@@ -120,52 +120,66 @@
                                     </div>
                                 </div>
                                 
-                                    <!-- New Review -->
-                                    <ng-container *ngIf='canGiveNewReview'>
-                                        <div class="ratingBoxPadding">
-                                            <div class="app-product-details-review-tab-rate-your-venue">
-                                                Rate your venue
-                                            </div>
-                                            <div class="app-product-details-give-rating-stars">
-                                                    <i class="fa fa-star {{apdgrs[0]}}" (click)='selectStarTill(1)'></i>
-                                                    <i class="fa fa-star {{apdgrs[1]}}" (click)='selectStarTill(2)'></i>
-                                                    <i class="fa fa-star {{apdgrs[2]}}" (click)='selectStarTill(3)'></i>
-                                                    <i class="fa fa-star {{apdgrs[3]}}" (click)='selectStarTill(4)'></i>
-                                                    <i class="fa fa-star {{apdgrs[4]}}" (click)='selectStarTill(5)'></i>
-                                            </div>
-                                            <div class="app-product-details-known-for">
-                                                Known for
-                                            </div>
-                                            <div class="app-product-details-known-for-tags">
-                                                <ng-container *ngFor="let knownForStatus of reviewProductKnownForStatus">
-                                                    <div 
-                                                        *ngIf="knownForStatus.selected else unSelectedBlock"
-                                                        (click)='selectProductKnownStatus(knownForStatus,false)'
-                                                        class="apdkft apdkft-selected">{{knownForStatus.title}}</div>
-                                                    <ng-template #unSelectedBlock>
-                                                        <div
-                                                            (click)='selectProductKnownStatus(knownForStatus,true)' 
-                                                            class="apdkft apdkft-unselected">{{knownForStatus.title}}</div>
-                                                    </ng-template>
-                                                </ng-container>
-                                            </div>
-                                            <div class="app-product-details-write-your-review">
-                                                Write your review
-                                            </div>
-                                            <textarea 
-                                                class="app-product-details-write-your-review-input-area" 
-                                                type="text" 
-                                                placeholder="Tell us about your experience*"
-                                                required="required">
-                                            </textarea>
-                                            <div class="app-product-details-write-your-review-submit"
-                                                (click)='submitNewReview()'>
-                                                Submit review
-                                            </div>
+                                <!-- New Review -->
+                                <ng-container *ngIf='canGiveNewReview'>
+                                    <div class="ratingBoxPadding">
+                                        <div class="app-product-details-review-tab-rate-your-venue">
+                                            Rate your venue
                                         </div>
-                                    </ng-container>
-                                    <!-- Product Review -->
-                                    <!-- Review List -->
+                                        <div class="app-product-details-give-rating-stars">
+                                                <i class="fa fa-star {{apdgrs[0]}}" (click)='selectStarTill(1)'></i>
+                                                <i class="fa fa-star {{apdgrs[1]}}" (click)='selectStarTill(2)'></i>
+                                                <i class="fa fa-star {{apdgrs[2]}}" (click)='selectStarTill(3)'></i>
+                                                <i class="fa fa-star {{apdgrs[3]}}" (click)='selectStarTill(4)'></i>
+                                                <i class="fa fa-star {{apdgrs[4]}}" (click)='selectStarTill(5)'></i>
+                                        </div>
+                                        <div class="app-product-details-known-for">
+                                            Known for
+                                        </div>
+                                        <div class="app-product-details-known-for-tags">
+                                            <ng-container *ngFor="let knownForStatus of reviewProductKnownForStatus">
+                                                <div 
+                                                    *ngIf="knownForStatus.selected else unSelectedBlock"
+                                                    (click)='selectProductKnownStatus(knownForStatus,false)'
+                                                    class="apdkft apdkft-selected">{{knownForStatus.title}}</div>
+                                                <ng-template #unSelectedBlock>
+                                                    <div
+                                                        (click)='selectProductKnownStatus(knownForStatus,true)' 
+                                                        class="apdkft apdkft-unselected">{{knownForStatus.title}}</div>
+                                                </ng-template>
+                                            </ng-container>
+                                        </div>
+                                        <div class="app-product-details-write-your-review">
+                                            Write your review
+                                        </div>
+                                        <textarea 
+                                            class="app-product-details-write-your-review-input-area" 
+                                            type="text" 
+                                            placeholder="Tell us about your experience*"
+                                            required="required">
+                                        </textarea>
+                                        <div class="app-product-details-write-your-review-submit"
+                                            (click)='submitNewReview()'>
+                                            Submit review
+                                        </div>
+                                    </div>
+                                </ng-container>
+                                <!-- Product Review -->
+                                <div class="app-product-details-review-summary-title ratingBoxPadding">Review Summary</div>
+                                <div class="ratingBoxPadding">
+                                    <div class="app-product-details-review-summary-big-rating-box dib vertical-a-t">
+                                        <div 
+                                        class="app-products-card-package-rating">
+                                            <i 
+                                                *ngFor="let _class of getStarArray(selectedProductDetail.rating)"
+                                                class="{{_class}}"></i>
+                                         </div>
+                                    </div>
+                                    <div class="app-product-details-review-summary-vertical-seperator dib vertical-a-t">
+
+                                    </div>
+                                </div>
+                                <!-- Review List -->
                                 <div>
                                     <div class="seperator"></div>
                                     <div class="app-product-details-reviews-title ratingBoxPadding">Reviews</div>

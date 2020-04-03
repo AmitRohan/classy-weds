@@ -12,12 +12,11 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="app-products-card-title">{{product.name}}</div>
-                            <div class="app-products-card-package-rating">          
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-o"></i>
-                                <i class="fa fa-star unrated"></i>
-                                <i class="fa fa-star enlang unrated"></i>
+                            <div 
+                                class="app-products-card-package-rating">
+                                <i 
+                                    *ngFor="let _class of getStarArray(product.rating)"
+                                    class="{{_class}}"></i>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -46,7 +45,12 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="app-products-card-title">{{product.name}}</div>
-                                <div class="app-products-card-package-rating"></div>
+                                <div 
+                                    class="app-products-card-package-rating">
+                                    <i 
+                                        *ngFor="let _class of getStarArray(product.rating)"
+                                        class="{{_class}}"></i>
+                                </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="app-products-card-package-title">Package starting from</div>
