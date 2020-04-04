@@ -649,6 +649,38 @@
     min-width: 2px;
 }
 
+.app-product-details-review-summary-social{
+    max-width: 191px;
+    width: 50%;
+    float: right;
+}
+
+.app-product-details-review-summary-social-review {
+    font-family: 'Nunito Sans';
+    color: #29292F;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.app-product-details-review-summary-best-know-for-holder{
+    margin-top: 12px;
+}
+
+.app-product-details-review-summary-best-know-for {
+    
+    font-family: 'Nunito Sans';
+    color: #29292F;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.app-product-details-review-summary-best-know-for-val {
+    font-family: 'Nunito Sans Bold';
+    color: #29292F;
+    font-size: 14px;
+    line-height: 21px;
+}
+
 /* Review List */
 .seperator {
     width: 100%;

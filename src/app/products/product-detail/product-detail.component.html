@@ -183,7 +183,7 @@
                                     </div>
                                     <div class="app-product-details-review-summary-vertical-seperator dib vertical-a-t">
                                     </div>
-                                    <div class="dib">
+                                    <div class="dib vertical-a-t">
                                         <div
                                             class="app-product-details-review-summary-rating-distributor"
                                             *ngFor="let ratingDistribution of selectedProductDetail.reviewResponse.starCounts.reverse();let i = index">
@@ -196,6 +196,38 @@
                                                 >
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="app-product-details-review-summary-social dib vertical-a-t">
+                                        <div class="app-product-details-review-summary-social-review">
+                                            {{selectedProductDetail.reviewResponse.socialReview}}
+                                        </div>
+                                        <div 
+                                            class="app-product-details-review-summary-social-review"
+                                            *ngIf="selectedProductDetail.reviewResponse.socialReviewSource != ''">
+                                                - {{selectedProductDetail.reviewResponse.socialReviewSource}}
+                                        </div>
+                                        <div class="app-product-details-review-summary-best-know-for-holder">
+                                            <ng-container 
+                                                *ngFor="let knownFor of selectedProductDetail.reviewResponse.reviewHighlights;
+                                                            last as isLast;
+                                                            first as isFirst">
+                                                        <span 
+                                                            class="app-product-details-review-summary-best-know-for"    
+                                                            *ngIf="isFirst">
+                                                            People talk about
+                                                        </span>
+                                                        <span
+                                                            class="app-product-details-review-summary-best-know-for-val">
+                                                            {{knownFor}}
+                                                        </span>
+                                                        <span 
+                                                        class="app-product-details-review-summary-best-know-for"    
+                                                        *ngIf="!isLast">
+                                                            and
+                                                         </span>
+                                                        
+                                            </ng-container>
                                         </div>
                                     </div>
                                 </div>
