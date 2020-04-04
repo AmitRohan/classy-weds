@@ -573,6 +573,11 @@
     font-size: 16px;
 }
 
+.app-product-details-review-summary-section {
+    margin-top: 28px;
+    margin-bottom: 14px;
+}
+
 .app-product-details-review-summary-big-rating-box{
     font-family: 'Nunito Sans Semi Bold';
     height: 149px;
