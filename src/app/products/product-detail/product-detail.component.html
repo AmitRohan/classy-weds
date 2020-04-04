@@ -182,7 +182,21 @@
                                         </div>
                                     </div>
                                     <div class="app-product-details-review-summary-vertical-seperator dib vertical-a-t">
-
+                                    </div>
+                                    <div class="dib">
+                                        <div
+                                            class="app-product-details-review-summary-rating-distributor"
+                                            *ngFor="let ratingDistribution of selectedProductDetail.reviewResponse.starCounts.reverse();let i = index">
+                                            <div class="app-product-details-review-summary-rating-count-label dib">
+                                                {{5-i}}
+                                            </div>
+                                            <div class="app-product-details-review-summary-rating-count-horizontal-bar-holder dib">
+                                                <div class="app-product-details-review-summary-rating-count-horizontal-bar" 
+                                                    [style.width.%]="getWidthPercentage(ratingDistribution,selectedProductDetail.reviewResponse.starCounts)"
+                                                >
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- Review List -->

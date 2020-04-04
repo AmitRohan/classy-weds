@@ -134,5 +134,16 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     }
     return startArray;
   }
+
+  getWidthPercentage(count:number ,fromArray:Array<number>):number{
+     
+    let width=0;
+    let _maxCount = fromArray.reduce(function(a, b) {
+      return Math.max(a, b);
+    });
+    if(_maxCount!=0)
+      width = ( 100* count/_maxCount);    
+      return width
+  }
   
 }

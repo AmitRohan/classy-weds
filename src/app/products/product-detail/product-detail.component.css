@@ -625,6 +625,30 @@
     border-left-color: rgba(74, 75, 84, 0.5);
 }
 
+.app-product-details-review-summary-rating-distributor {
+    margin-bottom: 8px;
+}
+
+.app-product-details-review-summary-rating-count-label {
+    margin-right: 10px;
+    height: 20px;
+    font-family: 'Nunito Sans Semi Bold';
+    color: #4A4B54;
+    font-size: 14px;
+    line-height: 21px;
+    min-width: 2px;
+}
+
+.app-product-details-review-summary-rating-count-horizontal-bar-holder {
+    width: 120px;
+}
+
+.app-product-details-review-summary-rating-count-horizontal-bar {
+    height: 20px;
+    background-color: #5DAE29;
+    min-width: 2px;
+}
+
 /* Review List */
 .seperator {
     width: 100%;
