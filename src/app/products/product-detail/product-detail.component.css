@@ -583,6 +583,32 @@
     border-color: rgba(74, 75, 84, 0.5);
 }
 
+.app-product-details-review-summary-big-rating-box-rating{
+    margin-top: 12px;
+    font-family: 'Nunito Sans Semi Bold';
+    color: #5DAE29;
+    width: 100%;
+    text-align: center;;
+    font-size: 46px;
+    line-height: 69px;
+}
+
+.app-product-details-review-summary-big-rating-box-rating-stars{
+    color: #5DAE29;
+    width: 100%;
+    text-align: center;;
+    font-size: 15px;
+}
+
+.app-product-details-review-summary-big-rating-box-rating-count{
+    margin-top: 18px;
+    font-family: 'Nunito Sans Semi Bold';
+    color: #29292F;
+    width: 100%;
+    text-align: center;;
+    font-size: 18px;
+    line-height: 25px;
+}
 
 .app-product-details-review-summary-vertical-seperator {
     height: 149px;

@@ -168,12 +168,18 @@
                                 <div class="app-product-details-review-summary-title ratingBoxPadding">Review Summary</div>
                                 <div class="ratingBoxPadding">
                                     <div class="app-product-details-review-summary-big-rating-box dib vertical-a-t">
+                                        <div class="app-product-details-review-summary-big-rating-box-rating">
+                                            {{selectedProductDetail.rating}}
+                                        </div>
                                         <div 
-                                        class="app-products-card-package-rating">
+                                        class="app-product-details-review-summary-big-rating-box-rating-stars">
                                             <i 
                                                 *ngFor="let _class of getStarArray(selectedProductDetail.rating)"
                                                 class="{{_class}}"></i>
                                          </div>
+                                         <div class="app-product-details-review-summary-big-rating-box-rating-count">
+                                            {{selectedProductDetail.reviewsCount}} Reviews
+                                        </div>
                                     </div>
                                     <div class="app-product-details-review-summary-vertical-seperator dib vertical-a-t">
 
