@@ -50,7 +50,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
     socialReview : 'High-end Vietnamese dishes & cocktails are provided at this grand ultramodern restaurant',
     socialReviewSource : 'Google',
     reviewHighlights : ['grand decoration','amazing caterers','friendly hospitality'],
-    starCounts : [0, 0, 0, 3, 5, 4],
+    starCounts : [0, 0, 3, 5, 4],
     reviewList : this.sampleReviewList
   }
   
