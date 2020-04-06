@@ -3,6 +3,13 @@ import { ProductsService } from '../products.service';
 import {ActivatedRoute} from '@angular/router';
 import { ProductModel } from '../products.types';
 
+import tippy, {animateFill} from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/animations/scale.css';
+import 'tippy.js/dist/backdrop.css';
+import 'tippy.js/animations/shift-away.css';
+
+
 declare const $: any;
 declare const Morris: any;
 declare const slimscroll: any;
@@ -27,7 +34,22 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
   }
 
   ngAfterViewInit(): void {
+    const datesFilter = document.getElementById('dates-1');
+    const template = document.getElementById('template');
+    const instance1 = this.initToolTip(datesFilter,template);
+    
+  }
 
+
+  initToolTip(datesFilter,template){
+    return tippy(datesFilter, {
+      content: template.innerHTML,
+      allowHTML: true,
+      animation: 'fade',
+      animateFill: true,
+      interactive: true,
+      plugins: [animateFill],
+    });
   }
 
   ngOnChanges(changes){
