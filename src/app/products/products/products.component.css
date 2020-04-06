@@ -96,3 +96,33 @@
 .products-filtered-holder {
     padding: 0px 42px 0px 42px!important;
 }
+
+.product-filter-bar {
+    margin-top: 18px;
+    padding-left: 20px!important;
+}
+
+.apftags {
+    margin-top: 2px;
+    margin-right: 12px;
+    display: inline-block;
+    padding: 8px 12px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 2px;
+    font-family: 'Nunito Sans';
+    line-height: 21px;
+    font-size: 14px;
+}
+
+.apftags-unselected {
+    border-color: rgba(74, 75, 84, 0.5);
+    background: #ffffff;
+    color: #29292F;
+}
+
+.apftags-selected {
+    border-color: #5DAE29;
+    background: #5DAE29;
+    color: #ffffff;;
+}

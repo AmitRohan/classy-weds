@@ -32,6 +32,16 @@
             {{availableProducts.length}} Venues
         </div>
 
+        <!-- Filters -->
+        <div class="product-filter-bar">
+            <div class="apftags">Dates</div>
+            <div class="apftags">Guests</div>
+            <div class="apftags">Type</div>
+            <div class="apftags">Price</div>
+            <div class="apftags">Rating</div>
+            <div class="apftags">Catering Included</div>
+        </div>
+
         <div *ngIf="selectedProductDetail == null; else selectedProductLayout">
             <app-home-products-list
                     [selectedProductDetail]="selectedProductDetail"
