@@ -4,13 +4,15 @@ import {HolderComponent} from "./holder/holder.component";
 
 const routes: Routes = [
   {
-    path: ':productId',
-    component:  HolderComponent
-  }, {
     path: '',
     component:  HolderComponent
+  },{
+    path: ':serviceName',
+    component:  HolderComponent
+  },{
+    path: ':serviceName/:productId',
+    component:  HolderComponent
   }
-
 ];
 
 @NgModule({

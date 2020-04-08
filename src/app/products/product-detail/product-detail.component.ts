@@ -12,6 +12,7 @@ declare const $: any;
   encapsulation: ViewEncapsulation.None
 })
 export class ProductDetailComponent implements OnInit , AfterViewInit , OnChanges , AfterContentChecked {
+  @Input() selectedService: string = '';
   @Input() selectedProductDetail: ProductModel = null;
 
 

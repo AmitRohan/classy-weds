@@ -15,6 +15,8 @@ declare var H: any;
   encapsulation: ViewEncapsulation.None
 })
 export class ProductListComponent implements OnInit , AfterViewInit , AfterContentChecked , OnChanges{
+  
+  @Input() selectedService: string = '';
   @Input() availableProducts: Array<ProductModel> = [];
   @Input() selectedProductDetail: ProductModel = null;
   tmpList = ''
@@ -41,7 +43,7 @@ export class ProductListComponent implements OnInit , AfterViewInit , AfterConte
   }
 
   selectItem(item:ProductModel){
-    this.router.navigateByUrl('/products/' + item.index);
+    this.router.navigateByUrl('/products/' +this.selectedService +'/'+ item.index);
   }
 
   getStarArray(rating:number): Array<string>{

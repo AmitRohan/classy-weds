@@ -143,6 +143,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
       }
       ];
   public selectedProductDetail: ProductModel = null;
+  public selectedService: string='';
   constructor(
       private dashboardData: ProductsService,
       private route: ActivatedRoute,
@@ -161,14 +162,19 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
 
   checkInRoute(route: ActivatedRoute){
     this.selectedProductDetail = null;
+
+    
+        const serviceName = (route.snapshot.paramMap.get('serviceName') || "-1");
         const productId = (route.snapshot.paramMap.get('productId') || "-1");
         let selectList = this.availableProducts.filter( item => item.index === Number(productId))
                             
+        console.log(serviceName,productId);
         
         
         if(selectList.length == 0){
             selectList = [null];
         }
+        this.selectedService = serviceName;
         this.selectedProductDetail = selectList[0]
   }
   
