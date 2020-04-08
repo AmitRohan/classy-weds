@@ -56,6 +56,6 @@ export class ServicesListComponent implements OnInit , AfterViewInit , AfterCont
       }
 
       openService(service : any){
-        this.router.navigateByUrl('/products');
+        this.router.navigateByUrl('/services/'+service.name.split(' ').join('_'));
       }
 }
