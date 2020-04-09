@@ -32,11 +32,13 @@
 .step-left {
     background: url("~assets/icons/step_left.png") no-repeat left;
     background-size: contain;
+    margin: 36px 0px;
 }
 
 .step-right {
     background: url("~assets/icons/step_right.png") no-repeat right;
     background-size: contain;
+    margin: 36px 0px;
 }
 
 .steps-title {
@@ -61,9 +63,10 @@
 
 /*STEP 1*/
 .step1 {
-    padding-top: 58px!important;
+    padding-top: 13px!important;
     padding-right: 90px!important;
     padding-left: 110px!important;
+    padding-bottom: 41px!important;
 }
 
 .step1-icon-holder {
@@ -114,9 +117,10 @@
 
 /*STEP 2*/
 .step2 {
-    padding-top: 95px!important;
+    padding-top: 27px!important;
     padding-right: 114px!important;
     padding-left: 150px!important;
+    padding-bottom: 50px!important;
 }
 
 .step2-icon-holder {
@@ -184,4 +188,15 @@
     width: 20px;
     height: 20px;
     margin-left: 12px;
+}
+
+
+.parent_with_center_child{
+    display: table;
+    height: 100%;
+}
+
+.child_in_center {
+    display: table-cell;
+    vertical-align: middle;
 }
