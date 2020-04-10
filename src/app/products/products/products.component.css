@@ -157,3 +157,9 @@
     line-height: 22px;
     font-family: 'Nunito Sans';
 }
+
+.bottomLine{
+    border-bottom-style: solid;
+    border-bottom-color: #0361E3;
+    border-bottom-width: 3px;
+}

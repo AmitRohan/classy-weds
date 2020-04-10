@@ -60,4 +60,16 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
   ngAfterContentChecked(): void {
 
   }
+
+  isPrimaryService(serviceIndex){
+    if(serviceIndex == 0 && this.selectedService == 'VENUE'){
+      return 'bottomLine';
+    }else if(serviceIndex == 1 && this.selectedService == 'CATERING'){
+      return 'bottomLine';
+    } else if(serviceIndex == 2 && this.selectedService != 'VENUE' && this.selectedService != 'CATERING' ){
+      return 'bottomLine';
+    }else{
+      return '';
+    }
+  }
 }
