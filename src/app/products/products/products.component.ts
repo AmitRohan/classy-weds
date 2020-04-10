@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, Input, AfterViewInit, AfterContentChecked, OnChanges} from '@angular/core';
 import { ProductsService } from '../products.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { ProductModel } from '../products.types';
 
 import tippy, {animateFill} from 'tippy.js';
@@ -27,7 +27,8 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
   @Input() selectedProductDetail: ProductModel = null;
   constructor(
       private dashboardData: ProductsService,
-      private route: ActivatedRoute
+      private route: ActivatedRoute,
+      private router: Router
   ) { }
 
   ngOnInit() {
@@ -61,12 +62,18 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
 
   }
 
+  openService(serviceName){
+    if(this.selectedService === serviceName)
+      return;
+      this.router.navigateByUrl('/services/'+serviceName);
+  }
+
   isPrimaryService(serviceIndex){
     if(serviceIndex == 0 && this.selectedService == 'VENUE'){
       return 'bottomLine';
     }else if(serviceIndex == 1 && this.selectedService == 'CATERING'){
       return 'bottomLine';
-    } else if(serviceIndex == 2 && this.selectedService != 'VENUE' && this.selectedService != 'CATERING' ){
+    } else if(serviceIndex == -1 && this.selectedService != 'VENUE' && this.selectedService != 'CATERING' ){
       return 'bottomLine';
     }else{
       return '';

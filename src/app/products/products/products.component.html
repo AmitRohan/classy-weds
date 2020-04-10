@@ -8,32 +8,32 @@
         </div>
         <div class="row p-0 m-0 products-filter-holder">
             <div class="col-lg-4 col-md-4 col-sm-12 p-0">
-                <div class="shadow products-filter-1 {{isPrimaryService(0)}}">
+                <div class="shadow products-filter-1 {{isPrimaryService(0)}}" (click)="openService('VENUE')">
                     <img class="products-filter-icon" src="assets/icons/app-products-venues.png">
                     <span class="products-filter-name">Venues</span>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 p-0">
-                <div class="shadow products-filter-2 {{isPrimaryService(1)}}">
+                <div class="shadow products-filter-2 {{isPrimaryService(1)}}" (click)="openService('CATERING')">
                     <img class="products-filter-icon" src="assets/icons/app-catering.png">
                     <span class="products-filter-name">Catering</span>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 p-0">
-                <div class="shadow products-filter-3 withADropDown {{isPrimaryService(2)}}">
+                <div class="shadow products-filter-3 withADropDown {{isPrimaryService(-1)}}">
                     <img class="products-filter-icon" src="assets/icons/app-products-services.png">
                     <span class="products-filter-name">Services</span>
                     <div class="withADropDown-content">
-                        <div class="services-item">Photography</div>
-                        <div class="services-item">Mehndi</div>
-                        <div class="services-item">Tents & Decor</div>
-                        <div class="services-item">DJ & Music</div>
-                        <div class="services-item">Wedding Cards</div>
-                        <div class="services-item">Transport</div>
-                        <div class="services-item">Entertainers</div>
-                        <div class="services-item">Band Baja</div>
-                        <div class="services-item">Anchor/MC</div>
-                        <div class="services-item">Luxury Car Transport</div>
+                        <div (click)="openService('PHOTOGRAPHY')" class="services-item">Photography</div>
+                        <div (click)="openService('MEHNDI')" class="services-item">Mehndi</div>
+                        <div (click)="openService('TENTS_AND_DECOR')" class="services-item">Tents & Decor</div>
+                        <div (click)="openService('MUSIC_AND_DJ')" class="services-item">DJ & Music</div>
+                        <div (click)="openService('WEDDING_CARD')" class="services-item">Wedding Cards</div>
+                        <div (click)="openService('TRANSPORT')" class="services-item">Transport</div>
+                        <div (click)="openService('ENTERTAINERS')" class="services-item">Entertainers</div>
+                        <div (click)="openService('BAND_BAJA')" class="services-item">Band Baja</div>
+                        <div (click)="openService('ANCHOR_MC')" class="services-item">Anchor/MC</div>
+                        <div (click)="openService('LUXURY_CAR')" class="services-item">Luxury Car Transport</div>
                     </div>
                 </div>
             </div>
