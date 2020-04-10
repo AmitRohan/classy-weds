@@ -25,6 +25,7 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
   @Input() selectedService: string = '';
   @Input() availableProducts: Array<ProductModel> = [];
   @Input() selectedProductDetail: ProductModel = null;
+  serviceName: string = '';
 
   availableSecondaryServices: Array<{
     key : string;
@@ -83,8 +84,7 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
     this.availableSecondaryServices.push({
       key : 'LUXURY_CAR',
       val : 'Luxury Card'
-    });
-    
+    });    
   }
 
 
@@ -101,6 +101,9 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
 
   ngOnChanges(changes){
     console.log("ProductsComponent : changes ", changes);
+    var checkActiveArray = this.availableSecondaryServices.filter(item => item.key == this.selectedService).map(item => item.val);
+    var _serviceName = (checkActiveArray.length > 0)? checkActiveArray[0]: '' ;
+    this.serviceName = (this.selectedService == 'VENUE')?"Venue":((this.selectedService == 'CATERING' ? 'Catering' : _serviceName ));
   }
 
   ngAfterContentChecked(): void {
