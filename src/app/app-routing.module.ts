@@ -8,6 +8,9 @@ const routes: Routes = [
     },{
         path: 'services',
         loadChildren: () => import('app/products/products.module').then(m => m.ProductsModule),
+    },{
+        path: 'contct-us',
+        loadChildren: () => import('app/products/contact-us.module').then(m => m.ContactUsModule),
     }
     ,{
         path: '',

@@ -10,6 +10,7 @@ import { HomeModule } from './home/home.module';
 import {AppNavBarComponent} from "./app-nav-bar/app-nav-bar.component";
 import {ProductsModule} from "./products/products.module";
 import {AppFooterComponent} from "./app-footer/app-footer.component";
+import { ContactUsModule } from './contact-us/contactUs.module';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import {AppFooterComponent} from "./app-footer/app-footer.component";
     AppRoutingModule,
     HomeModule,
     ProductsModule,
+    ContactUsModule,
     HttpClientModule,
   ],
   providers: [NetworkManagerService],
