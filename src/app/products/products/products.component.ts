@@ -85,6 +85,8 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
       key : 'LUXURY_CAR',
       val : 'Luxury Card'
     });    
+
+    this.patchServiceName();
   }
 
 
@@ -99,11 +101,15 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
     });
   }
 
-  ngOnChanges(changes){
-    console.log("ProductsComponent : changes ", changes);
+  patchServiceName(){
     var checkActiveArray = this.availableSecondaryServices.filter(item => item.key == this.selectedService).map(item => item.val);
     var _serviceName = (checkActiveArray.length > 0)? checkActiveArray[0]: '' ;
     this.serviceName = (this.selectedService == 'VENUE')?"Venue":((this.selectedService == 'CATERING' ? 'Catering' : _serviceName ));
+  }
+
+  ngOnChanges(changes){
+    console.log("ProductsComponent : changes ", changes);
+    this.patchServiceName();
   }
 
   ngAfterContentChecked(): void {
