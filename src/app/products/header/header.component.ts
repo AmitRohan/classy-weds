@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, Input, AfterViewInit, AfterContentChecked} from '@angular/core';
 import { ProductsService } from '../products.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 declare const $: any;
 declare const Morris: any;
@@ -18,7 +18,8 @@ export class HeaderComponent implements OnInit , AfterViewInit , AfterContentChe
 
   constructor(
       private dashboardData: ProductsService,
-      private route: ActivatedRoute
+      private route: ActivatedRoute,
+      private router: Router,
   ) { }
 
     ngOnInit() {
@@ -31,5 +32,9 @@ export class HeaderComponent implements OnInit , AfterViewInit , AfterContentChe
 
     ngAfterContentChecked(): void {
 
+      }
+
+      openContactUs(){
+        this.router.navigateByUrl('/contactUs');
       }
 }
