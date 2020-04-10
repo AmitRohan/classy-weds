@@ -25,6 +25,11 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
   @Input() selectedService: string = '';
   @Input() availableProducts: Array<ProductModel> = [];
   @Input() selectedProductDetail: ProductModel = null;
+
+  availableSecondaryServices: Array<{
+    key : string;
+    val : string;
+  }> = [];
   constructor(
       private dashboardData: ProductsService,
       private route: ActivatedRoute,
@@ -39,6 +44,46 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
     const datesFilter = document.getElementById('dates-1');
     const template = document.getElementById('template');
     const instance1 = this.initToolTip(datesFilter,template);
+    this.availableSecondaryServices.push({
+      key : 'PHOTOGRAPHY',
+      val : 'Photography'
+    });
+    this.availableSecondaryServices.push({
+      key : 'MEHNDI',
+      val : 'Mehndi'
+    });
+    this.availableSecondaryServices.push({
+      key : 'TENTS_AND_DECOR',
+      val : 'Tests & Decor'
+    });
+    this.availableSecondaryServices.push({
+      key : 'MUSIC_AND_DJ',
+      val : 'DJ & Music'
+    });
+    this.availableSecondaryServices.push({
+      key : 'WEDDING_CARD',
+      val : 'Wedding Card'
+    });
+    this.availableSecondaryServices.push({
+      key : 'TRANSPORT',
+      val : 'Transport'
+    });
+    this.availableSecondaryServices.push({
+      key : 'ENTERTAINERS',
+      val : 'Entertainers'
+    });
+    this.availableSecondaryServices.push({
+      key : 'BAND_BAJA',
+      val : 'Band Baja'
+    });
+    this.availableSecondaryServices.push({
+      key : 'ANCHOR_MC',
+      val : 'Anchor MC'
+    });
+    this.availableSecondaryServices.push({
+      key : 'LUXURY_CAR',
+      val : 'Luxury Card'
+    });
     
   }
 
@@ -76,7 +121,7 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
     } else if(serviceIndex == -1 && this.selectedService != 'VENUE' && this.selectedService != 'CATERING' ){
       return 'bottomLine';
     }else{
-      return '';
+      return 'noBottomLine';
     }
   }
 }

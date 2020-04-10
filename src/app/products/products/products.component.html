@@ -24,16 +24,10 @@
                     <img class="products-filter-icon" src="assets/icons/app-products-services.png">
                     <span class="products-filter-name">Services</span>
                     <div class="withADropDown-content">
-                        <div (click)="openService('PHOTOGRAPHY')" class="services-item">Photography</div>
-                        <div (click)="openService('MEHNDI')" class="services-item">Mehndi</div>
-                        <div (click)="openService('TENTS_AND_DECOR')" class="services-item">Tents & Decor</div>
-                        <div (click)="openService('MUSIC_AND_DJ')" class="services-item">DJ & Music</div>
-                        <div (click)="openService('WEDDING_CARD')" class="services-item">Wedding Cards</div>
-                        <div (click)="openService('TRANSPORT')" class="services-item">Transport</div>
-                        <div (click)="openService('ENTERTAINERS')" class="services-item">Entertainers</div>
-                        <div (click)="openService('BAND_BAJA')" class="services-item">Band Baja</div>
-                        <div (click)="openService('ANCHOR_MC')" class="services-item">Anchor/MC</div>
-                        <div (click)="openService('LUXURY_CAR')" class="services-item">Luxury Car Transport</div>
+                        <div 
+                            *ngFor="let secondaryService of availableSecondaryServices"
+                            (click)="openService(secondaryService.key)" 
+                            class="services-item">{{secondaryService.val}}</div>
                     </div>
                 </div>
             </div>

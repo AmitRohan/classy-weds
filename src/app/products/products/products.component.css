@@ -158,6 +158,14 @@
     font-family: 'Nunito Sans';
 }
 
+.services-item:hover {
+    background: #EEE;
+}
+
+.noBottomLine {
+    background: #ffffff;
+}
+
 .bottomLine{
     border-bottom-style: solid;
     border-bottom-color: #0361E3;
