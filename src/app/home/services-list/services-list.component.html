@@ -3,7 +3,7 @@
     <div
             *ngFor="let service of serviceList"
             (click)='openService(service)'
-        class="col-lg-4 col-md-6 col-sm-12 half-parent-height p-0 app-service-card-container">
+        class="col-lg-4 col-md-6 col-sm-12 p-0 app-service-card-container">
             <div class="card border-0 shadow app-service-card"
             [style.background-image]="'url(assets/icons/'+service.icon+')'"   >
                 <div class="h-100 blacked-40">

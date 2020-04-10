@@ -1,8 +1,6 @@
 .app-service-card-container {
     padding: 20px !important;
-    height: 100vh !important;
-    min-height: 355px !important;
-    max-height: 455px !important;
+    height: 296px !important;
 }
 
 .app-service-card {
