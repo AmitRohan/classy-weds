@@ -32,6 +32,15 @@
                 </div>
             </div>
         </div>
+        <div 
+            *ngIf='isSecondaryService()'
+            class="products-secondary-filter-holder">
+            <div 
+                *ngFor="let secondaryService of availableSecondaryServices"
+                (click)="openService(secondaryService.key)" 
+                class="secondary-service-item {{isSecondaryServiceActive(secondaryService.key)}}">{{secondaryService.val}}</div>
+        
+        </div>
     </div>
     <div class="products-filtered-holder">
         <div class="product-label-container">

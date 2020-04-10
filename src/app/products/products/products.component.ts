@@ -118,10 +118,22 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
       return 'bottomLine';
     }else if(serviceIndex == 1 && this.selectedService == 'CATERING'){
       return 'bottomLine';
-    } else if(serviceIndex == -1 && this.selectedService != 'VENUE' && this.selectedService != 'CATERING' ){
+    } else if(serviceIndex == -1 && this.isSecondaryService() ){
       return 'bottomLine';
     }else{
       return 'noBottomLine';
     }
+  }
+
+  isSecondaryService(){
+    return (this.selectedService != 'VENUE' && this.selectedService != 'CATERING')
+  }
+  
+  isSecondaryServiceActive(serviceName){
+    if(this.selectedService == serviceName){
+      return "secondary_service_active";
+    }
+    return "secondary_service_inactive";
+
   }
 }

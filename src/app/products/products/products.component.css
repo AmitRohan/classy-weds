@@ -171,3 +171,29 @@
     border-bottom-color: #0361E3;
     border-bottom-width: 3px;
 }
+
+.products-secondary-filter-holder{
+    margin-top: 16px;
+}
+
+.secondary-service-item {
+    margin-top: 24px;
+    margin-right: 20px;
+    border-radius: 4px;
+    display: inline-block;
+    padding : 20px 24px;
+    line-height: 22px;
+    font-size: 16px;
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.15);
+    color: #29292F;
+    font-family: 'Nunito Sans';
+}
+
+.secondary_service_active{
+    border-bottom-style: solid;
+    border-bottom-color: #0361E3;
+    border-bottom-width: 3px;
+}
+.secondary_service_inactive{
+    border-bottom-style: none;
+}
