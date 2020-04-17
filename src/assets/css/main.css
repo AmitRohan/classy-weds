@@ -15,3 +15,133 @@ html::-webkit-scrollbar {
 body::-webkit-scrollbar {
     display: none;
 }
+
+
+
+
+.md-group {
+    position: relative;
+    margin: 24px 12px 0px 12px;
+  }
+    
+.md-input {
+    background: none;
+    color: #c6c6c6;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 10px 10px 10px 3px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #c6c6c6;
+}
+.md-input:focus {
+    outline: none;
+}
+.md-input:focus ~ .md-label, 
+.md-input:valid ~ .md-label {
+    top: -14px;
+    font-size: 12px;
+    color: #2196F3;
+}
+.md-input:focus ~ .md-bar:before{
+    width: 100%;
+}
+  
+.md-input[type="password"] {
+    letter-spacing: 0.3em;
+}
+  
+.md-label {
+    color: #c6c6c6;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    -webkit-transition: 300ms ease all;
+    transition: 300ms ease all;
+}
+  
+.md-bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.md-bar:before {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0px;
+    position: absolute;
+    background: #2196F3;
+    -webkit-transition: 300ms ease all;
+    transition: 300ms ease all;
+    left: 0%;
+}
+
+@keyframes ripple {
+    0% {
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+    }
+    50% {
+      box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+      box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);
+    }
+  }
+  .md-radio {
+    margin: 16px 0;
+  }
+  .md-radio.md-radio-inline {
+    display: inline-block;
+  }
+  .md-radio input[type="radio"] {
+    display: none;
+  }
+  .md-radio input[type="radio"]:checked + label:before {
+    border-color: #337ab7;
+    animation: ripple 0.2s linear forwards;
+  }
+  .md-radio input[type="radio"]:checked + label:after {
+    transform: scale(1);
+  }
+  .md-radio label {
+    display: inline-block;
+    min-height: 20px;
+    position: relative;
+    padding: 0 30px;
+    margin-bottom: 0;
+    cursor: pointer;
+    vertical-align: bottom;
+  }
+  .md-radio label:before, .md-radio label:after {
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    transition: all .3s ease;
+    transition-property: transform, border-color;
+  }
+  .md-radio label:before {
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.54);
+  }
+  .md-radio label:after {
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    transform: scale(0);
+    background: #337ab7;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
