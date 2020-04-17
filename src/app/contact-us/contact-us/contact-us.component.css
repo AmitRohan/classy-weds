@@ -14,6 +14,67 @@
     background-size: cover;
     padding: 66px 28px 94px 28px;
     color: #ffffff;
+    text-align: left;
+}
+
+.contact-us-title {
+    width: 100%;
+    font-family: "Nunito Sans";
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.contact-us-seperator {
+    width: 15%;
+    margin-top:4px;
+    margin-bottom: 40px;
+    border-top-style: solid;
+    border-top-color: white;
+    border-width: 1px;
+}
+
+.contact-us-left {
+    width: 100%;
+    margin-top: 32px!important;
+}
+
+.contact-us-left-icon {
+    vertical-align: top;
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+}
+
+.contact-us-left-text {
+    display: inline-block;
+    margin-left: 24px;
+    width: 80%;
+    font-family: "Nunito Sans";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.contact-us-left-maps {
+    margin-top: 8px;
+}
+
+.contact-us-left-maps-icon {
+    margin-left: 56px;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+}
+
+.contact-us-left-maps-text {
+    display: inline-block;
+    width: 50%;
+    font-family: "Nunito Sans";
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 21px;
+    margin-left: 8px;
 }
 
 .contact-us-label {
