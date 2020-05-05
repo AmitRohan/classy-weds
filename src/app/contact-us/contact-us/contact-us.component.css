@@ -50,7 +50,7 @@
     display: inline-block;
     margin-left: 24px;
     width: 80%;
-    font-family: "Nunito Sans";
+    font-family: Nunito Sans;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
@@ -70,7 +70,7 @@
 .contact-us-left-maps-text {
     display: inline-block;
     width: 50%;
-    font-family: "Nunito Sans";
+    font-family: Nunito Sans;
     font-weight: 300;
     font-size: 12px;
     line-height: 21px;
@@ -81,7 +81,7 @@
     padding : 0px 27px !important;
     width: 100%;
     color: #29292F;
-    font-family: "Nunito Sans";
+    font-family: Nunito Sans;
     font-weight: 300;
     font-size: 24px;
     line-height: 36px;
@@ -96,7 +96,7 @@
     padding : 0px !important;
     width: 100%;
     color: #29292F;
-    font-family: "Nunito Sans";
+    font-family: Nunito Sans;
     font-weight: 500;
     font-size: 14px;
     line-height: 21px;
@@ -106,7 +106,7 @@
 
 .contact-us-label3 {
     color: #535353;
-    font-family: "Nunito Sans Regular";
+    font-family: Nunito Sans Regular;
     font-size: 14px;
     line-height: 19px;
     margin-top: 12px !important;
@@ -136,7 +136,7 @@
     height: 100%;
     font-size: 14px;
     line-height: 24px;
-    font-family: "Nunito Sans Regular";
+    font-family: Nunito Sans Regular;
     border: none;
     color: #535353;
 }
@@ -163,7 +163,8 @@
     font-size: 14px;
     line-height: 24px;
     text-align: center;
-    font-family: "Nunito Sans Bold";
+    font-weight: bold;
+    font-family: Nunito Sans;
 }
 
 
@@ -191,7 +192,7 @@
     border-bottom: 0.5px solid rgba(74,75,84,0.5);
     font-size: 12px;
     line-height: 18px;
-    font-family: "Nunito Sans";
+    font-family: Nunito Sans;
     color: #29292F;
 }
 
