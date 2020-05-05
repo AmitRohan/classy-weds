@@ -47,7 +47,8 @@
     color: #181821;
     font-size: 24px;
     line-height: 36px;
-    font-family: 'Nunito Sans Bold';
+    font-family: Nunito Sans;
+    font-weight: bold;
 }
 
 .steps-description {
@@ -56,7 +57,7 @@
     color: #181821;
     font-size: 14px;
     line-height: 21px;
-    font-family: 'Nunito Sans';
+    font-family: Nunito Sans;
     margin-top: 16px !important;
 }
 
@@ -95,7 +96,8 @@
     height: 100%;
     font-size: 14px;
     line-height: 24px;
-    font-family: 'Nunito Sans';
+    font-family: Nunito Sans;
+    font-weight: bold;
     border: none;
 }
 
@@ -112,7 +114,8 @@
     font-size: 14px;
     line-height: 24px;
     text-align: center;
-    font-family: 'Nunito Sans Bold';
+    font-weight: bold;
+    font-family: Nunito Sans;
 }
 
 /*STEP 2*/
@@ -146,7 +149,8 @@
     font-size: 14px;
     line-height: 24px;
     text-align: center;
-    font-family: 'Nunito Sans Bold';
+    font-family: Nunito Sans;
+    font-weight: bold;
 }
 
 
@@ -181,7 +185,8 @@
     font-size: 14px;
     line-height: 24px;
     text-align: center;
-    font-family: 'Nunito Sans SemiBold';
+    font-weight: 400;
+    font-family: Nunito Sans;
 }
 
 .step3-input-submit-icon {

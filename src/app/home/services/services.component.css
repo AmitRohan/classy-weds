@@ -18,7 +18,8 @@
     color: #181821;
     font-size: 36px;
     line-height: 51px;
-    font-family: "Nunito Sans Bold";
+    font-weight: bold;
+    font-family: Nunito Sans;
     margin-top: 53px !important;
     margin-bottom: 16px !important;
 }

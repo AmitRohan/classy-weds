@@ -20,7 +20,8 @@
     font-size: 14px;
     line-height: 24px;
     text-align: center;
-    font-family: 'Nunito Sans Semi Bold';
+    font-weight: 400;
+    font-family: Nunito Sans;
 }
 
 .nav-bar-menu-desktop {
@@ -29,7 +30,7 @@
 
 .nav-bar-menu-item {
     margin-left: 48px!important;
-    font-family: "Nunito Sans";
+    font-family: Nunito Sans;
     font-size: 14px;
     line-height: 19px;
     color: #ffffff;

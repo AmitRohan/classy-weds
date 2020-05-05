@@ -12,7 +12,8 @@
 
 .app-footer-list-label{
     color: #ffffff;
-    font-family: 'Nunito Sans Extra Bold';
+    font-family: Nunito Sans;
+    font-weight: 700;
     font-size: 20px;
     line-height: 26px;
     margin-bottom: 10px !important;
