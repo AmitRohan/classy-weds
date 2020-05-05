@@ -11,17 +11,8 @@
                         <div class="col-lg-8 p-0">
                             <div class="app-product-details-card-title">{{selectedProductDetail.name}}</div>
                             <div class="app-product-landmark">
-                                <div class="dib vertical-a-t">
-                                    <img
-                                        style="width: 16px;height: 16px;"
-                                        src="assets/icons/app_my_location.png">
-                                </div>
-                                <div class="dib vertical-a-t" style='margin-left: 8px;'>
-                                    <div class="dib vertical-a-t">{{selectedProductDetail.landmark}}</div> 
-                                    <div style='margin-left: 8px;'class="app-product-view-on-map dib vertical-a-t">View on map</div>
-                                </div>
-                            </div>
-                            <div class="dib vertical-a-t" style='margin-left: 24px;'>
+                                <div class="dib vertical-a-t">{{selectedProductDetail.landmark}}</div> 
+                                <div style='margin-left: 8px;'class="app-product-view-on-map dib vertical-a-t">View on map</div>
                                 <div class="app-product-view-on-map">{{selectedProductDetail.address}}</div> 
                             </div>
                         </div>
@@ -32,8 +23,19 @@
                                 </div> 
                             </div>
                             <div class="app-product-review-count">{{selectedProductDetail.reviewsCount}} Reviews</div> 
-                            <div class="app-product-details-card-package-title">Package starting from</div>
-                            <div class="app-product-details-card-package-price">{{selectedProductDetail.price}} INR</div>
+                        </div>
+                        <div class="col-lg-12" style="margin-top: 16px;">
+                            <div class="row p-0">
+                                <div class="col-lg-7 p-0">
+                                    <div class="app-product-details-card-package-title">Packages starting from</div>
+                                    <div class="app-product-details-card-package-price">{{selectedProductDetail.price}} INR</div>
+                                </div>
+                                <div class="col-lg-5 p-0">
+                                    <div class="app-product-details-packages-available-get-deal">
+                                        Get this deal
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -303,25 +305,12 @@
                                 <div class='app-product-details-contact-title'>
                                     Find best prices in the market, Kindly contact us and we will give you a deal you cannot refuse
                                 </div>
-                                <div class="row app-product-details-contact-number-holder p-0 m-0">
-                                    <div class="col-lg-1 col-md-1 col-sm-1 p-0">
-                                        <img class="button-icon" src="assets/icons/app-call.png">
-                                    </div>
-                                    <div class="col-lg-7 col-md-7 col-sm-11 p-0">
-                                        <input class="app-product-details-contact-number" placeholder="Enter you phone number">
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-12 p-0">
-                                        <div class="app-product-details-contact-number-submit">
-                                            Get final quotation
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class='app-product-details-label-2'>
-                                    Enter your details here
+                                    Enter the details here
                                 </div>
                                 
                                 <div class="row">
-                                    <div class="col-lg-12 p-0">
+                                    <div class="col-lg-6 p-0">
                                         <div class="md-group">
                                             <input class="md-input" type="text" required="required"/>
                                             <span class="highlight"></span>
@@ -331,18 +320,18 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-12 p-0">
+                                    <div class="col-lg-6 p-0">
                                         <div class="row md-group p-0">
-                                            <div class="col-lg-2 p-0">
+                                            <div class="col-lg-1 p-0">
+                                            </div>
+                                            <!-- <div class="col-lg-2 p-0">
                                                 <input class="md-input" type="text" required="required"/>
                                                 <span class="highlight"></span>
                                                 <span class="md-bar"></span>
                                                 <span class="md-bar-error"></span>
                                                 <label class="md-label">+91</label>
-                                            </div>
-                                            <div class="col-lg-1 p-0">
-                                            </div>
-                                            <div class="col-lg-9 p-0">
+                                            </div> -->
+                                            <div class="col-lg-10 p-0" style="padding-left:10px!important">
                                                 <input class="md-input" type="text" required="required"/>
                                                 <span class="highlight"></span>
                                                 <span class="md-bar"></span>
@@ -353,9 +342,19 @@
                                     </div>                                    
                                 </div>
 
-
                                 <div class="app-product-details-contact-send-message">
-                                    Send message
+                                    Get OTP
+                                </div>
+
+                                <div class="row app-product-details-contact-number-holder p-0 m-0">
+                                    <div class="col-lg-6 col-md-8 col-sm-12 p-0">
+                                        <input class="app-product-details-contact-number" placeholder="****">
+                                    </div>
+                                    <div class="col-lg-6 col-md-4 col-sm-12 p-0">
+                                        <div class="app-product-details-contact-number-submit">
+                                            Submit OTP
+                                        </div>
+                                    </div>
                                 </div>
                             </div>                        
                         </div>

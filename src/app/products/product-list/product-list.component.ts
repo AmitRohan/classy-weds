@@ -54,7 +54,7 @@ export class ProductListComponent implements OnInit , AfterViewInit , AfterConte
       _i++
     }
     if(_i > rating){
-      startArray.push('fa fa-star-half-o dib')  
+      startArray.push('fa fa-star-half dib')  
       _i++;
     }
     while(_i<6){

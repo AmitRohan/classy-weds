@@ -126,7 +126,7 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
       _i++
     }
     if(_i > rating){
-      startArray.push('fa fa-star-half-o apdgrs-selected')  
+      startArray.push('fa fa-star-half apdgrs-selected')  
       _i++;
     }
     while(_i<6){

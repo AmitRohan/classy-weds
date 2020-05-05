@@ -60,7 +60,7 @@
     text-align: left;
 }
 
-.fa-star-half-o,.fa-star{
+.fa-star-half,.fa-star{
     color: #FFA700;
 }
 
@@ -72,16 +72,4 @@
 .unrated{
     color: #EDEDED;
     cursor: pointer;
-}
-
-.fa-star-half-empty:after, .fa-star-half-full:after, .fa-star-half-o:after {
-    content: "\f123";
-    transform: rotateY(-180deg);
-    display: inline-block;
-    left: 6px;
-    position: absolute;
-    top: 0;
-    color: #EDEDED;
-    overflow: hidden;
-    width: 8px;
 }

@@ -38,13 +38,6 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
   ) { }
 
   ngOnInit() {
-    
-  }
-
-  ngAfterViewInit(): void {
-    const datesFilter = document.getElementById('dates-1');
-    const template = document.getElementById('template');
-    const instance1 = this.initToolTip(datesFilter,template);
     this.availableSecondaryServices.push({
       key : 'PHOTOGRAPHY',
       val : 'Photography'
@@ -85,8 +78,14 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
       key : 'LUXURY_CAR',
       val : 'Luxury Card'
     });    
+  }
 
-    this.patchServiceName();
+  ngAfterViewInit(): void {
+    const datesFilter = document.getElementById('dates-1');
+    const template = document.getElementById('template');
+    const instance1 = this.initToolTip(datesFilter,template);
+    
+
   }
 
 
@@ -101,15 +100,26 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
     });
   }
 
-  patchServiceName(){
-    var checkActiveArray = this.availableSecondaryServices.filter(item => item.key == this.selectedService).map(item => item.val);
+  patchServiceName(selectedService: string){
+    var checkActiveArray = this.availableSecondaryServices.filter(item => item.key == selectedService).map(item => item.val);
     var _serviceName = (checkActiveArray.length > 0)? checkActiveArray[0]: '' ;
-    this.serviceName = (this.selectedService == 'VENUE')?"Venue":((this.selectedService == 'CATERING' ? 'Catering' : _serviceName ));
+    this.serviceName = (selectedService == 'VENUE')
+                                        ? "Venue"
+                                        :((selectedService == 'CATERING'
+                                                ? 'Catering' 
+                                                : _serviceName ));
+
+    this.selectedService = selectedService;
+                                                
   }
 
   ngOnChanges(changes){
-    console.log("ProductsComponent : changes ", changes);
-    this.patchServiceName();
+    if(changes.selectedService){
+      setTimeout(()=>{
+        this.patchServiceName(changes.selectedService.currentValue);
+      },200)
+    }
+      
   }
 
   ngAfterContentChecked(): void {
@@ -119,7 +129,7 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
   openService(serviceName){
     if(this.selectedService === serviceName)
       return;
-      this.router.navigateByUrl('/services/'+serviceName);
+    this.router.navigateByUrl('/services/'+serviceName);
   }
 
   isPrimaryService(serviceIndex){
