@@ -14,7 +14,7 @@ const routes: Routes = [
     }
     ,{
         path: '',
-        redirectTo: 'contactUs',
+        redirectTo: 'home',
         pathMatch: 'full'
     }
 ];
