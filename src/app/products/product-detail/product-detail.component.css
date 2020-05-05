@@ -364,13 +364,13 @@
     color: #29292F;
     line-height: 30px;
     font-size: 20px;
-    width: 80%;
+    width: 75%;
     display: inline-block;
 }
 
 .app-product-details-review-tab-write-a-review-box {
     display: inline-block;
-    width: 20%;
+    width: 25%;
     border-style: solid;
     background: #ffffff;
     padding: 8px 12px;
@@ -599,7 +599,8 @@
 }
 
 .app-product-details-review-summary-rating-count-horizontal-bar-holder {
-    width: 120px;
+    width: 80%;
+    max-width: 120px;
 }
 
 .app-product-details-review-summary-rating-count-horizontal-bar {
@@ -610,7 +611,7 @@
 
 .app-product-details-review-summary-social{
     max-width: 191px;
-    width: 50%;
+    width: 25%;
     float: right;
 }
 

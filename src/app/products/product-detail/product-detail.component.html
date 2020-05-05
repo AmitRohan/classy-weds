@@ -188,7 +188,7 @@
                                     </div>
                                     <div class="app-product-details-review-summary-vertical-seperator dib vertical-a-t">
                                     </div>
-                                    <div class="dib vertical-a-t">
+                                    <div class="dib vertical-a-t" style="width: 30%;">
                                         <div
                                             class="app-product-details-review-summary-rating-distributor"
                                             *ngFor="let ratingDistribution of selectedProductDetail.reviewResponse.starCounts.reverse();let i = index">
@@ -212,7 +212,7 @@
                                             *ngIf="selectedProductDetail.reviewResponse.socialReviewSource != ''">
                                                 - {{selectedProductDetail.reviewResponse.socialReviewSource}}
                                         </div>
-                                        <div class="app-product-details-review-summary-best-know-for-holder">
+                                        <!-- <div class="app-product-details-review-summary-best-know-for-holder">
                                             <ng-container 
                                                 *ngFor="let knownFor of selectedProductDetail.reviewResponse.reviewHighlights;
                                                             last as isLast;
@@ -233,7 +233,7 @@
                                                          </span>
                                                         
                                             </ng-container>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <!-- Review List -->
