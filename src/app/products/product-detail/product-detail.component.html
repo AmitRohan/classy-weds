@@ -11,15 +11,18 @@
                         <div class="col-lg-9 p-0">
                             <div class="app-product-details-card-title">{{selectedProductDetail.name}}</div>
                             <div class="app-product-landmark">
-                                <img
-                                    class="dib vertical-a-t"
-                                    style="width: 16px;height: 16px;"
-                                    src="assets/icons/app_my_location.png">
+                                <div class="dib vertical-a-t">
+                                    <img
+                                        style="width: 16px;height: 16px;"
+                                        src="assets/icons/app_my_location.png">
+                                </div>
                                 <div class="dib vertical-a-t" style='margin-left: 8px;'>
                                     <div class="dib vertical-a-t">{{selectedProductDetail.landmark}}</div> 
                                     <div style='margin-left: 8px;'class="app-product-view-on-map dib vertical-a-t">View on map</div>
-                                    <div class="app-product-view-on-map">{{selectedProductDetail.address}}</div> 
                                 </div>
+                            </div>
+                            <div class="dib vertical-a-t" style='margin-left: 24px;'>
+                                <div class="app-product-view-on-map">{{selectedProductDetail.address}}</div> 
                             </div>
                         </div>
                         <div class="col-lg-3 p-0" style="text-align: right;">
