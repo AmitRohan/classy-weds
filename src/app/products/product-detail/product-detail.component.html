@@ -8,7 +8,7 @@
                     src="assets/icons/{{selectedProductDetail.icon}}">
                 <div class="app-product-details-card-content">
                     <div class="row">
-                        <div class="col-lg-9 p-0">
+                        <div class="col-lg-8 p-0">
                             <div class="app-product-details-card-title">{{selectedProductDetail.name}}</div>
                             <div class="app-product-landmark">
                                 <div class="dib vertical-a-t">
@@ -25,7 +25,7 @@
                                 <div class="app-product-view-on-map">{{selectedProductDetail.address}}</div> 
                             </div>
                         </div>
-                        <div class="col-lg-3 p-0" style="text-align: right;">
+                        <div class="col-lg-4 p-0" style="text-align: right;">
                             <div class="app-product-review-box-holder">
                                 <div class="app-product-review-box">
                                     <i class="fa fa-star start-icon"></i>{{selectedProductDetail.rating}}
@@ -41,15 +41,15 @@
                 </div>
                 <div>
                     <ul class="nav nav-tabs" id="mySelectedProductsTabHead">
-                        <li><a data-toggle="tab" target="_self" href="#tabAbout">About</a></li>
+                        <li class="active"><a data-toggle="tab" target="_self" href="#tabAbout">About</a></li>
                         <li><a data-toggle="tab" target="_self" href="#tabAreas">Areas Available</a></li>
                         <li><a data-toggle="tab" href="#tabPhotos">{{selectedProductDetail.photos.length}} Photos</a></li>
-                        <li class="active" ><a data-toggle="tab" href="#tabReview">Review</a></li>
+                        <li ><a data-toggle="tab" href="#tabReview">Review</a></li>
                         <li><a data-toggle="tab" href="#tabContact">Contact Us</a></li>
                     </ul>  
                     <div class="tab-content" id="mySelectedProductsViewPager">
                         <!-- About Us Section -->
-                        <div id="tabAbout" class="tab-pane fade in">
+                        <div id="tabAbout" class="tab-pane active">
                             <div style="padding-bottom: 48px;">
                                 <div class="app-product-details-about-us-title">{{selectedProductDetail.name}}</div>
                                 <div class="app-product-details-about-us-intro">{{selectedProductDetail.intro}}</div>
@@ -61,7 +61,7 @@
                         </div>
 
                         <!-- Available Packages -->
-                        <div id="tabAreas" class="tab-pane fade">
+                        <div id="tabAreas" class="tab-pane">
                             <div
                                 class="app-product-details-packages-available" 
                                 *ngFor="let packageAvailable of selectedProductDetail.packageAvailable">
@@ -85,7 +85,7 @@
                         </div>
 
                         <!-- Photos -->
-                        <div id="tabPhotos" class="tab-pane fade">
+                        <div id="tabPhotos" class="tab-pane">
                             
                             <div 
                                 class="app-product-details-photo-list" 
@@ -111,7 +111,7 @@
                         </div>
 
                         <!-- Reviews -->
-                        <div id="tabReview" class="tab-pane fade active">
+                        <div id="tabReview" class="tab-pane">
                             <div style="padding: 32px 0px 48px 0px;">
                                 <div class="ratingBoxPadding">
                                     <div class="app-product-details-review-tab-title">{{selectedProductDetail.name}}</div>
@@ -298,7 +298,7 @@
                         </div>
 
                         <!-- Contact Us -->
-                        <div id="tabContact" class="tab-pane fade">
+                        <div id="tabContact" class="tab-pane">
                             <div class="app-product-details-contact">
                                 <div class='app-product-details-contact-title'>
                                     Find best prices in the market, Kindly contact us and we will give you a deal you cannot refuse
