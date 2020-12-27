@@ -5,4 +5,10 @@
     "logLevel": "debug",
     "changeOrigin": true
   }
+  ,"/products/*": {
+    "target": "http://13.232.158.180:5555/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
 }
