@@ -7,14 +7,22 @@ import {ProductsResponses} from './products.responses';
   providedIn: 'root'
 })
 export class ProductsService {
-    dashboardResponses: ProductsResponses;
+    
     constructor(private apiservice: NetworkManagerService) {
-        if (environment.offlineFirst) {
-            this.dashboardResponses = new ProductsResponses();
-        }
+    
     }
 
-    private baseUrl = environment.baseUrl + '/home';
+    private baseUrl = environment.baseUrl + '/products';
+
+    fetchProductList(callback) {
+        this.apiservice.apicall({
+                url: this.baseUrl
+                , httpMethod: 'get'
+            }, (result) => {
+            console.log('GOT fetchProductList', result);
+            callback(result);
+          }, (error) => this.defaultErrorHandler(error, callback));
+    }
 
     fetchTripListByUserId(userId: string, callback) {
         if (environment.offlineFirst) {
