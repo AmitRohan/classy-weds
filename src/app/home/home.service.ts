@@ -8,39 +8,19 @@ import {HomeResponses} from './home.responses';
   providedIn: 'root'
 })
 export class HomeService {
-    dashboardResponses: HomeResponses;
+    
     constructor(private apiservice: NetworkManagerService) {
-        if (environment.offlineFirst) {
-            this.dashboardResponses = new HomeResponses();
-        }
+        
     }
 
-    private baseUrl = environment.baseUrl + '/home';
+    private baseUrl = environment.baseUrl + '/products';
 
-    fetchTripListByUserId(userId: string, callback) {
-        if (environment.offlineFirst) {
-            setTimeout(callback([]), 1000);
-            return;
-        }
-        const body = {
-            'sortBy': 'desc',
-            'sortOn': 'startTime',
-            'filter': [{
-                'key': 'userId',
-                'requestFilterType': 'EQUAL',
-                'value': userId
-            }]
-        };
-        const token = sessionStorage.getItem('outh_key');
-        const auth = 'Bearer ' + token;
-        // const url_otp = baseUrl + "login/generateOTP"
+    fetchProductList(callback) {
         this.apiservice.apicall({
-                url: this.baseUrl + '/v1/trips?pageSize=100&pageNum=0'
-                , params : body
-                , httpMethod: 'postAuth'
-                , Authorization: auth
+                url: this.baseUrl
+                , httpMethod: 'get'
             }, (result) => {
-            console.log('GOT getTripsDataForUser', result);
+            console.log('GOT fetchProductList', result);
             callback(result);
           }, (error) => this.defaultErrorHandler(error, callback));
     }
