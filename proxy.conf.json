@@ -5,7 +5,7 @@
     "logLevel": "debug",
     "changeOrigin": true
   }
-  ,"/products/*": {
+  ,"/api/v1/*": {
     "target": "http://13.232.158.180:5555/",
     "secure": false,
     "logLevel": "debug",
