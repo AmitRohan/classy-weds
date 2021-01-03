@@ -3,6 +3,7 @@ import { ProductsService } from '../products.service';
 import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
 import { ProductModel , AboutContent, PackageAvailable, ProductReview, Review} from '../products.types';
 
+
 declare const $: any;
 declare const Morris: any;
 declare const slimscroll: any;
@@ -170,6 +171,12 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
                             
         console.log(serviceName,productId);
         
+        this.dashboardData.fetchProductList('all',(resp,err)=>{
+          console.log(resp,err)
+        })
+        this.dashboardData.fetchProductDetails(254,(resp,err)=>{
+          console.log(resp,err)
+        })
         
         if(selectList.length == 0){
             selectList = [null];
