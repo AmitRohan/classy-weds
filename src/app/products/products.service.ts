@@ -15,10 +15,11 @@ export class ProductsService {
     private baseUrl = environment.baseUrl + '/api/v1';
 
     fetchProductList(serviceName,callback) {
-        var _baseUrl = this.baseUrl + '/services/'+ serviceName +'/products';
+        var _baseUrl = this.baseUrl + '/services/'+ serviceName +'/products/';
         this.apiservice.apicall({
                 url: _baseUrl
                 , httpMethod: 'post'
+                , params : {}
             }, (result) => {
                     console.log('GOT fetchProductList', result);
                     callback(result);
