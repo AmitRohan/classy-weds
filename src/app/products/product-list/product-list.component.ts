@@ -43,7 +43,7 @@ export class ProductListComponent implements OnInit , AfterViewInit , AfterConte
   }
 
   selectItem(item:ProductModel){
-    this.router.navigateByUrl('/services/' +this.selectedService +'/'+ item.index);
+    this.router.navigateByUrl('/services/' +this.selectedService +'/'+ item.productId);
   }
 
   getStarArray(rating:number): Array<string>{

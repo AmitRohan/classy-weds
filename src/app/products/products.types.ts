@@ -17,7 +17,7 @@ export class PackageAvailable {
 }
 
 export class ProductModel {
-    index : number;
+    productId : number;
     icon : string;
     name : string;
     description : string;
