@@ -188,7 +188,8 @@
                                     </div>
                                     <div class="app-product-details-review-summary-vertical-seperator dib vertical-a-t">
                                     </div>
-                                    <div class="dib vertical-a-t" style="width: 30%;">
+                                    <div class="dib vertical-a-t" style="width: 30%;"
+                                        *ngIf='selectedProductDetail.reviewResponse'>
                                         <div
                                             class="app-product-details-review-summary-rating-distributor"
                                             *ngFor="let ratingDistribution of selectedProductDetail.reviewResponse.starCounts.reverse();let i = index">
@@ -203,7 +204,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="app-product-details-review-summary-social dib vertical-a-t">
+                                    <div class="app-product-details-review-summary-social dib vertical-a-t"
+                                        *ngIf='selectedProductDetail.reviewResponse'>
                                         <div class="app-product-details-review-summary-social-review">
                                             {{selectedProductDetail.reviewResponse.socialReview}}
                                         </div>
@@ -237,7 +239,8 @@
                                     </div>
                                 </div>
                                 <!-- Review List -->
-                                <div>
+                                <div
+                                    *ngIf='selectedProductDetail.reviewResponse'>
                                     <div class="seperator"></div>
                                     <div class="app-product-details-reviews-title ratingBoxPadding">Reviews</div>
                                     <div 
