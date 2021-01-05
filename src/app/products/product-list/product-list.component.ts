@@ -43,6 +43,8 @@ export class ProductListComponent implements OnInit , AfterViewInit , AfterConte
   }
 
   selectItem(item:ProductModel){
+    console.log(item);
+    
     this.router.navigateByUrl('/services/' +this.selectedService +'/'+ item.productId);
   }
 
