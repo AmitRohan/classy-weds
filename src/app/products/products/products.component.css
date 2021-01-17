@@ -62,17 +62,20 @@
 }
 
 .products-filter-1 {
+    cursor: pointer;
     background: #FFFFFF;
     margin-right: 21px;
     border-radius: 4px;
 }
 .products-filter-2 {
+    cursor: pointer;
     margin-left: 21px;
     margin-right: 21px;
     background: #FFFFFF;
     border-radius: 4px;
 }
 .products-filter-3 {
+    cursor: pointer;
     margin-left: 21px;
     background: #FFFFFF;
     border-radius: 4px;
@@ -177,6 +180,7 @@
 }
 
 .secondary-service-item {
+    cursor: pointer;
     margin-top: 24px;
     margin-right: 20px;
     border-radius: 4px;
