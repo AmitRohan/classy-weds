@@ -49,6 +49,9 @@ export class ProductListComponent implements OnInit , AfterViewInit , AfterConte
   }
 
   getStarArray(rating:number): Array<string>{
+    if(rating > 5){
+      rating = 5;
+    }
     let startArray=[];
     let _i=1;
     while(_i<rating){
