@@ -48,6 +48,12 @@ export class ProductListComponent implements OnInit , AfterViewInit , AfterConte
     this.router.navigateByUrl('/services/' +this.selectedService +'/'+ item.productId);
   }
 
+  getClassToUse(itemSelected) : string{
+    return itemSelected == null
+          ? "col-lg-4 col-md-6 col-sm-12 half-parent-height p-0 app-products-card-container"
+          : "col-lg-6 col-md-6 col-sm-12 half-parent-height p-0 app-products-card-container";
+  }
+
   getPriceText(price: string) : string{
     return price
             ? price + " INR"
