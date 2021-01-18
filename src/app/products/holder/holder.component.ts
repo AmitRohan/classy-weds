@@ -67,7 +67,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
   }
   
   ngOnChanges(changes){
-    console.log("HolderComponent : changes ", changes);
+    
   }
  
   ngOnInit() {
