@@ -61,14 +61,14 @@ export class ProductsService {
           }, (error) => this.defaultErrorHandler(error, callback));
     }
 
-    requestCallBack(phoneNumber,mode,productId = null,name = null,callback) {
+    requestCallBack(phone : string,enquiryType : string ,productId = null,name = null,callback) {
         var _baseUrl = environment.baseUrl + '/phonenumber';
 
         var body = {
-            phone : phoneNumber,
-            mode : mode,
-            product_id : productId,
-            name : name
+            phone,
+            enquiryType,
+            productId,
+            name
         }
         this.apiservice.apicall({
                 url: _baseUrl
@@ -79,7 +79,7 @@ export class ProductsService {
                     callback(result);
           }, (error) => this.defaultErrorHandler(error, callback));
     }
-    
+
     defaultErrorHandler(error, callback) {
         console.log(error, ' == error');
         // alert(error.error.message);
