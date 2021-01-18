@@ -28,7 +28,7 @@
                             <div class="row p-0">
                                 <div class="col-lg-7 p-0">
                                     <div class="app-product-details-card-package-title">Packages starting from</div>
-                                    <div class="app-product-details-card-package-price">{{selectedProductDetail.price}} INR</div>
+                                    <div class="app-product-details-card-package-price">{{getPriceText(selectedProductDetail.price)}}</div>
                                 </div>
                                 <div class="col-lg-5 p-0">
                                     <div class="app-product-details-packages-available-get-deal">
@@ -74,7 +74,7 @@
                                     </div>
                                     <div class="col-lg-4 p-0">
                                         <div class="app-product-details-packages-available-text">Package starting from</div>
-                                        <div class="app-product-details-packages-available-price">{{packageAvailable.price}} INR</div>
+                                        <div class="app-product-details-packages-available-price">{{getPriceText(packageAvailable.price)}}</div>
                                     </div>
                                     <div class="col-lg-3 p-0">
                                         <div class="app-product-details-packages-available-get-deal">

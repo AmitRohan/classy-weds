@@ -21,7 +21,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="app-products-card-package-title">Package starting from</div>
-                            <div class="app-products-card-package-price">{{product.price}} INR</div>
+                            <div class="app-products-card-package-price">{{getPriceText(product.price)}}</div>
                         </div>
                     </div>
                     <div class="app-products-card-package-description">{{getDescriptionText(product.description || "")}}</div>
@@ -54,7 +54,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="app-products-card-package-title">Package starting from</div>
-                                <div class="app-products-card-package-price">{{product.price}} INR</div>
+                                <div class="app-products-card-package-price">{{getPriceText(product.price)}}</div>
                             </div>
                         </div>
                         <div class="app-products-card-package-description">{{getDescriptionText(product.description || "")}}</div>

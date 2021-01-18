@@ -105,6 +105,12 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     this.reviewProductKnownForStatus = _reviewProductKnownForStatus
   }
 
+  getPriceText(price: string) : string{
+    return price
+            ? price + " INR"
+            : "N/A"
+  }
+
   selectStarTill(index: number){
     var x = document.getElementsByClassName('app-product-details-give-rating-stars')[0];
     var _index = 0;
