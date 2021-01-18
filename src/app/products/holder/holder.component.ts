@@ -117,6 +117,16 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
               return;
             }
             this.selectedProductDetail = resp[0];
+
+            this.dashboardData.fetchReviewListForProduct(productId,(resp,err)=>{
+              if(err){
+                return;
+              }
+              this.selectedProductDetail.reviewResponse.reviewList = resp;
+  
+              
+            })
+
           })
         }
         

@@ -174,7 +174,7 @@
                                 <div class="app-product-details-review-summary-section ratingBoxPadding">
                                     <div class="app-product-details-review-summary-big-rating-box dib vertical-a-t">
                                         <div class="app-product-details-review-summary-big-rating-box-rating">
-                                            {{selectedProductDetail.rating}}
+                                            {{selectedProductDetail.rating || "-"}}
                                         </div>
                                         <div 
                                         class="app-product-details-review-summary-big-rating-box-rating-stars">
@@ -183,7 +183,7 @@
                                                 class="{{_class}}"></i>
                                          </div>
                                          <div class="app-product-details-review-summary-big-rating-box-rating-count">
-                                            {{selectedProductDetail.reviewsCount}} Reviews
+                                            {{selectedProductDetail.reviewsCount || "-"}} Reviews
                                         </div>
                                     </div>
                                     <div class="app-product-details-review-summary-vertical-seperator dib vertical-a-t">
@@ -214,7 +214,7 @@
                                             *ngIf="selectedProductDetail.reviewResponse.socialReviewSource != ''">
                                                 - {{selectedProductDetail.reviewResponse.socialReviewSource}}
                                         </div>
-                                        <!-- <div class="app-product-details-review-summary-best-know-for-holder">
+                                        <div class="app-product-details-review-summary-best-know-for-holder">
                                             <ng-container 
                                                 *ngFor="let knownFor of selectedProductDetail.reviewResponse.reviewHighlights;
                                                             last as isLast;
@@ -235,7 +235,7 @@
                                                          </span>
                                                         
                                             </ng-container>
-                                        </div> -->
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- Review List -->
