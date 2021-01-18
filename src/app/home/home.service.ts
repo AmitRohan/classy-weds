@@ -13,17 +13,26 @@ export class HomeService {
         
     }
 
-    private baseUrl = environment.baseUrl + '/products';
+    private baseUrl = environment.baseUrl + '/api/v1';
 
-    fetchProductList(callback) {
-        this.apiservice.apicall({
-                url: this.baseUrl
-                , httpMethod: 'get'
-            }, (result) => {
-            console.log('GOT fetchProductList', result);
-            callback(result);
-          }, (error) => this.defaultErrorHandler(error, callback));
-    }
+    requestCallBack(phone : string,enquiryType : string ,productId = null,name = null,callback) {
+      var _baseUrl = this.baseUrl + '/phonenumber';
+
+      var body = {
+          phone,
+          enquiryType,
+          productId,
+          name
+      }
+      this.apiservice.apicall({
+              url: _baseUrl
+              , httpMethod: 'post'
+              , params : body
+          }, (result) => {
+                  console.log('GOT requestCallBack', result);
+                  callback(result);
+        }, (error) => this.defaultErrorHandler(error, callback));
+  }
 
 
 

@@ -15,10 +15,10 @@
                      src="assets/icons/app-call.png" alt="">
                 </div>
                 <div class="col-lg-7 p-0">
-                    <input class="header-input-number" placeholder="Enter phone number for free consultation">
+                    <input class="header-input-number" placeholder="Enter phone number for free consultation" [(ngModel)]='consultationNumber'>
                 </div>
                 <div class="col-lg-4 p-0">
-                    <div class="header-input-submit">
+                    <div class="header-input-submit" (click)='getCallback()'>
                         Get free consultation
                     </div>
                 </div>

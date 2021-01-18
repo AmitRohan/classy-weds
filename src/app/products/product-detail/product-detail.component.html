@@ -315,7 +315,7 @@
                                 <div class="row">
                                     <div class="col-lg-6 p-0">
                                         <div class="md-group">
-                                            <input class="md-input" type="text" required="required"/>
+                                            <input class="md-input" type="text" required="required" [(ngModel)]='getCallbackName'/>
                                             <span class="highlight"></span>
                                             <span class="md-bar"></span>
                                             <span class="md-bar-error"></span>
@@ -335,7 +335,7 @@
                                                 <label class="md-label">+91</label>
                                             </div> -->
                                             <div class="col-lg-10 p-0" style="padding-left:10px!important">
-                                                <input class="md-input" type="text" required="required"/>
+                                                <input class="md-input" type="text" required="required" [(ngModel)]='getCallbackNumber'/>
                                                 <span class="highlight"></span>
                                                 <span class="md-bar"></span>
                                                 <span class="md-bar-error"></span>
@@ -345,11 +345,11 @@
                                     </div>                                    
                                 </div>
 
-                                <div class="app-product-details-contact-send-message">
-                                    Get OTP
+                                <div class="app-product-details-contact-send-message" (click)='getCallback()'>
+                                    Get Callback
                                 </div>
 
-                                <div class="row app-product-details-contact-number-holder p-0 m-0">
+                                <!-- <div class="row app-product-details-contact-number-holder p-0 m-0">
                                     <div class="col-lg-6 col-md-8 col-sm-12 p-0">
                                         <input class="app-product-details-contact-number" placeholder="****">
                                     </div>
@@ -358,7 +358,7 @@
                                             Submit OTP
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>                        
                         </div>
                     </div>

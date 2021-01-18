@@ -62,7 +62,7 @@ export class ProductsService {
     }
 
     requestCallBack(phone : string,enquiryType : string ,productId = null,name = null,callback) {
-        var _baseUrl = environment.baseUrl + '/phonenumber';
+        var _baseUrl = this.baseUrl + '/phonenumber';
 
         var body = {
             phone,

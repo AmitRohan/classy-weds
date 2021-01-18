@@ -8,10 +8,10 @@
                     src="assets/icons/app-call.png" alt="">
             </div>
             <div class="col-lg-7 p-0">
-                <input class="contact-us-input-number" placeholder="Enter phone number for free consultation">
+                <input class="contact-us-input-number" placeholder="Enter phone number for free consultation" [(ngModel)]='consultationNumber'>
             </div>
             <div class="col-lg-4 p-0">
-                <div class="contact-us-input-submit">
+                <div class="contact-us-input-submit" (click)="getCallback()">
                     Get free consultation
                 </div>
             </div>

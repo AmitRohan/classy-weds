@@ -155,5 +155,36 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
       width = ( 100* count/_maxCount);    
       return width
   }
+
+  getCallbackName = ""
+  getCallbackNumber = ""
+
+  getCallback(){
+    if((this.getCallbackNumber || "").trim().length < 10){
+      alert("Please enter a 10 digit number.")
+      return;
+    }
+
+    if((this.getCallbackName || "").trim().length == 0){
+      alert("Please enter your name.")
+      return;
+    }
+
+    this.selectedProductDetail.productId
+    this.dashboardData.requestCallBack(
+        this.getCallbackNumber
+        , "product info"
+        , this.selectedProductDetail.productId
+        , this.getCallbackName
+        , (resp,err)=>{
+          if(err){
+            alert("oops")
+            return;
+          }
+          alert("We will get back to you soon!")
+
+        }
+        )
+  }
   
 }

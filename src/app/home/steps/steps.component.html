@@ -18,10 +18,10 @@
                                 <img class="button-icon" src="assets/icons/app-call.png">
                             </div>
                             <div class="col-lg-7 col-md-7 col-sm-11 p-0">
-                                <input class="step1-input-number" placeholder="Enter phone number">
+                                <input class="step1-input-number" placeholder="Enter phone number" [(ngModel)]="consultationNumber">
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 p-0">
-                                <div class="step1-input-submit">
+                                <div class="step1-input-submit" (click)='getCallback()'>
                                     Contact me
                                 </div>
                             </div>

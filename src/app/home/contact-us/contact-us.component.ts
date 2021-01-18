@@ -32,4 +32,29 @@ export class ContactUs implements OnInit , AfterViewInit , AfterContentChecked {
   ngAfterContentChecked(): void {
 
   }
+
+  consultationNumber = ""
+      getCallback(){
+        if((this.consultationNumber || "").trim().length < 10){
+          alert("Please enter a 10 digit number.")
+          return;
+        }
+
+        this.dashboardData.requestCallBack(
+            this.consultationNumber
+            , "consultation"
+            , null
+            , null
+            , (resp,err)=>{
+              if(err){
+                alert("oops")
+                return;
+              }
+              alert("We will get back to you soon!")
+    
+            }
+            )
+      }
+
+
 }

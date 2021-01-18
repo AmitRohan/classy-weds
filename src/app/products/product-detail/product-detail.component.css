@@ -319,6 +319,7 @@
 }
 
 .app-product-details-contact-number-submit {
+    cursor: pointer;
     width: 100%;
     padding: 12px 19px;
     color: #ffffff;
@@ -341,6 +342,7 @@
 }
 
 .app-product-details-contact-send-message {
+    cursor: pointer;
     margin: 36px 0px;
     border-radius: 4px;
     margin-left:auto;
@@ -506,6 +508,7 @@
 }
 
 .app-product-details-write-your-review-submit {
+    cursor: pointer;
     margin: 36px 0px;
     margin-left:auto;
     width: 150px;
