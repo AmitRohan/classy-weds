@@ -104,7 +104,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
         const productId = (route.snapshot.paramMap.get('productId') || "-1");
         
         this.selectedService = serviceName;
-        this.dashboardData.fetchProductList('all',(resp,err)=>{
+        this.dashboardData.fetchProductList(serviceName,(resp,err)=>{
           if(err){
             return;
           }
