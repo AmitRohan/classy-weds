@@ -54,6 +54,7 @@
                             <input 
                                 class="md1-input" 
                                 type="text" 
+                                [(ngModel)]='userName' 
                                 required="required"
                                 placeholder="Enter your name"/>
                         </div>
@@ -64,6 +65,7 @@
                             <label class="contact-us-input-label">Contanct Number</label>
                             <input class="md1-input" 
                                 type="text" 
+                                [(ngModel)]='userNumber' 
                                 placeholder="Enter your contact number"
                                 required="required"/>
                         </div>
@@ -72,7 +74,8 @@
                     <div class="col-lg-6">
                         <div class="md-group">
                             <label class="contact-us-input-label">Email Id</label>
-                            <input class="md1-input" type="text" 
+                            <input class="md1-input" type="text"
+                            [(ngModel)]='userEmail' 
                             placeholder="Enter your email id"
                             required="required"/>
                         </div>
@@ -84,13 +87,22 @@
                             <div class="row" style="padding: 0px 12px!important;">
                                 <div class="col-lg-6 col-sm-12 col-md-12">
                                     <div class="md-radio md-radio-inline">
-                                        <input id="3" type="radio" name="g2" checked>
+                                        <input 
+                                            id="3" 
+                                            type="radio" 
+                                            name="g2"
+                                            (click)='shouldUseEmail(true)'
+                                            checked>
                                         <label for="3">Email Id</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-12 col-md-12">
                                     <div class="md-radio md-radio-inline">
-                                        <input id="4" type="radio" name="g2">
+                                        <input 
+                                            id="4" 
+                                            type="radio" 
+                                            (click)='shouldUseEmail(false)'
+                                            name="g2">
                                         <label for="4">Phone</label>
                                     </div>
                                 </div>
@@ -104,6 +116,7 @@
                             <textarea 
                                 class="app-product-details-write-your-review-input-area" 
                                 type="text" 
+                                [(ngModel)]='userMessage'
                                 placeholder="Tell us about your experience*"
                                 required="required">
                             </textarea>
@@ -115,7 +128,7 @@
 
                 <div class="row p-0 m-0">
                     <div class="col-lg-9 col-md-6 col-sm-0"></div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 contact-us-input-submit">
+                    <div class="col-lg-3 col-md-6 col-sm-12 contact-us-input-submit" (click)="submitContactUs()">
                         Submit
                     </div>
                 </div>

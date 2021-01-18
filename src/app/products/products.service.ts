@@ -79,27 +79,7 @@ export class ProductsService {
                     callback(result);
           }, (error) => this.defaultErrorHandler(error, callback));
     }
-
-    contactUs(name,phone,email,message,pwc,callback) {
-        var _baseUrl = environment.baseUrl + '/contactus';
-
-        var body = {
-            message,
-            name,
-            email,
-            phone,
-            pwc
-        }
-        this.apiservice.apicall({
-                url: _baseUrl
-                , httpMethod: 'post'
-                , params : body
-            }, (result) => {
-                    console.log('GOT contactUs', result);
-                    callback(result);
-          }, (error) => this.defaultErrorHandler(error, callback));
-    }
-
+    
     defaultErrorHandler(error, callback) {
         console.log(error, ' == error');
         // alert(error.error.message);

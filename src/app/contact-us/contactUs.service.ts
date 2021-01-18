@@ -7,44 +7,33 @@ import {HomeResponses} from './contactUs.responses';
   providedIn: 'root'
 })
 export class ContactUsService {
-    dashboardResponses: HomeResponses;
+    
     constructor(private apiservice: NetworkManagerService) {
-        if (environment.offlineFirst) {
-            this.dashboardResponses = new HomeResponses();
-        }
+    
     }
 
-    private baseUrl = environment.baseUrl + '/home';
+    private baseUrl = environment.baseUrl + '/api/v1';
 
-    fetchTripListByUserId(userId: string, callback) {
-        if (environment.offlineFirst) {
-            setTimeout(callback([]), 1000);
-            return;
+    
+    contactUs(name,phone,email,message,pwc,callback) {
+        var _baseUrl = this.baseUrl + '/contactus';
+
+        var body = {
+            message,
+            name,
+            email,
+            phone,
+            pwc
         }
-        const body = {
-            'sortBy': 'desc',
-            'sortOn': 'startTime',
-            'filter': [{
-                'key': 'userId',
-                'requestFilterType': 'EQUAL',
-                'value': userId
-            }]
-        };
-        const token = sessionStorage.getItem('outh_key');
-        const auth = 'Bearer ' + token;
-        // const url_otp = baseUrl + "login/generateOTP"
         this.apiservice.apicall({
-                url: this.baseUrl + '/v1/trips?pageSize=100&pageNum=0'
+                url: _baseUrl
+                , httpMethod: 'post'
                 , params : body
-                , httpMethod: 'postAuth'
-                , Authorization: auth
             }, (result) => {
-            console.log('GOT getTripsDataForUser', result);
-            callback(result);
+                    console.log('GOT contactUs', result);
+                    callback(result);
           }, (error) => this.defaultErrorHandler(error, callback));
     }
-
-
 
     defaultErrorHandler(error, callback) {
         console.log(error, ' == error');

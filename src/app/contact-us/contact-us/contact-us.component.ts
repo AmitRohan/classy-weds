@@ -32,4 +32,36 @@ export class ContactUs implements OnInit , AfterViewInit , AfterContentChecked {
   ngAfterContentChecked(): void {
 
   }
+
+  userEmail : string = "";
+  userName : string = "";
+  userNumber : string = "";
+  userMessage : string = "";
+  userPWCEmail : boolean = true;
+
+  shouldUseEmail(mode){
+    this.userPWCEmail = mode;
+  }
+
+  submitContactUs() {
+
+    if((this.userNumber || "").trim().length < 10){
+      alert("Please enter a 10 digit number.")
+      return;
+    }
+
+    this.dashboardData.contactUs(
+        this.userName
+        ,this.userNumber
+        ,this.userEmail
+        ,this.userMessage
+        , this.userPWCEmail ? "email" : "password"
+        ,(resp,err)=>{
+            if(err){
+              alert("Something Went Wrong")
+              return;
+            }
+            alert("Submitted")
+        })
+  }
 }
