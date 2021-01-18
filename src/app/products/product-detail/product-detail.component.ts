@@ -1,7 +1,7 @@
-import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, Input, AfterViewInit, AfterContentChecked, OnChanges} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, Input, AfterViewInit, AfterContentChecked, OnChanges, EventEmitter, Output} from '@angular/core';
 import { ProductsService } from '../products.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import { ProductModel, ProductKnownForStatus } from '../products.types';
+import { ProductModel, ProductKnownForStatus, ContactUsBody, ReviewBody } from '../products.types';
 
 declare const $: any;
 
@@ -14,6 +14,8 @@ declare const $: any;
 export class ProductDetailComponent implements OnInit , AfterViewInit , OnChanges , AfterContentChecked {
   @Input() selectedService: string = '';
   @Input() selectedProductDetail: ProductModel = null;
+  @Output() onContactUsClicked = new EventEmitter<ContactUsBody>();
+  @Output() onAddReviewClicked = new EventEmitter<ReviewBody>();
 
 
   makeProductKnownForStatus(title: string): ProductKnownForStatus{
@@ -74,10 +76,27 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     this.canGiveNewReview = true;
   }
 
+  newProductReview = ""
   submitNewReview(){
+    var tags =
+          this.reviewProductKnownForStatus
+            .filter( _ => _.selected)  
+            .map( _ => _.title)
+    var rating = this.apdgrs.filter( _ => _ == 'apdgrs-selected').length
+    
+    
+    this.newProductReview = "";
     this.canGiveNewReview = false;
     this.resetProductKnownForStatus()
     this.resetRatingStarts();
+
+    var reviewBody = {
+      rating 
+      ,tags
+      ,user_id : 11
+      , message : this.newProductReview
+    }
+    this.onAddReviewClicked.emit(reviewBody);
   }
 
   resetRatingStarts(){
@@ -170,21 +189,13 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
       return;
     }
 
-    this.selectedProductDetail.productId
-    this.dashboardData.requestCallBack(
-        this.getCallbackNumber
-        , "product info"
-        , this.selectedProductDetail.productId
-        , this.getCallbackName
-        , (resp,err)=>{
-          if(err){
-            alert("oops")
-            return;
-          }
-          alert("We will get back to you soon!")
-
-        }
-        )
+    const contactUsBody = {
+      phone : this.getCallbackNumber,
+      enquiryType: "product info",
+      productId: this.selectedProductDetail.productId,
+      name: this.getCallbackName
+    }
+    this.onContactUsClicked.emit(contactUsBody)
   }
   
 }

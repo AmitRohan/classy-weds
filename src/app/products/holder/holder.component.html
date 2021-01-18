@@ -4,6 +4,8 @@
     <app-home-products
         [selectedService]="selectedService"
         [selectedProductDetail]="selectedProductDetail"
-        [availableProducts]="availableProducts">
+        [availableProducts]="availableProducts"
+        (onAddReviewClicked)="onAddReviewClicked($event)"
+        (onContactUsClicked)="onContactUsClicked($event)">>
     </app-home-products>
 </section>

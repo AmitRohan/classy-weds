@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { NetworkManagerService } from '../network-manager.service';
 import { environment } from '../../environments/environment';
 import {ProductsResponses} from './products.responses';
+import { ContactUsBody, ReviewBody } from './products.types';
 
 @Injectable({
   providedIn: 'root'
@@ -20,10 +21,9 @@ export class ProductsService {
                 url: _baseUrl
                 , httpMethod: 'post'
                 , params : {}
-            }, (result) => {
-                    console.log('GOT fetchProductList', result);
-                    callback(result);
-          }, (error) => this.defaultErrorHandler(error, callback));
+            }
+            , (result) => { callback(result); }
+            , (error) => this.defaultErrorHandler(error, callback));
     }
 
     fetchProductDetails(productId,callback) {
@@ -31,10 +31,9 @@ export class ProductsService {
         this.apiservice.apicall({
                 url: _baseUrl
                 , httpMethod: 'get'
-            }, (result) => {
-                    console.log('GOT fetchProductDetails', result);
-                    callback(result);
-          }, (error) => this.defaultErrorHandler(error, callback));
+            }
+            , (result) => { callback(result); }
+            , (error) => this.defaultErrorHandler(error, callback));
     }
 
     fetchReviewListForProduct(productId,callback) {
@@ -42,42 +41,32 @@ export class ProductsService {
         this.apiservice.apicall({
                 url: _baseUrl
                 , httpMethod: 'get'
-            }, (result) => {
-                    console.log('GOT fetchReviewListForProduct', result);
-                    callback(result);
-          }, (error) => this.defaultErrorHandler(error, callback));
+            }
+            , (result) => { callback(result); }
+            , (error) => this.defaultErrorHandler(error, callback));
     }
 
-    addReviewForProduct(productId,reviewToAdd,callback) {
-        reviewToAdd = {"rating":3, "tags":["Value For Money", "Amazing Food", "Hospitality"], "user_id":"31", "message":"this is awesome"};
+    addReviewForProduct(productId,reviewBody: ReviewBody,callback) {
         var _baseUrl = this.baseUrl + '/products/'+productId +'/newReview';
         this.apiservice.apicall({
                 url: _baseUrl
                 , httpMethod: 'post'
-                , params : reviewToAdd
-            }, (result) => {
-                    console.log('GOT addReviewForProduct', result);
-                    callback(result);
-          }, (error) => this.defaultErrorHandler(error, callback));
+                , params : reviewBody
+            }
+            , (result) => {callback(result); }
+            , (error) => this.defaultErrorHandler(error, callback));
     }
 
-    requestCallBack(phone : string,enquiryType : string ,productId = null,name = null,callback) {
+    requestCallBack(requestBody : ContactUsBody,callback) {
         var _baseUrl = this.baseUrl + '/phonenumber';
 
-        var body = {
-            phone,
-            enquiryType,
-            productId,
-            name
-        }
         this.apiservice.apicall({
                 url: _baseUrl
                 , httpMethod: 'post'
-                , params : body
-            }, (result) => {
-                    console.log('GOT requestCallBack', result);
-                    callback(result);
-          }, (error) => this.defaultErrorHandler(error, callback));
+                , params : requestBody
+            }
+            , (result) => { callback(result); }
+            , (error) => this.defaultErrorHandler(error, callback));
     }
 
     defaultErrorHandler(error, callback) {

@@ -1,7 +1,7 @@
-import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, Input, AfterViewInit, AfterContentChecked, OnChanges} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, Input, AfterViewInit, AfterContentChecked, OnChanges, EventEmitter, Output} from '@angular/core';
 import { ProductsService } from '../products.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import { ProductModel } from '../products.types';
+import { ContactUsBody, ProductModel, ReviewBody } from '../products.types';
 
 import tippy, {animateFill} from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
@@ -25,6 +25,9 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
   @Input() selectedService: string = '';
   @Input() availableProducts: Array<ProductModel> = [];
   @Input() selectedProductDetail: ProductModel = null;
+  @Output() onContactUsClicked = new EventEmitter<ContactUsBody>();
+  @Output() onAddReviewClicked = new EventEmitter<ReviewBody>();
+
   serviceName: string = '';
 
   availableSecondaryServices: Array<{
@@ -154,5 +157,13 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
     }
     return "secondary_service_inactive";
 
+  }
+
+  contactUsClicked(contactUsBody:ContactUsBody){
+    this.onContactUsClicked.emit(contactUsBody);
+  }
+
+  addReviewClicked(reviewBody:ReviewBody){
+    this.onAddReviewClicked.emit(reviewBody);
   }
 }

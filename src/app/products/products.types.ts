@@ -51,3 +51,17 @@ export class Review {
     replyFrom : string;
     reply : string;
 }
+
+export class ContactUsBody {
+    phone : string;
+    enquiryType: string;
+    productId: number;
+    name: string;
+}
+
+export class ReviewBody {
+    rating : number;
+    tags : Array<string>;
+    user_id : number;
+    message : string;
+}

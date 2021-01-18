@@ -80,6 +80,8 @@
         </div>
         <div class="col-lg-6 p-0">
             <app-home-products-details
+                (onContactUsClicked)="contactUsClicked($event)"
+                (onAddReviewClicked)="addReviewClicked($event)"
                 [selectedService]="selectedService"
                 [selectedProductDetail]="selectedProductDetail">
 
