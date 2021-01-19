@@ -94,7 +94,7 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
       rating 
       ,tags
       ,user_id : 11
-      , message : this.newProductReview
+      , review : this.newProductReview
     }
     this.onAddReviewClicked.emit(reviewBody);
   }

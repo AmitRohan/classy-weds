@@ -63,5 +63,5 @@ export class ReviewBody {
     rating : number;
     tags : Array<string>;
     user_id : number;
-    message : string;
+    review : string;
 }
