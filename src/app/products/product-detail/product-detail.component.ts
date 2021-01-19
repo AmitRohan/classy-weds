@@ -124,6 +124,25 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     this.reviewProductKnownForStatus = _reviewProductKnownForStatus
   }
 
+  getBestDealClicked(){    
+    document.getElementById("getBestDeal").click();
+  }
+
+  getReviewAtDate(time){
+    let _date = (new Date(time));
+    let monthNames =["Jan","Feb","Mar","Apr",
+                      "May","Jun","Jul","Aug",
+                      "Sep", "Oct","Nov","Dec"];
+    let day = _date.getDate();
+
+    let monthIndex = _date.getMonth();
+    let monthName = monthNames[monthIndex];
+    
+    let year = _date.getFullYear();
+    
+    return day + " " + monthName + " " + year;  
+  }
+
   getPriceText(price: string) : string{
     return price
             ? price + " INR"

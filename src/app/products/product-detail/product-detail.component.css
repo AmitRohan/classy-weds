@@ -14,6 +14,7 @@
 
 .app-product-details-card {
     background: #ffffff;
+    padding-bottom: 24px;
 }
 
 .app-product-details-card-content {
@@ -237,6 +238,7 @@
 }
 
 .app-product-details-packages-available-get-deal {
+    cursor: pointer;
     border-radius: 4px;
     font-family: Nunito Sans;
     font-weight: 400;

@@ -31,7 +31,8 @@
                                     <div class="app-product-details-card-package-price">{{getPriceText(selectedProductDetail.price)}}</div>
                                 </div>
                                 <div class="col-lg-5 p-0">
-                                    <div class="app-product-details-packages-available-get-deal">
+                                    <div class="app-product-details-packages-available-get-deal" 
+                                        (click)="getBestDealClicked()">
                                         Get this deal
                                     </div>
                                 </div>
@@ -47,7 +48,7 @@
                         <li><a data-toggle="tab" target="_self" href="#tabAreas">Areas Available</a></li>
                         <li><a data-toggle="tab" href="#tabPhotos">{{selectedProductDetail.photos.length}} Photos</a></li>
                         <li ><a data-toggle="tab" href="#tabReview">Review</a></li>
-                        <li><a data-toggle="tab" href="#tabContact">Contact Us</a></li>
+                        <li><a id="getBestDeal" data-toggle="tab" href="#tabContact">Contact Us</a></li>
                     </ul>  
                     <div class="tab-content" id="mySelectedProductsViewPager">
                         <!-- About Us Section -->
@@ -256,7 +257,7 @@
                                                         {{review.from}}
                                                     </div>
                                                     <div class="review-user-time">
-                                                        {{review.time}} ago
+                                                        {{getReviewAtDate(review.time)}}
                                                     </div>
                                                 </div>
                                                 <div style="float: right;" class="dib vertical-a-t">
