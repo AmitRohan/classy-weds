@@ -29,7 +29,9 @@ export class AppComponent implements OnInit {
                     }
                     this.previousUrl = currentUrlSlug;
                 }
+                window.scrollTo(0, 0)
             });
+            
     }
 
     ngOnInit() {
