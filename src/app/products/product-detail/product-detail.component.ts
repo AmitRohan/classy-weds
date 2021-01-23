@@ -143,7 +143,7 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     return day + " " + monthName + " " + year;  
   }
 
-  getPriceText(price: string) : string{
+  getPriceText(price) : string{
     return price
             ? price + " INR"
             : "N/A"
