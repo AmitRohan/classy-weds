@@ -166,4 +166,15 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
   addReviewClicked(reviewBody:ReviewBody){
     this.onAddReviewClicked.emit(reviewBody);
   }
+
+  getClassToUseFor(position : number): string{
+    if(this.selectedProductDetail)
+      return "col-lg-6 p-0"
+    else if(position == 0){
+      return "col-lg-12 p-0"
+    }
+    else {
+      return "col-lg-0 p-0"
+    }
+  }
 }

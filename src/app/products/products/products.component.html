@@ -57,14 +57,27 @@
             <div class="apftags">Catering Included</div>
         </div>
 
-        <div *ngIf="selectedProductDetail == null; else selectedProductLayout">
-            <app-home-products-list
+        <div class="row p-0 m-0">
+            <div [class]="getClassToUseFor(0)">
+                <app-home-products-list
+                        [selectedService]="selectedService"
+                        [selectedProductDetail]="selectedProductDetail"
+                        [availableProducts]="availableProducts">
+    
+                </app-home-products-list>
+            </div>
+            <div [class]="getClassToUseFor(1)">
+                <app-home-products-details
+                    (onContactUsClicked)="contactUsClicked($event)"
+                    (onAddReviewClicked)="addReviewClicked($event)"
                     [selectedService]="selectedService"
-                    [selectedProductDetail]="selectedProductDetail"
-                    [availableProducts]="availableProducts">
-
-            </app-home-products-list>
+                    [selectedProductDetail]="selectedProductDetail">
+    
+                </app-home-products-details>
+            </div>
+    
         </div>
+        
     </div>
 </div>
 
