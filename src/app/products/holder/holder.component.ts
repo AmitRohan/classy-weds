@@ -49,7 +49,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
         this.selectedService = serviceName;
         this.showLoader = true;
       
-        if(productId){
+        if(productId && productId!= '-1'){
           this.dashboardData.fetchProductDetails(productId,(resp,err)=>{
             if(err){
               return;
