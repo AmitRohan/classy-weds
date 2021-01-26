@@ -5,8 +5,5 @@
 
 export const environment = {
   merchantName : 'Afaq Dev',
-  production: false,
-  log: true,
-  offlineFirst : false,
   baseUrl : 'http://localhost:4200'
 };
