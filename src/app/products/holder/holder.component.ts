@@ -20,6 +20,8 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
   public availableProducts: Array<ProductModel> = [];
   public selectedProductDetail: ProductModel = null;
   public selectedService: string='';
+  public showLoader = false
+  private shouldFetchDetails = false
   constructor(
       private dashboardData: ProductsService,
       private route: ActivatedRoute,
@@ -44,13 +46,8 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
         const productId = (route.snapshot.paramMap.get('productId') || "-1");
         
         this.selectedService = serviceName;
-        this.dashboardData.fetchProductList(serviceName,(resp,err)=>{
-          if(err){
-            return;
-          }
-          this.availableProducts = resp;
-        })
-
+        this.showLoader = true;
+      
         if(productId){
           this.dashboardData.fetchProductDetails(productId,(resp,err)=>{
             if(err){
@@ -62,6 +59,14 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
 
           })
         }
+
+        this.dashboardData.fetchProductList(serviceName,(resp,err)=>{
+          this.showLoader = false;
+          if(err){
+            return;
+          }
+          this.availableProducts = resp;
+        })
         
         
   }
@@ -115,6 +120,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
 
   updateReviewList(){
     this.dashboardData.fetchReviewListForProduct(this.selectedProductDetail.productId,(resp,err)=>{
+      this.showLoader = false;
       if(err){
         return;
       }
