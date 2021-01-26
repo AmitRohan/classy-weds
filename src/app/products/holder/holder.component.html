@@ -2,20 +2,18 @@
     <div
         *ngIf="showLoader"
         class="myLoader">
-        <div
-            class="myLoaderChild">
-            <circle-progress    
-                [percent]="100"
-                [radius]="100"
-                [outerStrokeWidth]="16"
-                [innerStrokeWidth]="8"
-                [outerStrokeColor]="'#78C000'"
-                [innerStrokeColor]="'#C7E596'"
-                [animation]="true"
-                [animationDuration]="10000"
-                >
-            </circle-progress>
-        </div>
+       
+        <circle-progress    
+            [percent]="100"
+            [radius]="100"
+            [outerStrokeWidth]="16"
+            [innerStrokeWidth]="8"
+            [outerStrokeColor]="'#78C000'"
+            [innerStrokeColor]="'#C7E596'"
+            [animation]="true"
+            [animationDuration]="10000"
+            >
+        </circle-progress>
     </div>
     <div>
         <app-home-header>
