@@ -20,6 +20,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
   public availableProducts: Array<ProductModel> = [];
   public selectedProductDetail: ProductModel = null;
   public selectedService: string='';
+  private previousSelectedService: string='';
   public showLoader = false
   private shouldFetchDetails = false
   constructor(
@@ -59,14 +60,17 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
 
           })
         }
-
-        this.dashboardData.fetchProductList(serviceName,(resp,err)=>{
-          this.showLoader = false;
-          if(err){
-            return;
-          }
-          this.availableProducts = resp;
-        })
+        if(this.previousSelectedService != this.selectedService){
+          this.dashboardData.fetchProductList(serviceName,(resp,err)=>{
+            this.showLoader = false;
+            if(err){
+              return;
+            }
+            this.availableProducts = resp;
+          })
+          this.previousSelectedService = this.selectedService;
+        }
+        
         
         
   }
