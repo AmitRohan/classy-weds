@@ -13,6 +13,7 @@ export class NetworkManagerService {
       const commonOptions = {
           headers: new HttpHeaders({
               'Content-Type': 'application/json',
+            //   'Access-Control-Allow-Origin': '*',
               'Authorization': arg.Authorization || ''
           })
       };
