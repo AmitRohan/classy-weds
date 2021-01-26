@@ -79,7 +79,7 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
     });
     this.availableSecondaryServices.push({
       key : 'LUXURY_CAR',
-      val : 'Luxury Card'
+      val : 'Luxury Car'
     });    
   }
 
