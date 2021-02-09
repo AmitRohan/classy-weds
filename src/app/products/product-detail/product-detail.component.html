@@ -95,10 +95,10 @@
                                 class="app-product-details-photo-list" 
                                 class="row m-0 p-0">
                                 <div 
-                                    *ngFor="let photoUrl of selectedProductDetail.photos"
+                                    *ngFor="let photoUrl of selectedProductDetail.photos;let i = index"
                                     class="col-lg-6">
                                     <a 
-                                        (click)='showImage(photoUrl)' 
+                                        (click)='showImage(i)' 
                                         href="#productImageShowcase" 
                                         role="button" 
                                         class="img-fluid app-product-details-photo-thumbnail" 
@@ -384,10 +384,12 @@
                     class="img-fluid app-product-details-photo-enlarged" 
                     src="{{selectedPhotoUrl}}"
                     alt="Card image cap" >
-                <a class="app-product-details-photo-change app-product-details-photo-change-next">
+                <a class="app-product-details-photo-change app-product-details-photo-change-next"
+                    (click)="loadNext()">
                     <i class="fas fa-chevron-right"></i>
                 </a>
-                <a class="app-product-details-photo-change app-product-details-photo-change-previous">
+                <a class="app-product-details-photo-change app-product-details-photo-change-previous"
+                    (click)="loadPrevious()">
                     <i class="fas fa-chevron-left"></i>
                 </a>
                 <!-- <img class="app-product-details-photo-change app-product-details-photo-change-previous"/> -->

@@ -109,8 +109,29 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     this.reviewProductKnownForStatus = this.reviewProductKnownForStatus.map(_productKnownForStatus => Object.assign( _productKnownForStatus,{ selected : false}) )
   }
 
-  showImage(imageUrl){
-    this.selectedPhotoUrl = imageUrl;
+  loadPrevious(){
+    var toGoTo = this.selectedIndex - 1;
+    if(toGoTo >= 0 && toGoTo < this.selectedProductDetail.photos.length){
+      this.selectedPhotoUrl = this.selectedProductDetail.photos[toGoTo]
+      this.selectedIndex--;
+    }
+    
+  }
+
+  loadNext(){
+    var toGoTo = this.selectedIndex + 1;
+    if(toGoTo >= 0 && toGoTo < this.selectedProductDetail.photos.length){
+      this.selectedPhotoUrl = this.selectedProductDetail.photos[toGoTo]
+      this.selectedIndex++;
+    }
+  }
+  
+  selectedIndex = 0;
+
+  showImage(selectedIndex){
+    this.selectedIndex = selectedIndex;
+    this.selectedPhotoUrl = this.selectedProductDetail.photos[selectedIndex]
+    
   }
 
   selectProductKnownStatus(productKnownForStatus: ProductKnownForStatus,status:boolean){
