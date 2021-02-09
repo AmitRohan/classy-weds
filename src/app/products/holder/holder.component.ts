@@ -21,6 +21,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
   public selectedProductDetail: ProductModel = null;
   public selectedService: string='';
   private previousSelectedService: string='';
+  public hasRequestedCallback = false;
   public showLoader = false
   private shouldFetchDetails = false
   constructor(
@@ -54,6 +55,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
             if(err){
               return;
             }
+            this.hasRequestedCallback= false;
             this.selectedProductDetail = resp[0];
 
             this.updateReviewList();
@@ -116,7 +118,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
             alert("oops")
             return;
           }
-          alert("We will get back to you soon!")
+          this.hasRequestedCallback=true;
 
         }
     )

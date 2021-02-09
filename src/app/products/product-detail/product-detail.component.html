@@ -311,11 +311,14 @@
                                 <div class='app-product-details-contact-title'>
                                     Find best prices in the market, Kindly contact us and we will give you a deal you cannot refuse
                                 </div>
-                                <div class='app-product-details-label-2'>
+                                <div 
+                                    *ngIf="!hasRequestedCallback"
+                                    class='app-product-details-label-2'>
                                     Enter the details here
                                 </div>
                                 
-                                <div class="row">
+                                <div *ngIf="!hasRequestedCallback"
+                                    class="row">
                                     <div class="col-lg-6 p-0">
                                         <div class="md-group">
                                             <input class="md-input" type="text" required="required" [(ngModel)]='getCallbackName'/>
@@ -348,8 +351,14 @@
                                     </div>                                    
                                 </div>
 
-                                <div class="app-product-details-contact-send-message" (click)='getCallback()'>
+                                <div *ngIf="!hasRequestedCallback"
+                                    class="app-product-details-contact-send-message" (click)='getCallback()'>
                                     Get Callback
+                                </div>
+
+                                <div *ngIf="hasRequestedCallback"
+                                    class='app-product-details-label-2'>
+                                    We will get back to you soon!
                                 </div>
 
                                 <!-- <div class="row app-product-details-contact-number-holder p-0 m-0">

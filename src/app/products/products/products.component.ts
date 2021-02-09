@@ -22,6 +22,8 @@ declare var H: any;
   encapsulation: ViewEncapsulation.None
 })
 export class ProductsComponent implements OnInit , AfterViewInit , AfterContentChecked , OnChanges{
+  
+  @Input() hasRequestedCallback: false;
   @Input() selectedService: string = '';
   @Input() availableProducts: Array<ProductModel> = [];
   @Input() selectedProductDetail: ProductModel = null;

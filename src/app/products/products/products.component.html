@@ -70,6 +70,7 @@
                 <app-home-products-details
                     (onContactUsClicked)="contactUsClicked($event)"
                     (onAddReviewClicked)="addReviewClicked($event)"
+                    [hasRequestedCallback]="hasRequestedCallback"
                     [selectedService]="selectedService"
                     [selectedProductDetail]="selectedProductDetail">
     

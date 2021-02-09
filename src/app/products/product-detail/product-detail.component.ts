@@ -12,6 +12,8 @@ declare const $: any;
   encapsulation: ViewEncapsulation.None
 })
 export class ProductDetailComponent implements OnInit , AfterViewInit , OnChanges , AfterContentChecked {
+  
+  @Input() hasRequestedCallback = false;
   @Input() selectedService: string = '';
   @Input() selectedProductDetail: ProductModel = null;
   @Output() onContactUsClicked = new EventEmitter<ContactUsBody>();
