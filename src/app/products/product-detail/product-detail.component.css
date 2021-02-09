@@ -306,6 +306,10 @@
 
 /* Contact Us */
 
+.md-input {
+    color: black;
+}
+
 .button-icon{
     margin: auto;
     margin-top: 14px;
