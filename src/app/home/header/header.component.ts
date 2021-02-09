@@ -54,4 +54,11 @@ export class HeaderComponent implements OnInit , AfterViewInit , AfterContentChe
             }
             )
       }
+
+      loadNextSection = () =>{
+        document.getElementById('services').scrollIntoView({
+          behavior: "smooth"
+        })
+              
+      }
 }
