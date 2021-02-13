@@ -31,7 +31,11 @@ export class ProductListComponent implements OnInit , AfterViewInit , AfterConte
   }
 
   ngOnChanges(changes){
-    
+
+    if(changes.selectedProductDetail){
+      this.fixScroll();
+      
+    }
   }
 
   ngAfterViewInit(): void {
@@ -83,5 +87,17 @@ export class ProductListComponent implements OnInit , AfterViewInit , AfterConte
       _i++
     }
     return startArray;
+  }
+
+  fixScroll(){
+    this.availableProducts.forEach((element,index) => {
+      if(element.productId == this.selectedProductDetail.productId){
+        setTimeout(()=>{
+          document.getElementById('checkIfItIsSelected'+index).scrollIntoView({
+            behavior: "smooth"
+          })
+        },500)
+      }
+    });      
   }
 }

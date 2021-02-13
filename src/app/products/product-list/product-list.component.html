@@ -1,8 +1,9 @@
 <div>
     <div class="row p-0 m-0 full-parent-height">
         <div
-            *ngFor="let product of availableProducts"
+            *ngFor="let product of availableProducts;let i = index;"
             (click)="selectItem(product)"
+            [id]='"checkIfItIsSelected" + i'
             [class]="getClassToUse(selectedProductDetail)">
             <div class="card border-0 shadow app-products-card">
                 <img
