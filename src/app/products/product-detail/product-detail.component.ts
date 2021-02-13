@@ -9,7 +9,10 @@ declare const $: any;
   selector: 'app-home-products-details',
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    '(document:keyup)': 'checkIfArrowKeysClicked($event)'
+  }
 })
 export class ProductDetailComponent implements OnInit , AfterViewInit , OnChanges , AfterContentChecked {
   
@@ -109,6 +112,30 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
   resetProductKnownForStatus(){
     this.reviewProductKnownForStatus = this.defaultProductKnownForStatus;
     this.reviewProductKnownForStatus = this.reviewProductKnownForStatus.map(_productKnownForStatus => Object.assign( _productKnownForStatus,{ selected : false}) )
+  }
+
+  /*
+  * Check if 
+  *     1. selectedProductDetail had some data i.e. in UI the card details is presnt
+  *     2. If a image is selected
+  *  to intercept the desired keyboard event
+  *  and change image in the modal.
+  */
+  checkIfArrowKeysClicked(ev:KeyboardEvent) {
+    if(this.selectedProductDetail != null
+      && this.selectedPhotoUrl != ''){
+      switch(ev.key){
+        case 'ArrowRight' :
+          ev.preventDefault();
+          this.loadNext();
+          break;
+        case 'ArrowLeft' :
+          ev.preventDefault();
+          this.loadPrevious();
+          break;
+      }
+    }
+    
   }
 
   loadPrevious(){
