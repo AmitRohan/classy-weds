@@ -32,7 +32,7 @@ export class ProductListComponent implements OnInit , AfterViewInit , AfterConte
 
   ngOnChanges(changes){
 
-    if(changes.selectedProductDetail){
+    if(changes.selectedProductDetail && changes.selectedProductDetail.currentValue){
       this.fixScroll();
       
     }
@@ -93,10 +93,12 @@ export class ProductListComponent implements OnInit , AfterViewInit , AfterConte
     this.availableProducts.forEach((element,index) => {
       if(element.productId == this.selectedProductDetail.productId){
         setTimeout(()=>{
-          document.getElementById('checkIfItIsSelected'+index).scrollIntoView({
+          var checkIfItIsSelected = document.getElementById('checkIfItIsSelected'+index);
+          
+          checkIfItIsSelected.scrollIntoView({
             behavior: "smooth"
           })
-        },500)
+        },500)  
       }
     });      
   }
