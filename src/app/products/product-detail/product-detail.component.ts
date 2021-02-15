@@ -89,18 +89,18 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
             .map( _ => _.title)
     var rating = this.apdgrs.filter( _ => _ == 'apdgrs-selected').length
     
-    
-    this.newProductReview = "";
-    this.canGiveNewReview = false;
-    this.resetProductKnownForStatus()
-    this.resetRatingStarts();
-
     var reviewBody = {
       rating 
       ,tags
       ,user_id : 11
       , review : this.newProductReview
     }
+
+    this.newProductReview = "";
+    this.canGiveNewReview = false;
+    this.resetProductKnownForStatus()
+    this.resetRatingStarts();
+
     this.onAddReviewClicked.emit(reviewBody);
   }
 
