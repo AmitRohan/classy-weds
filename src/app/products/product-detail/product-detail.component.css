@@ -404,10 +404,12 @@
     font-size: 20px;
     width: 75%;
     display: inline-block;
+    vertical-align: middle;
 }
 
 .app-product-details-review-tab-write-a-review-box {
     display: inline-block;
+    vertical-align: middle;
     width: 25%;
     border-style: solid;
     background: #ffffff;
@@ -422,11 +424,11 @@
 }
 
 .app-product-details-review-tab-write-a-review-box-text {
-    margin-left: 8px;
+    margin-left: 4px;
     font-family: Nunito Sans;
     font-weight: 400;
     color: #29292F;
-    line-height: 18px;
+    line-height: 12px;
     font-size: 12px;
 }
 
