@@ -28,8 +28,25 @@ export class AppComponent implements OnInit {
                         this.renderer.addClass(document.body, currentUrlSlug);
                     }
                     this.previousUrl = currentUrlSlug;
+                    
+                    console.log(event);
+                    if(event.url.indexOf('/services/') == -1){
+                        window.scrollTo(0, 0)
+                    }
+
+                    if(event.url.match(/services\//gi)
+                        && event.url.match(/\w\/\d/gi)){
+                        
+                        // ON SERVICE DETAIL PAGE
+                    }else{
+                        // ON OTHER PAGE SCROLL TO TOP
+
+                        window.scrollTo(0, 0)
+                    }
                 }
-                window.scrollTo(0, 0)
+                
+                
+                
             });
             
     }
