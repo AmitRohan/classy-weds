@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NetworkManagerService } from '../network-manager.service';
 import { environment } from '../../environments/environment';
-import {DriverModel, TripModel} from './home.types';
-import {HomeResponses} from './home.responses';
 
 @Injectable({
   providedIn: 'root'
