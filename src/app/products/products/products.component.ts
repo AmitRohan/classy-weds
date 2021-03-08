@@ -68,13 +68,12 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
     var checkActiveArray = this.availableSecondaryServices.filter(item => item.id == selectedService).map(item => item.name);
     var _serviceName = (checkActiveArray.length > 0)? checkActiveArray[0]: '' ;
     this.serviceName = _serviceName.toUpperCase();
-
     this.selectedService = selectedService;
                                                 
   }
 
   ngOnChanges(changes){
-    if(changes.selectedService){
+    if(changes.selectedService && changes.selectedService.currentValue != NaN){
       setTimeout(()=>{
         this.patchServiceName(changes.selectedService.currentValue);
       },200)
@@ -88,7 +87,6 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
 
   private loadServices() {
     this.dashboardData.getServices((resp,error)=>{
-      console.log(resp,error)
       if(error){
         return;
       }

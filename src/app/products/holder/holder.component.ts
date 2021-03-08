@@ -19,8 +19,8 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
   
   public availableProducts: Array<ProductModel> = [];
   public selectedProductDetail: ProductModel = null;
-  public selectedService: string='';
-  private previousSelectedService: string='';
+  public selectedService: number = -1;
+  private previousSelectedService: number = -1;
   public hasRequestedCallback = false;
   public showLoader = false
   private shouldFetchDetails = false
@@ -43,8 +43,8 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
   checkInRoute(route: ActivatedRoute){
     this.selectedProductDetail = null;
 
-    
-        const serviceName = (route.snapshot.paramMap.get('serviceName') || "-1");
+
+        const serviceName : number = parseInt(route.snapshot.paramMap.get('serviceName') || '-1');
         const productId = (route.snapshot.paramMap.get('productId') || "-1");
         
         this.selectedService = serviceName;

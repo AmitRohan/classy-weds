@@ -8,13 +8,13 @@
         </div>
         <div class="row p-0 m-0 products-filter-holder">
             <div class="col-lg-4 col-md-4 col-sm-12 p-0">
-                <div class="shadow products-filter-1 {{isPrimaryService(0)}}" (click)="openService('VENUE')">
+                <div class="shadow products-filter-1 {{isPrimaryService(0)}}" (click)="openService(5)">
                     <img class="products-filter-icon" src="assets/icons/app-products-venues.png">
                     <span class="products-filter-name">Venues</span>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 p-0">
-                <div class="shadow products-filter-2 {{isPrimaryService(1)}}" (click)="openService('CATERING')">
+                <div class="shadow products-filter-2 {{isPrimaryService(1)}}" (click)="openService(50)">
                     <img class="products-filter-icon" src="assets/icons/app-catering.png">
                     <span class="products-filter-name">Catering</span>
                 </div>
@@ -27,7 +27,7 @@
                         <div 
                             *ngFor="let secondaryService of cleanedServicesList(availableSecondaryServices)"
                             (click)="openService(secondaryService.id)"
-                            class="services-item">{{secondaryService.name}}</div>
+                            class="services-item">{{toLocaleNameFormat(secondaryService.name)}}</div>
                     </div>
                 </div>
             </div>
