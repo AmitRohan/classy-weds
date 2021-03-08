@@ -8,6 +8,7 @@ import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/scale.css';
 import 'tippy.js/dist/backdrop.css';
 import 'tippy.js/animations/shift-away.css';
+import {ClassyService} from "../../home/home.types";
 
 
 declare const $: any;
@@ -24,7 +25,7 @@ declare var H: any;
 export class ProductsComponent implements OnInit , AfterViewInit , AfterContentChecked , OnChanges{
   
   @Input() hasRequestedCallback: false;
-  @Input() selectedService: string = '';
+  @Input() selectedService: number = -1;
   @Input() availableProducts: Array<ProductModel> = [];
   @Input() selectedProductDetail: ProductModel = null;
   @Output() onContactUsClicked = new EventEmitter<ContactUsBody>();
@@ -32,10 +33,7 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
 
   serviceName: string = '';
 
-  availableSecondaryServices: Array<{
-    key : string;
-    val : string;
-  }> = [];
+  availableSecondaryServices: Array<ClassyService> = [];
   constructor(
       private dashboardData: ProductsService,
       private route: ActivatedRoute,
@@ -43,46 +41,7 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
   ) { }
 
   ngOnInit() {
-    this.availableSecondaryServices.push({
-      key : 'PHOTOGRAPHY',
-      val : 'Photography'
-    });
-    this.availableSecondaryServices.push({
-      key : 'MEHNDI',
-      val : 'Mehndi'
-    });
-    this.availableSecondaryServices.push({
-      key : 'TENTS_AND_DECOR',
-      val : 'Tests & Decor'
-    });
-    this.availableSecondaryServices.push({
-      key : 'MUSIC_AND_DJ',
-      val : 'DJ & Music'
-    });
-    this.availableSecondaryServices.push({
-      key : 'WEDDING_CARD',
-      val : 'Wedding Card'
-    });
-    this.availableSecondaryServices.push({
-      key : 'TRANSPORT',
-      val : 'Transport'
-    });
-    this.availableSecondaryServices.push({
-      key : 'ENTERTAINERS',
-      val : 'Entertainers'
-    });
-    this.availableSecondaryServices.push({
-      key : 'BAND_BAJA',
-      val : 'Band Baja'
-    });
-    this.availableSecondaryServices.push({
-      key : 'ANCHOR_MC',
-      val : 'Anchor MC'
-    });
-    this.availableSecondaryServices.push({
-      key : 'LUXURY_CAR',
-      val : 'Luxury Car'
-    });    
+    this.loadServices();
   }
 
   ngAfterViewInit(): void {
@@ -105,14 +64,10 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
     });
   }
 
-  patchServiceName(selectedService: string){
-    var checkActiveArray = this.availableSecondaryServices.filter(item => item.key == selectedService).map(item => item.val);
+  patchServiceName(selectedService: number){
+    var checkActiveArray = this.availableSecondaryServices.filter(item => item.id == selectedService).map(item => item.name);
     var _serviceName = (checkActiveArray.length > 0)? checkActiveArray[0]: '' ;
-    this.serviceName = (selectedService == 'VENUE')
-                                        ? "Venue"
-                                        :((selectedService == 'CATERING'
-                                                ? 'Catering' 
-                                                : _serviceName ));
+    this.serviceName = _serviceName.toUpperCase();
 
     this.selectedService = selectedService;
                                                 
@@ -131,6 +86,24 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
 
   }
 
+  private loadServices() {
+    this.dashboardData.getServices((resp,error)=>{
+      console.log(resp,error)
+      if(error){
+        return;
+      }
+      this.availableSecondaryServices = (resp || []).filter((_ , i) => i < 6);
+    })
+  }
+
+  toLocaleNameFormat(name: string = '') : string {
+    return name.toUpperCase();
+  }
+
+  cleanedServicesList( dirtyList : Array<ClassyService> = []) : Array<ClassyService>{
+    return  dirtyList.filter( item =>item.name !== 'venue').filter( item =>item.name !== 'catering')
+  }
+
   openService(serviceName){
     if(this.selectedService === serviceName)
       return;
@@ -138,9 +111,9 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
   }
 
   isPrimaryService(serviceIndex){
-    if(serviceIndex == 0 && this.selectedService == 'VENUE'){
+    if(serviceIndex == 0 && this.selectedService == 5){
       return 'bottomLine';
-    }else if(serviceIndex == 1 && this.selectedService == 'CATERING'){
+    }else if(serviceIndex == 1 && this.selectedService == 50){
       return 'bottomLine';
     } else if(serviceIndex == -1 && this.isSecondaryService() ){
       return 'bottomLine';
@@ -150,7 +123,7 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
   }
 
   isSecondaryService(){
-    return (this.selectedService != 'VENUE' && this.selectedService != 'CATERING')
+    return (this.selectedService != 5 && this.selectedService != 50)
   }
   
   isSecondaryServiceActive(serviceName){

@@ -25,9 +25,9 @@
                     <span class="products-filter-name">Services</span>
                     <div class="withADropDown-content">
                         <div 
-                            *ngFor="let secondaryService of availableSecondaryServices"
-                            (click)="openService(secondaryService.key)" 
-                            class="services-item">{{secondaryService.val}}</div>
+                            *ngFor="let secondaryService of cleanedServicesList(availableSecondaryServices)"
+                            (click)="openService(secondaryService.id)"
+                            class="services-item">{{secondaryService.name}}</div>
                     </div>
                 </div>
             </div>
@@ -36,9 +36,9 @@
             *ngIf='isSecondaryService()'
             class="products-secondary-filter-holder">
             <div 
-                *ngFor="let secondaryService of availableSecondaryServices"
-                (click)="openService(secondaryService.key)" 
-                class="secondary-service-item {{isSecondaryServiceActive(secondaryService.key)}}">{{secondaryService.val}}</div>
+                *ngFor="let secondaryService of cleanedServicesList(availableSecondaryServices)"
+                (click)="openService(secondaryService.id)"
+                class="secondary-service-item {{isSecondaryServiceActive(secondaryService.id)}}">{{toLocaleNameFormat(secondaryService.name)}}</div>
         
         </div>
     </div>
