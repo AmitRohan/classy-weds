@@ -34,6 +34,18 @@ export class HomeService {
         }, (error) => this.defaultErrorHandler(error, callback));
   }
 
+    getServices(callback) {
+        var _baseUrl = this.baseUrl + '/services';
+
+        this.apiservice.apicall({
+            url: _baseUrl
+            , httpMethod: 'get'
+        }, (result) => {
+            console.log('GOT getServices', result);
+            callback(result);
+        }, (error) => this.defaultErrorHandler(error, callback));
+    }
+
 
 
     defaultErrorHandler(error, callback) {
