@@ -1,4 +1,17 @@
-import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, Input, AfterViewInit, AfterContentChecked, OnChanges, EventEmitter, Output} from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation,
+  ViewChild,
+  ElementRef,
+  Input,
+  AfterViewInit,
+  AfterContentChecked,
+  OnChanges,
+  EventEmitter,
+  Output,
+  HostListener
+} from '@angular/core';
 import { ProductsService } from '../products.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import { ProductModel, ProductKnownForStatus, ContactUsBody, ReviewBody } from '../products.types';
@@ -265,6 +278,38 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
       name: this.getCallbackName
     }
     this.onContactUsClicked.emit(contactUsBody)
+  }
+
+  @HostListener('window:scroll', ['$event']) onScrollEvent($event){
+    var amtScrolled = $event.target.scrollingElement.scrollTop;
+
+    var selectedProductHolder = document.getElementById('selectedProductHolder')
+    if(selectedProductHolder == null){
+      return;
+    }
+    var selectedProductCard = document.getElementById('selectedProductCard')
+
+    var startAfterScrolled =  selectedProductHolder.offsetTop
+    if(window.innerHeight > selectedProductCard.clientHeight + selectedProductHolder.offsetTop)
+      startAfterScrolled += selectedProductCard.clientHeight
+
+
+    var endAfterScrolled = selectedProductHolder.clientHeight  - selectedProductHolder.offsetTop;
+    // if(window.innerHeight > selectedProductCard.clientHeight + selectedProductHolder.offsetTop)
+    //   endAfterScrolled += selectedProductCard.clientHeight + selectedProductHolder.offsetTop
+
+    if(amtScrolled > startAfterScrolled && amtScrolled < endAfterScrolled ){
+      selectedProductCard.style.position = "fixed";
+      selectedProductCard.style.top = "20px";
+
+
+    } else{
+      selectedProductCard.style.position = '';
+      selectedProductCard.style.top = "";
+      selectedProductCard.style.right = "";
+
+
+    }
   }
   
 }
