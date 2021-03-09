@@ -275,7 +275,6 @@
 
 .app-product-details-photo-enlarged{
     object-fit: cover;
-    width: 100%;
     max-width: 80%;
     max-height: 80%;
 }

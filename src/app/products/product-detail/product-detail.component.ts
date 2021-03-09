@@ -281,6 +281,9 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
   }
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event){
+
+    return;
+
     var amtScrolled = $event.target.scrollingElement.scrollTop;
 
     var selectedProductHolder = document.getElementById('selectedProductHolder')
