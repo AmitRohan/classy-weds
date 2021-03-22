@@ -1,6 +1,6 @@
 {
   "/auth/*": {
-    "target": "http://vpsingh.com/",
+    "target": "https://classywed.com/",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
