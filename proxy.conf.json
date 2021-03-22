@@ -1,6 +1,6 @@
 {
   "/auth/*": {
-    "target": "https://classywed.com/",
+    "target": "http://classywed.com/",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
