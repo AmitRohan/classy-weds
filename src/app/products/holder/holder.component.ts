@@ -1,4 +1,16 @@
-import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, Input, AfterViewInit, AfterContentChecked, OnDestroy, OnChanges} from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation,
+  ViewChild,
+  ElementRef,
+  Input,
+  AfterViewInit,
+  AfterContentChecked,
+  OnDestroy,
+  OnChanges,
+  HostListener
+} from '@angular/core';
 import { ProductsService } from '../products.service';
 import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
 import { ProductModel , AboutContent, PackageAvailable, ProductReview, Review, ContactUsBody, ReviewBody} from '../products.types';
@@ -63,7 +75,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
           })
         }
         if(this.previousSelectedService != this.selectedService){
-          this.dashboardData.fetchProductList(serviceName,(resp,err)=>{
+          this.dashboardData.fetchProductList(this.selectedService,(resp,err)=>{
             this.showLoader = false;
             if(err){
               return;
