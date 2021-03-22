@@ -12,8 +12,6 @@ const routes: Routes = [
         path: 'services',
         loadChildren: () => import('app/products/products.module').then(m => m.ProductsModule),
     },{
-        path: 'api'
-    },{
         path: '',
         redirectTo: 'home',
         pathMatch: 'full'
