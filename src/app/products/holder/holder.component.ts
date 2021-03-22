@@ -75,7 +75,7 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
           })
         }
         if(this.previousSelectedService != this.selectedService){
-          this.dashboardData.fetchProductList('VENUE',(resp,err)=>{
+          this.dashboardData.fetchProductList(this.selectedService,(resp,err)=>{
             this.showLoader = false;
             if(err){
               return;
