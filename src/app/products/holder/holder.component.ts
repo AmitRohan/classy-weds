@@ -56,10 +56,10 @@ export class HolderComponent implements OnInit , AfterContentChecked , AfterView
     this.selectedProductDetail = null;
 
 
-        const serviceName : number = parseInt(route.snapshot.paramMap.get('serviceName') || '-1');
+        const serviceId : number = parseInt(route.snapshot.paramMap.get('serviceId') || '-1');
         const productId = (route.snapshot.paramMap.get('productId') || "-1");
         
-        this.selectedService = serviceName;
+        this.selectedService = serviceId;
         this.showLoader = true;
       
         if(productId && productId!= '-1'){

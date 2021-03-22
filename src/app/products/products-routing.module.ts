@@ -7,10 +7,10 @@ const routes: Routes = [
     path: '',
     component:  HolderComponent
   },{
-    path: ':serviceName',
+    path: ':serviceId',
     component:  HolderComponent
   },{
-    path: ':serviceName/:productId',
+    path: ':serviceId/:productId',
     component:  HolderComponent
   }
 ];
