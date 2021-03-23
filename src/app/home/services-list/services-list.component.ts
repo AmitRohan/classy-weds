@@ -63,7 +63,6 @@ export class ServicesListComponent implements OnInit , AfterViewInit , AfterCont
 
       private loadServices() {
         this.dashboardData.getServices((resp,error)=>{
-          console.log(resp,error)
           if(error){
             return;
           }

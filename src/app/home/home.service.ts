@@ -27,7 +27,6 @@ export class HomeService {
               , httpMethod: 'post'
               , params : body
           }, (result) => {
-                  console.log('GOT requestCallBack', result);
                   callback(result);
         }, (error) => this.defaultErrorHandler(error, callback));
   }
@@ -39,7 +38,6 @@ export class HomeService {
             url: _baseUrl
             , httpMethod: 'get'
         }, (result) => {
-            console.log('GOT getServices', result);
             callback(result);
         }, (error) => this.defaultErrorHandler(error, callback));
     }
