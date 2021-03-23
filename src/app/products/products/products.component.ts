@@ -41,7 +41,7 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
   ) { }
 
   ngOnInit() {
-    this.loadServices();
+    this.loadServices(true);
   }
 
   ngAfterViewInit(): void {
@@ -65,11 +65,16 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
   }
 
   patchServiceName(selectedService: number){
+    if(this.availableSecondaryServices.length == 0){
+      setTimeout(()=>{
+        this.patchServiceName(selectedService);
+      },500)
+      return;
+    }
     var checkActiveArray = this.availableSecondaryServices.filter(item => item.id == selectedService).map(item => item.name);
     var _serviceName = (checkActiveArray.length > 0)? checkActiveArray[0]: '' ;
     this.serviceName = _serviceName.toUpperCase();
-    this.selectedService = selectedService;
-                                                
+    this.selectedService = selectedService;                                       
   }
 
   ngOnChanges(changes){
@@ -85,10 +90,16 @@ export class ProductsComponent implements OnInit , AfterViewInit , AfterContentC
 
   }
 
-  private loadServices() {
+  private loadServices(isFirstTry = false) {
     this.dashboardData.getServices((resp,error)=>{
       if(error){
+        if(isFirstTry)
+          this.loadServices(false);
         return;
+      }
+
+      if((resp || []).length == 0){
+        this.loadServices(false);
       }
       this.availableSecondaryServices = (resp || []).filter((_ , i) => i < 6);
     })
