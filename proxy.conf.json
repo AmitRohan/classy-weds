@@ -1,24 +1,24 @@
 {
   "/auth/*": {
-    "target": "https://classywed.com/",
+    "target": "https://cms.classywed.com/",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
   }
   ,"/api/v1/*": {
-    "target": "https://13.232.158.180:5555/",
+    "target": "https://cms.classywed.com/",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
   }
   ,"/contactus/*": {
-    "target": "https://13.232.158.180:5555/",
+    "target": "https://cms.classywed.com/",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
   }
   ,"/phonenumber/*": {
-    "target": "https://13.232.158.180:5555/",
+    "target": "https://cms.classywed.com/",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
