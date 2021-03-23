@@ -76,7 +76,6 @@ export class ProductsService {
             url: _baseUrl
             , httpMethod: 'get'
         }, (result) => {
-            console.log('GOT getServices', result);
             callback(result);
         }, (error) => this.defaultErrorHandler(error, callback));
     }

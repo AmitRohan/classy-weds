@@ -29,13 +29,12 @@ export class AppComponent implements OnInit {
                     }
                     this.previousUrl = currentUrlSlug;
                     
-                    console.log(event);
                     if(event.url.indexOf('/services/') == -1){
                         window.scrollTo(0, 0)
                     }
 
                     if(event.url.match(/services\//gi)
-                        && event.url.match(/\w\/\d/gi)){
+                        && event.url.match(/\w\/\d\/\d/gi)){
                         
                         // ON SERVICE DETAIL PAGE
                     }else{
