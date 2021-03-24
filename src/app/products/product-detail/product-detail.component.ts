@@ -280,35 +280,60 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     this.onContactUsClicked.emit(contactUsBody)
   }
 
+  getPosition(element) {
+    var xPosition = 0;
+    var yPosition = 0;
+
+    while(element) {
+        xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+        yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+        element = element.offsetParent;
+    }
+
+    return { x: xPosition, y: yPosition };
+  }
+
   @HostListener('window:scroll', ['$event']) onScrollEvent($event){
 
     return;
 
     var amtScrolled = $event.target.scrollingElement.scrollTop;
-
+    
     var selectedProductHolder = document.getElementById('selectedProductHolder')
     if(selectedProductHolder == null){
       return;
     }
     var selectedProductCard = document.getElementById('selectedProductCard')
+    const offsetTop = this.getPosition(selectedProductCard).y;
 
-    var startAfterScrolled =  selectedProductHolder.offsetTop
-    if(window.innerHeight > selectedProductCard.clientHeight + selectedProductHolder.offsetTop)
+
+    var startAfterScrolled =  offsetTop
+    if(window.innerHeight > selectedProductCard.clientHeight)
       startAfterScrolled += selectedProductCard.clientHeight
 
 
-    var endAfterScrolled = selectedProductHolder.clientHeight  - selectedProductHolder.offsetTop;
+    var endAfterScrolled = selectedProductHolder.clientHeight  - offsetTop;
     // if(window.innerHeight > selectedProductCard.clientHeight + selectedProductHolder.offsetTop)
     //   endAfterScrolled += selectedProductCard.clientHeight + selectedProductHolder.offsetTop
 
     if(amtScrolled > startAfterScrolled && amtScrolled < endAfterScrolled ){
+
+
+
+       // no need to capture if page is smaller then card
+      if(window.innerHeight < selectedProductCard.clientHeight){
+        selectedProductCard.style.bottom = "20px";
+      }else{
+        selectedProductCard.style.top = "20px";
+      }
       selectedProductCard.style.position = "fixed";
-      selectedProductCard.style.top = "20px";
+    
 
 
     } else{
       selectedProductCard.style.position = '';
       selectedProductCard.style.top = "";
+      selectedProductCard.style.bottom = "";
       selectedProductCard.style.right = "";
 
 

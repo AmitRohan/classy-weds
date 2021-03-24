@@ -30,7 +30,7 @@ export class ContactUsService {
                 , httpMethod: 'post'
                 , params : body
             }, (result) => {
-                    console.log('GOT contactUs', result);
+             
                     callback(result);
           }, (error) => this.defaultErrorHandler(error, callback));
     }
