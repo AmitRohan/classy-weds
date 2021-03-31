@@ -782,6 +782,6 @@
 
 .fixToRight {
     position: fixed;
-    right: 145px;
-    left: 50%;
+    right: 165px;
+    left: calc(50% + 22px);
 }

@@ -16,7 +16,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import { ProductModel, ProductKnownForStatus, ContactUsBody, ReviewBody } from '../products.types';
 
 declare const $: any;
-
 @Component({
   selector: 'app-home-products-details',
   templateUrl: './product-detail.component.html',
@@ -33,8 +32,17 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
   @Input() selectedProductDetail: ProductModel = null;
   @Output() onContactUsClicked = new EventEmitter<ContactUsBody>();
   @Output() onAddReviewClicked = new EventEmitter<ReviewBody>();
+  
+  @ViewChild('holder',{ static : false}) holder  : ElementRef;
+  @ViewChild('detailsCard',{ static : false}) detailsCard  : ElementRef;
+  @ViewChild('prodImage',{ static : false}) prodImage  : ElementRef;
+  @ViewChild('detailsCardContent',{ static : false}) detailsCardContent  : ElementRef;
+  @ViewChild('detailsShowCaseTabHead',{ static : false}) detailsShowCaseTabHead  : ElementRef;
+  @ViewChild('detailsShowCase',{ static : false}) detailsShowCase  : ElementRef;
 
 
+  
+  
   makeProductKnownForStatus(title: string): ProductKnownForStatus{
     return {
       title : title,
@@ -77,13 +85,14 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     })
     this.resetProductKnownForStatus()
     this.resetRatingStarts();
-    this.setUpScrollingBehaviours();
   }
 
   ngOnChanges(changes){
     this.canGiveNewReview = false    
     this.resetProductKnownForStatus()
     this.resetRatingStarts();
+    this.setUpScrollingBehaviours();
+
   }
 
   enableNewRatingSection(){
@@ -289,28 +298,43 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     return { x: xPosition, y: yPosition };
   }
 
-  pinHolderAfter : number;
+  private static pinHolderAfter : number;
+  private static detailsCardHeight : number;
 
+  private static prodImageHeight : number;
+  private static detailsCardContentHeight : number;
+
+  private static detailsShowCaseTabHeadHeight : number;
+  private static offsetTop : number;
+  private static endAfterScrolled : number;
+
+  
   setUpScrollingBehaviours(){
     
-    var holder = document.getElementById('selectedProductHolder')
-    if(holder == null){
+    if(this.holder == null || this.holder.nativeElement == null){
       return;
     }
-    var holderHeight = holder.clientHeight
+    ProductDetailComponent.detailsCardHeight = this.detailsCard.nativeElement.clientHeight
     
-    var detailsCard = document.getElementById('selectedProductCard')
-    var detailsCardHeight = detailsCard.clientHeight
+    ProductDetailComponent.prodImageHeight = this.prodImage.nativeElement.clientHeight
 
-    var detailsShowCaseTabHead = document.getElementById('producDescriptionTabHead')
-    const detailsShowCaseTabHeadHeight = detailsShowCaseTabHead.clientHeight;
+    ProductDetailComponent.detailsCardContentHeight = this.detailsCardContent.nativeElement.clientHeight
 
-    var detailsShowCase = document.getElementById('mySelectedProductsViewPager')
+    
+    ProductDetailComponent.detailsShowCaseTabHeadHeight = this.detailsShowCaseTabHead.nativeElement.clientHeight;
+    ProductDetailComponent.offsetTop = this.getPosition(this.detailsCard.nativeElement).y;
 
+    ProductDetailComponent.pinHolderAfter = this.getPosition(this.detailsCardContent.nativeElement).y;    
 
-    const offsetTop = this.getPosition(detailsCard).y;
-    this.pinHolderAfter = this.getPosition(detailsShowCaseTabHead).y;
-
+    // console.log(
+    //   ProductDetailComponent.holderHeight,
+    //   ProductDetailComponent.pinHolderAfter,
+    //   ProductDetailComponent.detailsCardHeight,
+    //   ProductDetailComponent.detailsShowCaseTabHeadHeight,
+    //   ProductDetailComponent.offsetTop,
+    //   ProductDetailComponent.endAfterScrolled,
+    // );
+    
   }
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event){
@@ -319,47 +343,41 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
 
     var amtScrolled = $event.target.scrollingElement.scrollTop;
     
-    var holder = document.getElementById('selectedProductHolder')
-    if(holder == null){
+    if(this.holder == null || this.holder.nativeElement == null){
       return;
     }
-    var holderHeight = holder.clientHeight
+
+   
+    if( ProductDetailComponent.endAfterScrolled == null){
+      ProductDetailComponent.endAfterScrolled = this.holder.nativeElement.clientHeight - ProductDetailComponent.prodImageHeight - ProductDetailComponent.offsetTop;
+    }
     
-    var detailsCard = document.getElementById('selectedProductCard')
-    var detailsCardHeight = detailsCard.clientHeight
-
-    var detailsShowCaseTabHead = document.getElementById('producDescriptionTabHead')
-    const detailsShowCaseTabHeadHeight = detailsShowCaseTabHead.clientHeight;
-
-    var detailsShowCase = document.getElementById('mySelectedProductsViewPager')
-
-
-    const offsetTop = this.getPosition(detailsCard).y;
-
-
-    var endAfterScrolled = holderHeight  + offsetTop;
-    console.log(amtScrolled,this.pinHolderAfter,endAfterScrolled);
+    console.log(amtScrolled,ProductDetailComponent.pinHolderAfter,ProductDetailComponent.endAfterScrolled);
     
-    if(amtScrolled > this.pinHolderAfter 
+    if(amtScrolled >= ProductDetailComponent.pinHolderAfter 
       
-         && amtScrolled < endAfterScrolled ){
+         && amtScrolled <= ProductDetailComponent.endAfterScrolled ){
 
-          detailsCard.classList.add('fixToRight');
-          detailsShowCase.classList.add('makeScrollable');
+          this.detailsCard.nativeElement.classList.add('fixToRight');
+          this.detailsShowCase.nativeElement.classList.add('makeScrollable');
 
       // no need to capture if page is smaller then card
-      if(window.innerHeight < detailsCardHeight){
-        detailsCard.style.bottom = "20px";
-      }else{
-        detailsCard.style.top = '-' + (this.pinHolderAfter - offsetTop + detailsShowCaseTabHeadHeight) + "px";
-      }
+      // if(window.innerHeight < ProductDetailComponent.detailsCardHeight){
+      //   this.detailsCard.nativeElement.style.bottom = "20px";
+      // }else{
+        this.detailsCard.nativeElement.style.top = '-' + ProductDetailComponent.prodImageHeight + "px";
+      // }
       
+    } else if(amtScrolled > ProductDetailComponent.endAfterScrolled){
+      console.log("sss");
+      
+      this.detailsCard.nativeElement.style.top = '-' + (ProductDetailComponent.detailsCardHeight + ProductDetailComponent.prodImageHeight) + "px";
     } else{
-      detailsCard.classList.remove('fixToRight');
-      detailsCard.style.top = "";
-      detailsCard.style.bottom = "";
+      this.detailsCard.nativeElement.classList.remove('fixToRight');
+      this.detailsCard.nativeElement.style.top = "";
+      this.detailsCard.nativeElement.style.bottom = "";
 
-      detailsShowCase.classList.remove('makeScrollable');
+      this.detailsShowCase.nativeElement.classList.remove('makeScrollable');
 
 
     }
