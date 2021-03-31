@@ -6,7 +6,6 @@ import {
   ElementRef,
   Input,
   AfterViewInit,
-  AfterContentChecked,
   OnChanges,
   EventEmitter,
   Output,
@@ -27,7 +26,7 @@ declare const $: any;
     '(document:keyup)': 'checkIfArrowKeysClicked($event)'
   }
 })
-export class ProductDetailComponent implements OnInit , AfterViewInit , OnChanges , AfterContentChecked {
+export class ProductDetailComponent implements OnInit , AfterViewInit , OnChanges {
   
   @Input() hasRequestedCallback = false;
   @Input() selectedService: string = '';
@@ -78,10 +77,7 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     })
     this.resetProductKnownForStatus()
     this.resetRatingStarts();
-  }
-
-  ngAfterContentChecked(): void {
-    
+    this.setUpScrollingBehaviours();
   }
 
   ngOnChanges(changes){
@@ -293,48 +289,77 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     return { x: xPosition, y: yPosition };
   }
 
+  pinHolderAfter : number;
+
+  setUpScrollingBehaviours(){
+    
+    var holder = document.getElementById('selectedProductHolder')
+    if(holder == null){
+      return;
+    }
+    var holderHeight = holder.clientHeight
+    
+    var detailsCard = document.getElementById('selectedProductCard')
+    var detailsCardHeight = detailsCard.clientHeight
+
+    var detailsShowCaseTabHead = document.getElementById('producDescriptionTabHead')
+    const detailsShowCaseTabHeadHeight = detailsShowCaseTabHead.clientHeight;
+
+    var detailsShowCase = document.getElementById('mySelectedProductsViewPager')
+
+
+    const offsetTop = this.getPosition(detailsCard).y;
+    this.pinHolderAfter = this.getPosition(detailsShowCaseTabHead).y;
+
+  }
+
   @HostListener('window:scroll', ['$event']) onScrollEvent($event){
 
-    return;
+    // return;
 
     var amtScrolled = $event.target.scrollingElement.scrollTop;
     
-    var selectedProductHolder = document.getElementById('selectedProductHolder')
-    if(selectedProductHolder == null){
+    var holder = document.getElementById('selectedProductHolder')
+    if(holder == null){
       return;
     }
-    var selectedProductCard = document.getElementById('selectedProductCard')
-    const offsetTop = this.getPosition(selectedProductCard).y;
-
-
-    var startAfterScrolled =  offsetTop
-    if(window.innerHeight > selectedProductCard.clientHeight)
-      startAfterScrolled += selectedProductCard.clientHeight
-
-
-    var endAfterScrolled = selectedProductHolder.clientHeight  - offsetTop;
-    // if(window.innerHeight > selectedProductCard.clientHeight + selectedProductHolder.offsetTop)
-    //   endAfterScrolled += selectedProductCard.clientHeight + selectedProductHolder.offsetTop
-
-    if(amtScrolled > startAfterScrolled && amtScrolled < endAfterScrolled ){
-
-
-
-       // no need to capture if page is smaller then card
-      if(window.innerHeight < selectedProductCard.clientHeight){
-        selectedProductCard.style.bottom = "20px";
-      }else{
-        selectedProductCard.style.top = "20px";
-      }
-      selectedProductCard.style.position = "fixed";
+    var holderHeight = holder.clientHeight
     
+    var detailsCard = document.getElementById('selectedProductCard')
+    var detailsCardHeight = detailsCard.clientHeight
+
+    var detailsShowCaseTabHead = document.getElementById('producDescriptionTabHead')
+    const detailsShowCaseTabHeadHeight = detailsShowCaseTabHead.clientHeight;
+
+    var detailsShowCase = document.getElementById('mySelectedProductsViewPager')
 
 
+    const offsetTop = this.getPosition(detailsCard).y;
+
+
+    var endAfterScrolled = holderHeight  + offsetTop;
+    console.log(amtScrolled,this.pinHolderAfter,endAfterScrolled);
+    
+    if(amtScrolled > this.pinHolderAfter 
+      
+         && amtScrolled < endAfterScrolled ){
+
+          detailsCard.classList.add('fixToRight');
+          detailsShowCase.classList.add('makeScrollable');
+
+      // no need to capture if page is smaller then card
+      if(window.innerHeight < detailsCardHeight){
+        detailsCard.style.bottom = "20px";
+      }else{
+        detailsCard.style.top = '-' + (this.pinHolderAfter - offsetTop + detailsShowCaseTabHeadHeight) + "px";
+      }
+      
     } else{
-      selectedProductCard.style.position = '';
-      selectedProductCard.style.top = "";
-      selectedProductCard.style.bottom = "";
-      selectedProductCard.style.right = "";
+      detailsCard.classList.remove('fixToRight');
+      detailsCard.style.top = "";
+      detailsCard.style.bottom = "";
+
+      detailsShowCase.classList.remove('makeScrollable');
 
 
     }
