@@ -6,7 +6,6 @@ import {
   ElementRef,
   Input,
   AfterViewInit,
-  AfterContentChecked,
   OnChanges,
   EventEmitter,
   Output,
@@ -17,7 +16,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import { ProductModel, ProductKnownForStatus, ContactUsBody, ReviewBody } from '../products.types';
 
 declare const $: any;
-
 @Component({
   selector: 'app-home-products-details',
   templateUrl: './product-detail.component.html',
@@ -27,15 +25,24 @@ declare const $: any;
     '(document:keyup)': 'checkIfArrowKeysClicked($event)'
   }
 })
-export class ProductDetailComponent implements OnInit , AfterViewInit , OnChanges , AfterContentChecked {
+export class ProductDetailComponent implements OnInit , AfterViewInit , OnChanges {
   
   @Input() hasRequestedCallback = false;
   @Input() selectedService: string = '';
   @Input() selectedProductDetail: ProductModel = null;
   @Output() onContactUsClicked = new EventEmitter<ContactUsBody>();
   @Output() onAddReviewClicked = new EventEmitter<ReviewBody>();
+  
+  @ViewChild('holder',{ static : false}) holder  : ElementRef;
+  @ViewChild('detailsCard',{ static : false}) detailsCard  : ElementRef;
+  @ViewChild('prodImage',{ static : false}) prodImage  : ElementRef;
+  @ViewChild('detailsCardContent',{ static : false}) detailsCardContent  : ElementRef;
+  @ViewChild('detailsShowCaseTabHead',{ static : false}) detailsShowCaseTabHead  : ElementRef;
+  @ViewChild('detailsShowCase',{ static : false}) detailsShowCase  : ElementRef;
 
 
+  
+  
   makeProductKnownForStatus(title: string): ProductKnownForStatus{
     return {
       title : title,
@@ -80,14 +87,12 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     this.resetRatingStarts();
   }
 
-  ngAfterContentChecked(): void {
-    
-  }
-
   ngOnChanges(changes){
     this.canGiveNewReview = false    
     this.resetProductKnownForStatus()
     this.resetRatingStarts();
+    this.setUpScrollingBehaviours();
+
   }
 
   enableNewRatingSection(){
@@ -293,48 +298,86 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     return { x: xPosition, y: yPosition };
   }
 
+  private static pinHolderAfter : number;
+  private static detailsCardHeight : number;
+
+  private static prodImageHeight : number;
+  private static detailsCardContentHeight : number;
+
+  private static detailsShowCaseTabHeadHeight : number;
+  private static offsetTop : number;
+  private static endAfterScrolled : number;
+
+  
+  setUpScrollingBehaviours(){
+    
+    if(this.holder == null || this.holder.nativeElement == null){
+      return;
+    }
+    ProductDetailComponent.detailsCardHeight = this.detailsCard.nativeElement.clientHeight
+    
+    ProductDetailComponent.prodImageHeight = this.prodImage.nativeElement.clientHeight
+
+    ProductDetailComponent.detailsCardContentHeight = this.detailsCardContent.nativeElement.clientHeight
+
+    
+    ProductDetailComponent.detailsShowCaseTabHeadHeight = this.detailsShowCaseTabHead.nativeElement.clientHeight;
+    ProductDetailComponent.offsetTop = this.getPosition(this.detailsCard.nativeElement).y;
+
+    ProductDetailComponent.pinHolderAfter = this.getPosition(this.detailsCardContent.nativeElement).y;    
+
+    // console.log(
+    //   ProductDetailComponent.holderHeight,
+    //   ProductDetailComponent.pinHolderAfter,
+    //   ProductDetailComponent.detailsCardHeight,
+    //   ProductDetailComponent.detailsShowCaseTabHeadHeight,
+    //   ProductDetailComponent.offsetTop,
+    //   ProductDetailComponent.endAfterScrolled,
+    // );
+    
+  }
+
   @HostListener('window:scroll', ['$event']) onScrollEvent($event){
 
-    return;
+    // return;
 
     var amtScrolled = $event.target.scrollingElement.scrollTop;
     
-    var selectedProductHolder = document.getElementById('selectedProductHolder')
-    if(selectedProductHolder == null){
+    if(this.holder == null || this.holder.nativeElement == null){
       return;
     }
-    var selectedProductCard = document.getElementById('selectedProductCard')
-    const offsetTop = this.getPosition(selectedProductCard).y;
 
-
-    var startAfterScrolled =  offsetTop
-    if(window.innerHeight > selectedProductCard.clientHeight)
-      startAfterScrolled += selectedProductCard.clientHeight
-
-
-    var endAfterScrolled = selectedProductHolder.clientHeight  - offsetTop;
-    // if(window.innerHeight > selectedProductCard.clientHeight + selectedProductHolder.offsetTop)
-    //   endAfterScrolled += selectedProductCard.clientHeight + selectedProductHolder.offsetTop
-
-    if(amtScrolled > startAfterScrolled && amtScrolled < endAfterScrolled ){
-
-
-
-       // no need to capture if page is smaller then card
-      if(window.innerHeight < selectedProductCard.clientHeight){
-        selectedProductCard.style.bottom = "20px";
-      }else{
-        selectedProductCard.style.top = "20px";
-      }
-      selectedProductCard.style.position = "fixed";
+   
+    if( ProductDetailComponent.endAfterScrolled == null){
+      ProductDetailComponent.endAfterScrolled = this.holder.nativeElement.clientHeight - ProductDetailComponent.prodImageHeight - ProductDetailComponent.offsetTop;
+    }
     
+    console.log(amtScrolled,ProductDetailComponent.pinHolderAfter,ProductDetailComponent.endAfterScrolled);
+    
+    if(amtScrolled >= ProductDetailComponent.pinHolderAfter 
+      
+         && amtScrolled <= ProductDetailComponent.endAfterScrolled ){
 
+          this.detailsCard.nativeElement.classList.add('fixToRight');
+          this.detailsShowCase.nativeElement.classList.add('makeScrollable');
 
+      // no need to capture if page is smaller then card
+      // if(window.innerHeight < ProductDetailComponent.detailsCardHeight){
+      //   this.detailsCard.nativeElement.style.bottom = "20px";
+      // }else{
+        this.detailsCard.nativeElement.style.top = '-' + ProductDetailComponent.prodImageHeight + "px";
+      // }
+      
+    } else if(amtScrolled > ProductDetailComponent.endAfterScrolled){
+      console.log("sss");
+      
+      this.detailsCard.nativeElement.style.top = '-' + (ProductDetailComponent.detailsCardHeight + ProductDetailComponent.prodImageHeight) + "px";
     } else{
-      selectedProductCard.style.position = '';
-      selectedProductCard.style.top = "";
-      selectedProductCard.style.bottom = "";
-      selectedProductCard.style.right = "";
+      this.detailsCard.nativeElement.classList.remove('fixToRight');
+      this.detailsCard.nativeElement.style.top = "";
+      this.detailsCard.nativeElement.style.bottom = "";
+
+      this.detailsShowCase.nativeElement.classList.remove('makeScrollable');
 
 
     }

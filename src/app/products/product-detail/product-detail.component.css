@@ -769,3 +769,19 @@
     line-height: 21px;
     font-size: 14px;
 }
+
+
+/* HACKS */
+
+
+.makeScrollable {
+    overflow-y: scroll;
+    max-height: 90vh;
+}
+
+
+.fixToRight {
+    position: fixed;
+    right: 165px;
+    left: calc(50% + 22px);
+}
