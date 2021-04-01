@@ -776,7 +776,7 @@
 
 .makeScrollable {
     overflow-y: scroll;
-    max-height: 90vh;
+    max-height: calc(45vh + 20px);
 }
 
 

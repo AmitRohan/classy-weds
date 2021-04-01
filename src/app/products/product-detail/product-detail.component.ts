@@ -37,7 +37,6 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
   @ViewChild('detailsCard',{ static : false}) detailsCard  : ElementRef;
   @ViewChild('prodImage',{ static : false}) prodImage  : ElementRef;
   @ViewChild('detailsCardContent',{ static : false}) detailsCardContent  : ElementRef;
-  @ViewChild('detailsShowCaseTabHead',{ static : false}) detailsShowCaseTabHead  : ElementRef;
   @ViewChild('detailsShowCase',{ static : false}) detailsShowCase  : ElementRef;
 
 
@@ -298,13 +297,14 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     return { x: xPosition, y: yPosition };
   }
 
+  private static holderHeight : number;
+
   private static pinHolderAfter : number;
   private static detailsCardHeight : number;
 
   private static prodImageHeight : number;
   private static detailsCardContentHeight : number;
 
-  private static detailsShowCaseTabHeadHeight : number;
   private static offsetTop : number;
   private static endAfterScrolled : number;
 
@@ -321,20 +321,9 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     ProductDetailComponent.detailsCardContentHeight = this.detailsCardContent.nativeElement.clientHeight
 
     
-    ProductDetailComponent.detailsShowCaseTabHeadHeight = this.detailsShowCaseTabHead.nativeElement.clientHeight;
     ProductDetailComponent.offsetTop = this.getPosition(this.detailsCard.nativeElement).y;
 
-    ProductDetailComponent.pinHolderAfter = this.getPosition(this.detailsCardContent.nativeElement).y;    
-
-    // console.log(
-    //   ProductDetailComponent.holderHeight,
-    //   ProductDetailComponent.pinHolderAfter,
-    //   ProductDetailComponent.detailsCardHeight,
-    //   ProductDetailComponent.detailsShowCaseTabHeadHeight,
-    //   ProductDetailComponent.offsetTop,
-    //   ProductDetailComponent.endAfterScrolled,
-    // );
-    
+    ProductDetailComponent.pinHolderAfter = this.getPosition(this.detailsCardContent.nativeElement).y;      
   }
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event){
@@ -349,11 +338,17 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
 
    
     if( ProductDetailComponent.endAfterScrolled == null){
-      ProductDetailComponent.endAfterScrolled = this.holder.nativeElement.clientHeight - ProductDetailComponent.prodImageHeight - ProductDetailComponent.offsetTop;
+      ProductDetailComponent.holderHeight = this.holder.nativeElement.clientHeight
+      ProductDetailComponent.endAfterScrolled =  this.holder.nativeElement.clientHeight - ProductDetailComponent.prodImageHeight + 40
+      console.log(
+        "\n 1. HolderHeight ",this.holder.nativeElement.clientHeight,
+        "\n HolderHeight ",ProductDetailComponent.holderHeight,
+        "\n DetailsCardHeight ",ProductDetailComponent.detailsCardHeight,
+        "\n ProdImageHeight ",ProductDetailComponent.prodImageHeight,
+        "\n OffsetTop ",ProductDetailComponent.offsetTop,
+        "\n EndAfterScrolled ",ProductDetailComponent.endAfterScrolled,
+      );
     }
-    
-    console.log(amtScrolled,ProductDetailComponent.pinHolderAfter,ProductDetailComponent.endAfterScrolled);
-    
     if(amtScrolled >= ProductDetailComponent.pinHolderAfter 
       
          && amtScrolled <= ProductDetailComponent.endAfterScrolled ){
@@ -368,10 +363,11 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
         this.detailsCard.nativeElement.style.top = '-' + ProductDetailComponent.prodImageHeight + "px";
       // }
       
-    } else if(amtScrolled > ProductDetailComponent.endAfterScrolled){
-      console.log("sss");
+    } else if(amtScrolled > ProductDetailComponent.endAfterScrolled ){
+      const newPosition = ProductDetailComponent.holderHeight - amtScrolled - 40 - ProductDetailComponent.prodImageHeight
+      console.log("a", newPosition );
       
-      this.detailsCard.nativeElement.style.top = '-' + (ProductDetailComponent.detailsCardHeight + ProductDetailComponent.prodImageHeight) + "px";
+      this.detailsCard.nativeElement.style.top = newPosition + "px";
     } else{
       this.detailsCard.nativeElement.classList.remove('fixToRight');
       this.detailsCard.nativeElement.style.top = "";
