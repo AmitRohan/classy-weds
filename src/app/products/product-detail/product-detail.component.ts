@@ -339,15 +339,18 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
    
     if( ProductDetailComponent.endAfterScrolled == null){
       ProductDetailComponent.holderHeight = this.holder.nativeElement.clientHeight
-      ProductDetailComponent.endAfterScrolled =  this.holder.nativeElement.clientHeight - ProductDetailComponent.prodImageHeight + 40
-      console.log(
-        "\n 1. HolderHeight ",this.holder.nativeElement.clientHeight,
-        "\n HolderHeight ",ProductDetailComponent.holderHeight,
-        "\n DetailsCardHeight ",ProductDetailComponent.detailsCardHeight,
-        "\n ProdImageHeight ",ProductDetailComponent.prodImageHeight,
-        "\n OffsetTop ",ProductDetailComponent.offsetTop,
-        "\n EndAfterScrolled ",ProductDetailComponent.endAfterScrolled,
-      );
+      ProductDetailComponent.endAfterScrolled =  
+                    this.holder.nativeElement.clientHeight 
+                      - 20 // PADDING FIX
+                      - ProductDetailComponent.prodImageHeight // HEIGHT to cut FIX
+      // console.log(
+      //   "\n 1. HolderHeight ",this.holder.nativeElement.clientHeight,
+      //   "\n HolderHeight ",ProductDetailComponent.holderHeight,
+      //   "\n DetailsCardHeight ",ProductDetailComponent.detailsCardHeight,
+      //   "\n ProdImageHeight ",ProductDetailComponent.prodImageHeight,
+      //   "\n OffsetTop ",ProductDetailComponent.offsetTop,
+      //   "\n EndAfterScrolled ",ProductDetailComponent.endAfterScrolled,
+      // );
     }
     if(amtScrolled >= ProductDetailComponent.pinHolderAfter 
       
@@ -364,9 +367,10 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
       // }
       
     } else if(amtScrolled > ProductDetailComponent.endAfterScrolled ){
-      const newPosition = ProductDetailComponent.holderHeight - amtScrolled - 40 - ProductDetailComponent.prodImageHeight
-      console.log("a", newPosition );
-      
+      const newPosition = 
+              ProductDetailComponent.endAfterScrolled 
+                - amtScrolled 
+                - ProductDetailComponent.prodImageHeight
       this.detailsCard.nativeElement.style.top = newPosition + "px";
     } else{
       this.detailsCard.nativeElement.classList.remove('fixToRight');
