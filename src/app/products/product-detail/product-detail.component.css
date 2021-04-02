@@ -776,12 +776,12 @@
 
 .makeScrollable {
     overflow-y: scroll;
-    max-height: 90vh;
+    max-height: calc(45vh + 20px);
 }
 
 
 .fixToRight {
     position: fixed;
     right: 165px;
-    left: calc(50% + 22px);
+    left: calc(50% + 21px);
 }
