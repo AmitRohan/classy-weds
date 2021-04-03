@@ -320,11 +320,11 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
     ProductDetailComponent.prodImageHeight = this.prodImage.nativeElement.clientHeight
 
     ProductDetailComponent.detailsCardContentHeight = this.detailsCardContent.nativeElement.clientHeight
-
-    
+    this.detailsShowCase.nativeElement.classList.remove('makeScrollable');
+    this.detailsCard.nativeElement.classList.remove('fixToRight');
     ProductDetailComponent.offsetTop = this.getPosition(this.detailsCard.nativeElement).y;
-
-    ProductDetailComponent.pinHolderAfter = this.getPosition(this.detailsCardContent.nativeElement).y;      
+ 
+    ProductDetailComponent.pinHolderAfter = Math.max(this.getPosition(this.detailsCardContent.nativeElement).y,ProductDetailComponent.offsetTop,0);      
   }
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event){
@@ -343,7 +343,7 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
       ProductDetailComponent.holderHeight = this.holder.nativeElement.clientHeight
       ProductDetailComponent.endAfterScrolled =  
                     this.holder.nativeElement.clientHeight 
-                      - 20 // PADDING FIX
+                      - 40 // PADDING FIX
                       - ProductDetailComponent.prodImageHeight // HEIGHT to cut FIX
       // console.log(
       //   "\n 1. HolderHeight ",this.holder.nativeElement.clientHeight,
@@ -354,6 +354,7 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
       //   "\n EndAfterScrolled ",ProductDetailComponent.endAfterScrolled,
       // );
     }
+    
     if(amtScrolled >= ProductDetailComponent.pinHolderAfter 
       
          && amtScrolled <= ProductDetailComponent.endAfterScrolled ){
@@ -369,6 +370,8 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
       // }
       
     } else if(amtScrolled > ProductDetailComponent.endAfterScrolled ){
+      this.detailsCard.nativeElement.classList.add('fixToRight');
+
       const newPosition = 
               ProductDetailComponent.endAfterScrolled 
                 - amtScrolled 
