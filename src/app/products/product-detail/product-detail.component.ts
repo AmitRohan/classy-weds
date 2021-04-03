@@ -28,6 +28,7 @@ declare const $: any;
 export class ProductDetailComponent implements OnInit , AfterViewInit , OnChanges {
   
   @Input() hasRequestedCallback = false;
+  @Input() availableProducts: Array<ProductModel> = [];
   @Input() selectedService: string = '';
   @Input() selectedProductDetail: ProductModel = null;
   @Output() onContactUsClicked = new EventEmitter<ContactUsBody>();
@@ -328,7 +329,8 @@ export class ProductDetailComponent implements OnInit , AfterViewInit , OnChange
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event){
 
-    // return;
+    if(this.availableProducts.length == 0)
+      return;
 
     var amtScrolled = $event.target.scrollingElement.scrollTop;
     
