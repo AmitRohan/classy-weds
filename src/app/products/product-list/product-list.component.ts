@@ -98,7 +98,7 @@ export class ProductListComponent implements OnInit , AfterViewInit , AfterConte
           checkIfItIsSelected.scrollIntoView({
             behavior: "smooth"
           })
-        },500)  
+        },1000)  
       }
     });      
   }
