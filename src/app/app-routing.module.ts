@@ -11,8 +11,7 @@ const routes: Routes = [
     },{
         path: 'services',
         loadChildren: () => import('app/products/products.module').then(m => m.ProductsModule),
-    }
-    ,{
+    },{
         path: '',
         redirectTo: 'home',
         pathMatch: 'full'
